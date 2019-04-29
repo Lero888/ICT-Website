@@ -1,0 +1,91 @@
+body{
+	background: skyblue;
+}
+
+/*.wrap{
+	width:85%;
+	margin:auto;
+	margin-top:100px;
+}*/
+
+
+
+.column {
+  float: left;
+  width: 30%;
+  margin:1.66%;
+  min-width: 250px;
+
+}
+
+.row {
+	/*margin: 0 5px;*/
+	margin: 0 10%;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+  /*width:100%;*/
+
+}
+
+/* Responsive columns */
+@media screen and (max-width: 700px) {
+  .column {
+    width: 100%;
+    display: block;
+    margin: auto;
+    margin-bottom: 10%;
+  }
+}
+
+/* Style the counter cards */
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  padding: 16px;
+  text-align: center;
+  background-color: #fff;
+  color: black;
+  transition:0.4s;
+  width: auto;
+  height: auto;
+  
+
+
+}
+
+
+.card:hover{
+	box-shadow: 0 8px 16px 0 rgba(0,0,0,0.6);
+}
+
+/*.container{
+	padding:2px 16px;
+}*/
+
+img {
+
+  width:200px;
+  height:200px;
+  min-width: 50px;
+  min-height:50px;
+  max-width: 200px;
+  max-height:200px;
+}
+/*.card{
+
+	background-color: red;
+	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.6);
+	transition:0.4s;
+	width:30%;
+	background: #fff;
+	text-align: center;
+	font-size:16px;
+	font-family: arial;
+	float:left;
+	margin:1.66%; 
+}*/
+
