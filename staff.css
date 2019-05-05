@@ -1,4 +1,6 @@
-body{
+html, body{
+  margin: 0px;
+  padding: 0px;
 	background: skyblue;
 }
 
@@ -8,12 +10,15 @@ body{
 	margin-top:100px;
 }*/
 
+div {
+  border: 0.5px solid;
+}
 
 
 .column {
   float: left;
   width: 30%;
-  margin:1.66%;
+  margin:1.6%;
   min-width: 250px;
 
 }
@@ -21,26 +26,32 @@ body{
 .row {
 	/*margin: 0 5px;*/
 	margin: 0 10%;
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
 }
 
 /* Clear floats after the columns */
 .row:after {
-  content: "";
-  display: table;
-  clear: both;
+  /*content: "";*/
+  /*display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;*/
+
+  /*clear: both;*/
   /*width:100%;*/
 
 }
 
 /* Responsive columns */
-@media screen and (max-width: 700px) {
+/*@media screen and (max-width: 700px) {
   .column {
     width: 100%;
     display: block;
     margin: auto;
     margin-bottom: 10%;
   }
-}
+}*/
 
 /* Style the counter cards */
 .card {
@@ -52,9 +63,6 @@ body{
   transition:0.4s;
   width: auto;
   height: auto;
-  
-
-
 }
 
 
