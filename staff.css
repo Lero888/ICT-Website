@@ -44,14 +44,25 @@ div {
 }
 
 /* Responsive columns */
-/*@media screen and (max-width: 700px) {
+@media screen and (max-width: 700px) {
   .column {
     width: 100%;
     display: block;
     margin: auto;
     margin-bottom: 10%;
   }
-}*/
+}
+
+@media screen and (max-width: 1061px) {
+  .row {
+  /*margin: 0 5px;*/
+  margin: 0 10%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+}
+
 
 /* Style the counter cards */
 .card {
