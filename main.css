@@ -1,0 +1,18 @@
+html, body {
+	margin: 0px;
+	padding: 0px;
+}
+
+.navigation_bar {
+	background-color:#02234e; 
+	padding:10px; 
+	color:white;
+}
+
+.nav_item
+			{
+				display: inline-block;
+				width:90px;
+				font-weight:900;
+				padding:10px;
+			}
