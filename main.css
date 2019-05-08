@@ -1,6 +1,13 @@
 html, body {
 	margin: 0px;
 	padding: 0px;
+	background-color: skyblue;
+}
+
+#main_logo{
+	margin:0 auto;
+	width: 50%;
+
 }
 
 .navigation_bar {
