@@ -5,6 +5,10 @@ html, body {
 	background-color: skyblue;
 }
 
+a{
+	text-decoration: none;
+}
+
 
 .header{
 	height: auto;

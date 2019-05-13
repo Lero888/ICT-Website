@@ -6,6 +6,19 @@ html, body {
   min-height: 100%;
 }
 
+a{
+  text-decoration: none;
+}
+
+.nav_item a:hover{
+  color: lightgray;
+  text-decoration: none;
+}
+
+a:visited{
+  color: white;
+  text-decoration: none;
+}
 
 .header{
   /*min-height: px;*/
@@ -144,6 +157,8 @@ html, body {
   width: auto;
   height: auto;
   z-index: 1;
+  max-width: 
+  max-height:;
 }
 
 
