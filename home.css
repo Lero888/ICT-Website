@@ -1,0 +1,12 @@
+.navbar-nav {
+	flex-direction: row;
+}
+
+a:hover {
+	color: grey;
+	text-decoration: none;
+}
+
+a {
+  color: white;
+}
