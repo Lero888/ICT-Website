@@ -1,0 +1,176 @@
+html, body {
+  margin: 0px;
+  padding: 0px;;
+  height: 100%;
+  /*background-color: skyblue;*/
+}
+
+.cover_container{
+  min-height: 200px;
+  height: auto;
+  width: 100%;
+  background-color: rgb(20,40,97);
+/*  background-image: url("bg.jpg");
+  background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+*/
+
+    /*position: relative;*/
+  
+}
+
+.logo_container{
+  width: 95%;
+  display: flex;
+  justify-content: center;
+  height: 120px;
+  /*overflow: hidden;*/
+  border-bottom:3px solid white;  
+  margin: 0 auto;
+
+}
+
+#main_logo {
+  object-fit: contain;
+
+  width: 35%;
+  /*position: absolute;*/
+
+  /*border: 2px black solid;*/
+  /*left:30%;*/
+
+
+}
+
+.navigation_bar {
+  /*background-color:#02234e; */
+  padding:10px; 
+  color:white;
+  display: flex;
+  justify-content: space-between;
+  /*border: 1px solid black;*/
+  width: 90%;
+  margin:0 auto;
+}
+
+.nav_item
+{
+  display: inline-block;
+  /*width:150px;*/
+  font-weight:900;
+  font-size: 22px;
+  padding:5px;
+  text-align: center;
+
+
+}
+
+
+/*.wrap{
+	width:85%;
+	margin:auto;
+	margin-top:100px;
+}*/
+
+/*div {
+  border: 0.5px solid;
+}
+*/
+
+.column {
+  float: left;
+  width: 30%;
+  margin:1.6%;
+  min-width: 250px;
+
+}
+
+.row {
+	/*margin: 0 5px;*/
+	margin: 0 10%;
+  margin-top: 50px;
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  /*content: "";*/
+  /*display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;*/
+
+  /*clear: both;*/
+  /*width:100%;*/
+
+}
+
+/* Responsive columns */
+@media screen and (max-width: 700px) {
+  .column {
+    width: 80%;
+    display: block;
+    margin: auto;
+    margin-bottom: 10%;
+  }
+}
+
+@media screen and (max-width: 1061px) {
+  .row {
+  /*margin: 0 5px;*/
+  margin: 0 10%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+}
+
+
+/* Style the counter cards */
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  padding: 16px;
+  text-align: center;
+  /*background-color: #fff;*/
+  background-color: rgb(29,70,143);
+  /*color: black;*/
+  color: white;
+  transition:0.4s;
+  width: auto;
+  height: auto;
+}
+
+
+.card:hover{
+	box-shadow: 0 8px 16px 0 rgba(0,0,0,0.6);
+}
+
+/*.container{
+	padding:2px 16px;
+}*/
+
+.card img {
+
+  width:200px;
+  height:200px;
+  min-width: 50px;
+  min-height:50px;
+  max-width: 200px;
+  max-height:200px;
+}
+/*.card{
+
+	background-color: red;
+	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.6);
+	transition:0.4s;
+	width:30%;
+	background: #fff;
+	text-align: center;
+	font-size:16px;
+	font-family: arial;
+	float:left;
+	margin:1.66%; 
+}*/
+
