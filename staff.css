@@ -1,9 +1,9 @@
 html, body {
   margin: 0px;
-  padding: 0px;;
+  padding: 0px;
   height: 100%;
-  background-color: #F5F5F5;
-  height: 100%;
+  overflow-x: hidden;
+  
 }
 
 a{
@@ -42,20 +42,14 @@ a:visited{
 
 .logo_container a {
   position: relative;
-  left: 32.5%;
-}
-
-
-.logo_container a {
-  position: relative;
-  left: 32.5%;
+  left: 28.75%;
 }
 
 
 #main_logo {
   object-fit: contain;
 
-  width: 35%;
+  width: 40%;
 
   padding-bottom: 10px;
 
@@ -89,21 +83,29 @@ a:visited{
 }
 
 .staff_banner {
-  min-height: 800px;
+  /*min-height: 800px;
   background-image: url("staff banner.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  /*width: 100%;*/
-  /*object-fit: cover;*/
-  /*height: auto;*/
-  /*min-height: 2%;*/
+  
   position: absolute;
   left: 0px;
   top: 0px;
-  z-index: -1;
+  z-index: 1;*/
   
 }
+
+.staff_banner img {
+  width: 100%;
+  object-fit: cover;
+  /*height: auto;*/
+  /*min-height: 2%;*/
+  /*position: absolute;*/
+
+}
+
+
 
 
 /*.wrap{
@@ -132,6 +134,11 @@ a:visited{
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+  position: relative;
+  bottom: 100px;
+  background-color: white;
+  border: 1px solid lightgray;
+  /*z-index: 0;*/
 }
 
 /* Responsive columns */
@@ -193,4 +200,45 @@ a:visited{
   min-height:50px;
   max-width: 200px;
   max-height:200px;
+}
+
+
+
+.custom-banner-image {
+
+/*background-image: url("group-meeting-banner.jpg");  */
+background-image: url("staff banner.jpg");
+
+background-repeat: no-repeat;
+
+background-size: cover;
+
+background-position: 50% 50%;
+
+position: absolute;
+
+width: 100%;
+
+height: 400px;
+
+display: block;
+
+z-index: 0.3;
+
+}
+
+.custom-banner-image .banner-overlay {
+
+position: absolute;
+
+top: 0;
+
+left: 0;
+
+width: 100%;
+
+height: 100%;
+
+background-color: rgba(0, 0, 0, 0);
+
 }
