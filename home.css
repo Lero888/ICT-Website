@@ -6,13 +6,30 @@ html, body {
 }
 
 a{
-	text-decoration: none;
+  text-decoration: none;
+}
+
+.nav_item a:hover{
+  color: lightgray;
+  text-decoration: none;
+}
+
+a:visited{
+  color: white;
+  text-decoration: none;
 }
 
 
 .header{
 	height: auto;
 	width: 100%;
+	/*display: flex;
+	justify-content: center;*/
+}
+
+.logo_container a {
+	position: relative;
+	left: 32.5%;
 }
 
 
