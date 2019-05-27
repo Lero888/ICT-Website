@@ -183,6 +183,12 @@ a:visited{
 #table-example-1 caption { 
   padding-bottom: 0.5em; 
 }
+#table-example-1 tr {
+  border-bottom: 1px solid black;
+}
+#table-example-1 tr.no-border-row {
+  border-bottom: none;
+}
 #table-example-1 th, 
 #table-example-1 td { 
   border: solid thin;
@@ -195,7 +201,7 @@ a:visited{
   font-weight: normal; 
 }
 #table-example-1 td { 
-  border-style: none solid; 
+  border-style: solid thin; 
   vertical-align: top; 
 }
 #table-example-1 th { 
