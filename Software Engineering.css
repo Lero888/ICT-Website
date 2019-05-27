@@ -106,16 +106,33 @@ a:visited{
 }
 
 
-/*.wrap{
-	width:85%;
-	margin:auto;
-	margin-top:100px;
-}*/
+.bg { 
+  /* The image used */
+  background-image: url("staff banner.jpg");
 
-/*div {
-  border: 0.5px solid;
+  /* half height */
+  height: 50%; 
+
+  /* Center and scale the image nicely */
+  min-height: 600px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
-*/
+
+.bg2 {
+  border-radius: 50%;
+  max-width: 300px;
+  margin-top: -60px;
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  text-align: center;
+}
 
 .column {
   float: left;
@@ -155,21 +172,50 @@ a:visited{
   }
 }
 
-table, td, th {
-  border: 1px solid black;
+#table-example-1 { 
+  border: solid thin; 
+  border-collapse: collapse; 
+  margin-top: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 50px;
+}
+#table-example-1 caption { 
+  padding-bottom: 0.5em; 
+}
+#table-example-1 tr {
+  border-bottom: 1px solid black;
+}
+#table-example-1 tr.no-border-row {
+  border-bottom: none;
+}
+#table-example-1 th, 
+#table-example-1 td { 
+  border: solid thin;
+  padding: 0.5rem 2rem;
+}
+#table-example-1 td {
+  white-space: nowrap;
+}
+#table-example-1 th { 
+  font-weight: normal; 
+}
+#table-example-1 td { 
+  border-style: solid thin; 
+  vertical-align: top; 
+}
+#table-example-1 th { 
+  padding: 0.2em; 
+  vertical-align: middle; 
+  text-align: center; 
 }
 
-table {
-  border-collapse: collapse;
-  width: 100%;
-  padding-top: 20px;
-  margin-top: 20px;
-  margin-left: 20px;
-  margin-right: 20px;
+#table-example-1 tbody td:first-child::after { 
+  content: leader(". "); '
 }
 
-td {
-  height: 50px;
-  vertical-align: bottom;
-  max-width: 50px;
+body {
+  padding: 1rem;
 }
+
+

@@ -24,6 +24,7 @@ a:visited{
   /*min-height: px;*/
   height: auto;
   width: 100%;
+  font-family: 'Open Sans', sans-serif;
 }
     
 
@@ -70,6 +71,7 @@ a:visited{
   margin:0 auto;
   border-top:3px solid white;
   padding-top: 10px;
+
 }
 
 .nav_item {
@@ -80,6 +82,7 @@ a:visited{
   text-align: center;
   margin-left:2%;
   margin-right:2%;
+  font-size: 18px;
 }
 
 .nav_item:hover {
@@ -88,21 +91,18 @@ a:visited{
   transition: .2s;
 }
 
-.staff_banner {
-  min-height: 800px;
+.bg { 
+  /* The image used */
   background-image: url("staff banner.jpg");
+
+  /* half height */
+  height: 50%; 
+
+  /* Center and scale the image nicely */
+  min-height: 600px;
+  background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: center;
-  /*width: 100%;*/
-  /*object-fit: cover;*/
-  /*height: auto;*/
-  /*min-height: 2%;*/
-  position: absolute;
-  left: 0px;
-  top: 0px;
-  z-index: -1;
-  
 }
 
 
@@ -117,6 +117,10 @@ a:visited{
 }
 */
 
+.programStructure-banner {
+
+}
+
 .column {
   float: left;
   width: 30%;
@@ -129,6 +133,7 @@ a:visited{
 	/*margin: 0 5px;*/
 	margin: 0 10%;
   margin-top: 50px;
+  margin-bottom: 63px;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
@@ -198,7 +203,7 @@ a:visited{
 /*Style the footer*/
 .footer {
 
-	background-color: #BCC1C5;
+	background-color: #1E90FF;
 	height: 190px;
 	position: relative;
 	top: 20px;
@@ -213,17 +218,36 @@ a:visited{
 }
 
 .footerrow {
-  margin: auto;
-  margin-top: 10px;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
+  		margin: auto;
+  		margin-top: 10px;
+  		display: flex;
+  		justify-content: space-around;
+ 		flex-wrap: wrap;
 }
 
 .footercolumn {
-    width: 25%;
-    display: block;
-    margin: auto;
+	    width: 25%;
+	    display: block;
+	    margin: auto;
+}
+
+@media only screen and (max-width 974px) {
+
+	.footerrow {
+  		margin: auto;
+  		margin-top: 10px;
+  		display: flex;
+		flex-direction: column;
+  		justify-content: center;
+	}
+}
+
+@media only screen and (max-width: 700px) {
+	.footercolumn {
+	    width: 25%;
+	    display: block;
+	    margin: auto;
+	}
 }
 
 .footer2 {
