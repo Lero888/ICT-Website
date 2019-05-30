@@ -5,10 +5,6 @@ html, body {
   font-family: 'Arvo', Georgia, Times, serif;
 }
 
-body {
-  overflow-x: hidden;
-}
-
 a{
   text-decoration: none;
 }
