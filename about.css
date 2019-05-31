@@ -141,7 +141,7 @@ h2 {
 
 
 /*column and row*/
-.row {
+.row, .row_reverse{
 	/*margin: 0 5px;*/
   margin: 0 auto;
 /*  margin-top: 50px;
@@ -150,6 +150,14 @@ h2 {
   justify-content: center;
   flex-wrap: wrap;
 }
+
+@media screen and (max-width: 992px) {
+  .row_reverse {
+  	flex-direction: column-reverse;
+  }
+}
+
+
 
 .column {
   float: left;
@@ -162,7 +170,7 @@ h2 {
 
 
 
-/* Responsive columns */
+/* Responsive columns 
 /*@media screen and (max-width: 700px) {
   .column {
     margin-top: 50px;
