@@ -17,6 +17,7 @@
 
 .relativeimg{
   position:relative;
+  box-shadow: 2px 6px 5px grey;
 }
 
 .absolutecapt{
@@ -42,6 +43,7 @@
 .bignews{
   margin-right:5px;
   position:relative;
+  box-shadow: 2px 6px 5px grey;
 }
 
 .image{
@@ -77,16 +79,31 @@
 .content{
   width: 100%;
   display:flex;
-  justify-content: space-around;
+  justify-content: center;
 }
 
 .leftcc{
-  width:60%;
+  width:50%;
 }
 
 .rightcc{
-  width:20%;
-  padding-top: 3.5px;
+  width:50%;
+  padding-right: 5px;
+  text-align:right;
+  font-size: 12px;
+  align-self: flex-end;
+}
+
+.rightcc a:visited{
+  color:black;
+}
+
+.rightcc a:link{
+  color:black;
+}
+
+.rightcc > a:hover {
+  color:orange;
 }
 
 .contentcontainer{
@@ -110,6 +127,7 @@ figure{
   width:100%;
   padding-left: 5px;
   padding-bottom: 5px;
+  display:inline-flex;
 }
 
 .recentcontent{
@@ -167,12 +185,12 @@ button{
   background-color:white;
   border-radius: 15px;
   padding-left: 0;
+  width:100%;
 }
 
 button:hover{
   cursor:pointer;
   background-color:buttonface;
-  border
 }
 
 .date{

@@ -24,9 +24,9 @@
 	</header>
 	<div class="container">
 		<div class="banner">
-			<figure class="bignews">
+			<figure class="bignews" style="margin-bottom:3.33px">
 				<!-- bignews -->
-				<a href="#"><img src="big.jpg" class="image" style="width:500px; height:405px;"></a>
+				<a href="#"><img src="big.jpg" class="image" style="width:500px; height:100%;"></a>
 				<figcaption class="absolutecapt"s>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 				tempor incididunt ut labore et dolore magna aliqua.</figcaption>
 			</figure>
@@ -35,7 +35,7 @@
 				<div style="display:inline-block;">
 					<figure class="relativeimg">
 						<!-- topleft -->
-						<a href=""><img src="small1.jpg" class="image" style="width:300px; height:200px;"></a>
+						<a href=""><img src="small1.jpg" class="image" style="width:300px; height:200px; margin-bottom:10px;"></a>
 						<figcaption class="absolutecapt">Lorem ipsum dolor sit amet, consectetur adipisicing elit</figcaption>
 					</figure>
 					<figure class="relativeimg">
@@ -47,7 +47,7 @@
 				<div style="display:inline-block;">
 					<figure class="relativeimg">
 						<!-- topright -->
-						<a href=""><img src="small3.jpg" class="image" style="width:300px; height:200px;"></a>
+						<a href=""><img src="small3.jpg" class="image" style="width:300px; height:200px; margin-bottom: 10px"></a>
 						<figcaption class="absolutecapt">Lorem ipsum dolor sit amet, consectetur adipisicing elit</figcaption>
 					</figure>
 					<figure class="relativeimg">
@@ -61,147 +61,105 @@
 
 		<div class="content">
 			<div class="contentcontainer">
-				<table>
-					<tr>
-						<td class="leftcc">
-							<table style="display:flex; flex-direction: column;">
-								<tr>
-									<td class="category">
-										<i class="fas fa-clock" style="font-size: 15px;"></i>
-										<strong>RECENT</strong>
-
-									</td>
-								</tr>
-								<tr>
-									<td>
-										<div class="recentcontent">
-											<button type="button" onclick="location.href='#';">
-												<div style="display:flex;">
-													<!-- img -->
-													<img src="recent1.jpg" class="newsimg">
-												</div>
-												<div style="width:70%; display:flex;">
-													<div>
-														<!-- title -->
-														<b>Lorem ipsum dolor sit amet</b>
-														<div class="date">
-															<!-- Date created -->
-															<i class="fas fa-calendar-alt"></i>
-															Date Created: <time datetime="2018-05-21">2019-05-21</time>
-														</div>
-														<!-- content -->
-														<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-														tempor incididunt ut labore et dolore magna aliqua.</p>
-													</div>
-												</div>
-											</button>
-										</div>
-									</td>
-								</tr>
-								<tr>
-									<td>
-										<div class="recentcontent">
-											<button type="button" onclick="location.href='#';">
-												<div style="display:flex;">
-													<!-- img -->
-													<img src="recent2.jpg" class="newsimg">
-												</div>
-												<div style="width:70%; display:flex;">
-													<div>
-														<!-- title -->
-														<b>Lorem ipsum dolor sit amet</b>
-														<div class="date">
-															<!-- Date created -->
-															<i class="fas fa-calendar-alt"></i>
-															Date Created: <time datetime="2018-05-21">2019-05-21</time>
-														</div>
-														<!-- content -->
-														<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-														tempor incididunt ut labore et dolore magna aliqua.</p>
-													</div>
-												</div>
-											</button>
-										</div>
-									</td>
-								</tr>
-								<tr>
-									<td>
-										<div class="recentcontent">
-											<button type="button" onclick="location.href='#';">
-												<div style="display:flex;">
-													<!-- img -->
-													<img src="recent3.jpg" class="newsimg">
-												</div>
-												<div style="width:70%; display:flex;">
-													<div>
-														<!-- title -->
-														<b>Lorem ipsum dolor sit amet</b>
-														<div class="date">
-															<!-- Date created -->
-															<i class="fas fa-calendar-alt"></i>
-															Date Created: <time datetime="2018-05-21">2019-05-21</time>
-														</div>
-														<!-- content -->
-														<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-														tempor incididunt ut labore et dolore magna aliqua.</p>
-													</div>
-												</div>
-											</button>
-										</div>
-									</td>
-								</tr>
-								<tr>
-									<td>
-										<div class="recentcontent">
-											<button type="button" onclick="location.href='#';">
-												<div style="display:flex;">
-													<!-- img -->
-													<img src="recent4.jpg" class="newsimg">
-												</div>
-												<div style="width:70%; display:flex;">
-													<div>
-														<!-- title -->
-														<b>Lorem ipsum dolor sit amet</b>
-														<div class="date">
-															<!-- Date created -->
-															<i class="fas fa-calendar-alt"></i>
-															Date Created: <time datetime="2018-05-21">2019-05-21</time>
-														</div>
-														<!-- content -->
-														<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-														tempor incididunt ut labore et dolore magna aliqua.</p>
-													</div>
-												</div>
-											</button>
-										</div>
-									</td>
-								</tr>
-							</table>
-						</td>
-						<td class="rightcc">
-							<div class="categorycontainer">
-								<div class="category">
-									<strong>FOLLOW US</strong>
-								</div>
-								<div class="followcontainer">
-									<div class="followcontent">
-										<div class="icon">
-											<a href="https://www.facebook.com/SWEstudentunion"><i class="fab fa-facebook" style="color:#5d6ba3;"></i></a>
-										</div>
-										<div class="icon">
-											<i class="fab fa-weixin" style="color: green;"></i>
-										</div>
-										<div class="icon">
-											<a href="https://play.google.com/store/apps/details?id=org.ctbeta.xmux.xmux&hl=en">
-												<img src="xmuxicon.png" class="xmux">
-											</a>
-										</div>
+				<div class="category">
+					<div class="leftcc">
+						<i class="fas fa-clock" style="font-size: 15px;"></i>
+						<strong>RECENT</strong>
+					</div>
+					<div class="rightcc">
+						<a href="#">More...</a>
+					</div>
+				</div>
+				<div>
+					<div class="recentcontent">
+						<button type="button" onclick="location.href='#';">
+							<div style="display:flex;">
+								<!-- img -->
+								<img src="recent1.jpg" class="newsimg">
+							</div>
+							<div style="width:70%; display:flex;">
+								<div>
+									<!-- title -->
+									<b>Lorem ipsum dolor sit amet</b>
+									<div class="date">
+										<!-- Date created -->
+										<i class="fas fa-calendar-alt"></i>
+										Date Created: <time datetime="2018-05-21">2019-05-21</time>
 									</div>
+									<!-- content -->
+									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+									tempor incididunt ut labore et dolore magna aliqua.</p>
 								</div>
 							</div>
-						</td>
-					</tr>
-				</table>
+						</button>
+					</div>
+					<div class="recentcontent">
+						<button type="button" onclick="location.href='#';">
+							<div style="display:flex;">
+								<!-- img -->
+								<img src="recent2.jpg" class="newsimg">
+							</div>
+							<div style="width:70%; display:flex;">
+								<div>
+									<!-- title -->
+									<b>Lorem ipsum dolor sit amet</b>
+									<div class="date">
+										<!-- Date created -->
+										<i class="fas fa-calendar-alt"></i>
+										Date Created: <time datetime="2018-05-21">2019-05-21</time>
+									</div>
+									<!-- content -->
+									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+									tempor incididunt ut labore et dolore magna aliqua.</p>
+								</div>
+							</div>
+						</button>
+					</div>
+					<div class="recentcontent">
+						<button type="button" onclick="location.href='#';">
+							<div style="display:flex;">
+								<!-- img -->
+								<img src="recent3.jpg" class="newsimg">
+							</div>
+							<div style="width:70%; display:flex;">
+								<div>
+									<!-- title -->
+									<b>Lorem ipsum dolor sit amet</b>
+									<div class="date">
+										<!-- Date created -->
+										<i class="fas fa-calendar-alt"></i>
+										Date Created: <time datetime="2018-05-21">2019-05-21</time>
+									</div>
+									<!-- content -->
+									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+									tempor incididunt ut labore et dolore magna aliqua.</p>
+								</div>
+							</div>
+						</button>
+					</div>
+					<div class="recentcontent">
+						<button type="button" onclick="location.href='#';">
+							<div style="display:flex;">
+								<!-- img -->
+								<img src="recent4.jpg" class="newsimg">
+							</div>
+							<div style="width:70%; display:flex;">
+								<div>
+									<!-- title -->
+									<b>Lorem ipsum dolor sit amet</b>
+									<div class="date">
+										<!-- Date created -->
+										<i class="fas fa-calendar-alt"></i>
+										Date Created: <time datetime="2018-05-21">2019-05-21</time>
+									</div>
+									<!-- content -->
+									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+									tempor incididunt ut labore et dolore magna aliqua.</p>
+								</div>
+							</div>
+						</button>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
