@@ -55,7 +55,6 @@ h2 {
 }
 
 
-
 .session2 {
 	margin-top:-40px; 
 	width: 80%;
@@ -87,23 +86,64 @@ h2 {
 	transform-origin: top right;
 	transform: skewY(-5deg);
 	z-index: -1;
-	/*display: block;*/
 }
 
 
-.t3 {
+.session3 {
 	margin-top:8%; 
 	width: 80%;
 	background-color: white;
 	height: auto;
 	padding-top:30px;
-	position: absolute;
+	position: relative;
 	width: 100%;
 	z-index: -1;
 	text-align: center;
 	font-size: 1.2em;
 }
 
+
+.session4 {
+	margin-top:8%; 
+	width: 80%;
+	background-color: lightgray;
+	height: auto;
+	padding-top:30px;
+	position: relative;
+	width: 100%;
+	z-index: -1;
+	text-align: center;
+	font-size: 1.2em;
+	padding-bottom: 8%;
+	/*clip-path: polygon(0 0, 100% 20%, 100% 100%, 0 100%);*/
+}
+
+.session4:after {
+	position: absolute;
+	content: '';
+	width: 100%;
+	height: 100%;
+	top: 0;
+	right:0;
+	bottom:0;
+	left:0;
+	background-color: lightgray;
+	transform-origin: top right;
+	transform: skewY(5deg);
+	z-index: -1;
+}
+
+.session4 img {
+	width: 300px;
+	background-color: white;
+	border-radius: 50%;
+}
+
+.session4 p{
+	margin-top: 30px;
+	font-size: 1.4em;
+	font-weight: 300;
+}
 /*.session2:before {
 	position: absolute;
 	content: '';
@@ -168,31 +208,6 @@ h2 {
   /*margin-right: 100px;*/
 }
 
-
-
-/* Responsive columns 
-/*@media screen and (max-width: 700px) {
-  .column {
-    margin-top: 50px;
-    width: 80%;
-    display: block;
-    margin: auto;
-    margin-bottom: 10%;
-  }
-
-}
-
-@media screen and (max-width: 1061px) {
-
-  .row {
-    margin: 0 10%;
-    margin-top: 50px;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-  }
-}*/
-
 /* Style the course container */
 .course_container {
   position: relative;
@@ -206,11 +221,6 @@ h2 {
   /*object-fit: cover;*/
   height: auto;
   width: 450px;
-
-  /*min-width: 50px;
-  min-height:50px;
-  max-width: 350px;
-  max-height:300px;*/
 }
 
 .overlay {
