@@ -21,10 +21,13 @@ html, body {
   background-size: cover;
 }
 
-.bg2 {
+.course-logo {
   border-radius: 50%;
-  max-width: 300px;
-  margin-top: -60px;
+  width: auto;
+  height: auto;
+  max-width: 325px;
+  max-height: 250px;
+  margin-top: -70px;
 }
 
 .center {
@@ -33,6 +36,8 @@ html, body {
   margin-right: auto;
   width: 50%;
   text-align: center;
+  display: flex;
+  justify-content: center;
 }
 
 .column {
@@ -73,7 +78,7 @@ html, body {
   }
 }
 
-#table-example-1 { 
+#table-course { 
   border: solid thin; 
   border-collapse: collapse; 
   margin-top: 50px;
@@ -81,31 +86,31 @@ html, body {
   margin-right: auto;
   margin-bottom: 50px;
 }
-#table-example-1 caption { 
+#table-course caption { 
   padding-bottom: 0.5em; 
 }
-#table-example-1 th, 
-#table-example-1 td { 
+#table-course th, 
+#table-course td { 
   border: solid thin;
   padding: 0.5rem 2rem;
 }
-#table-example-1 td {
+#table-course td {
   white-space: nowrap;
 }
-#table-example-1 th { 
-  font-weight: normal; 
+#table-course th { 
+  font-weight: bold; 
 }
-#table-example-1 td { 
+#table-course td { 
   border-style: none solid; 
   vertical-align: top; 
 }
-#table-example-1 th { 
+#table-course th { 
   padding: 0.2em; 
   vertical-align: middle; 
   text-align: center; 
 }
 
-#table-example-1 tbody td:first-child::after { 
+#table-course tbody td:first-child::after { 
   content: leader(". "); '
 }
 

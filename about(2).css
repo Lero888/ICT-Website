@@ -1,9 +1,9 @@
 html, body {
   margin: 0px;
-  padding: 0px;;
+  padding: 0px;
+  width: 100%;
   height: 100%;
   background-color: #F5F5F5;
-  height: 100%;
 }
 
 /*background image*/
@@ -12,7 +12,7 @@ html, body {
   background-image: url("aboutus.jpg");
 
   /* half height */
-  height: 50%; 
+  height: 100%; 
 
   /* Center and scale the image nicely */
   min-height: 600px;
@@ -21,13 +21,15 @@ html, body {
   background-size: cover;
 }
 
-.bg {
+.bg-white {
   background-color: white;
+  width: 100%;
 }
 
-.message {
-  color: #blue;  
-  text-shadow: #343a40 2px 2px;
+
+.bigTitle {
+  color: black;  
+  text-shadow: #343a40 1px 1px;
   min-width: 100%;
   min-height: 12em;
   position: relative;
@@ -38,192 +40,77 @@ h1 {
   overflow: hidden;
   align-items: center;
   justify-content: center;
-  margin-top: -3px;
 }
 
-h1:before,
-h1:after {
-  background-color: #000;
-  content: "";
-  display: inline-block;
-  height: 1px;
-  position: relative;
-  vertical-align: middle;
-  width: 50%;
+.title {
+  font-size: 30px; 
+  align: center; 
+  margin-top: 150px;
+  text-align: center;
+  font-weight: bold;
 }
 
-h1:before {
-  right: 0.5em;
-  margin-left: -50%;
-}
-
-h1:after {
-  left: 0.5em;
-  margin-right: -50%;
-}
-
-
-/*hero code*/
-.hero {
-  width: 100%;
-  height: 100%;
-  min-width: 100%;
-  min-height: 100%;
-  position: relative;
-}
-
-.hero::before {
-  background-image: url(aboutus.jpg);
-  background-size: cover;
-  content: "";
-  display: block;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -2;
-  opacity: 0.8;
-}
-
-@media (min-width: 320px) {
-  .hero::before {
-   background-image: url(aboutus.jpg);
-  }
-}
-
-@media (min-width: 460px) {
-  .hero::before {
-   background-image: url(aboutus.jpg);
-  }
-}
-
-@media (min-width: 720px) {
-  .hero::before {
-   background-image: url(aboutus.jpg);
-  }
-}
-
-@media (min-width: 980px) {
-  .hero::before {
-   background-image: url(aboutus.jpg);
-  }
-}
-
-@media (min-width: 1240px) {
-  .hero::before {
-   background-image: url(aboutus.jpg);
-  }
-
-}
-
-@media (min-width: 1500px) {
-  .hero::before {
-   background-image: url(aboutus.jpg);
-  }
-
-}
-
-@media (min-width: 1760px) {
-  .hero::before {
-    background-image: url(aboutus.jpg);
-  }
-}
-
-.flex-center {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-content: center;
-}
-
-.hero-message {
-  color: #fff;  
-  text-shadow: #343a40 2px 2px;
-  min-width: 100%;
-  min-height: 12em;
-  position: relative;
-}
-
-.hero-message::before {
-  content: "";
-  display: block;
-  position: absolute;
-  margin-left: 0;
-  min-width: 100%;
-  min-height: 12em;
-  z-index: -1;
-  opacity: 0.4;
-  background-color: #343a40;
-}
-
-
-@media(min-width:1024px) {
-  .hero-message {
-    min-width: 50%;
-    min-height: 12em;
-  }
-  .hero-message::before {
-    margin-left: 25%;
-    min-width: 50%;
-    min-height: 12em;
-  }
-}
-
-.hero-title,
-.hero-sub-title {
-  width: 100%;
-  display: block;
+.content h2, h3 {
+  width: 80%;
+  margin:0 auto;
+  margin-top: 50px;
   text-align: center;
 }
 
-.hero-title {
-  margin: 3% 0;
-  text-transform: uppercase;
+.content p{
+  width: 80%;
+  margin:0 auto;
+  margin-top: 30px;
+  padding: 10px;
+  word-spacing: 8px;
+  text-align: justify;
 }
 
-.hero::after {
-  background-color: #563d7c;
-  content: "";
-  display: block;
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-  opacity: 0.4;
+.text-exp {
+  text-align: justify; 
+  word-spacing: 8px;
+  margin-left: 30px;
+  margin-top: 0px;"
 }
+
+.align-left {
+  text-align: center;
+}
+
+.align-justify {
+  text-align: justify;
+}
+
 
 /*column and row*/
 .column {
   float: left;
   width: 30%;
-  margin:1.6%;
-  min-width: 250px;
-
-}
-
-.row {
-	/*margin: 0 5px;*/
-	margin: 0 10%;
-  margin-top: 50px;
-  margin-bottom: 63px;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
+  margin: 2%;
+  min-width: 450px;
+  align-self: center;
 }
 
 /* Responsive columns */
 @media screen and (max-width: 700px) {
   .column {
     margin-top: 50px;
-    width: 80%;
-    display: block;
+    width: auto;
+    display: flex;
+    justify-content: center;
     margin: auto;
     margin-bottom: 10%;
   }
 
+}
+
+.row, .row-reverse {
+  margin: 0 auto;
+  margin-top: 50px;
+  margin-bottom: 63px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 @media screen and (max-width: 1061px) {
@@ -237,6 +124,13 @@ h1:after {
   }
 }
 
+@media screen and (max-width: 992px) {
+  .row_reverse {
+    flex-direction: column-reverse;
+  }
+}
+
+
 /* Style the course container */
 .course_container {
   position: relative;
@@ -246,13 +140,8 @@ h1:after {
 
 .image {
   display: block;
-  width: 100%;
   height: auto;
-  width: auto;
-  min-width: 50px;
-  min-height:50px;
-  max-width: 350px;
-  max-height:300px;
+  width: 450px;
 }
 
 .overlay {
@@ -272,28 +161,3 @@ h1:after {
   opacity: 0.95;
 }
 
-.text {
-  color: white;
-  font-size: 20px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  text-align: center;
-}
-
-.text-exp {
-  text-align: justify; 
-  margin-left: 30px;
-  margin-top: 0px;"
-}
-
-.align-left {
-  text-align: left;
-}
-
-.align-justify {
-  text-align: justify;
-}

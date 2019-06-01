@@ -2,7 +2,7 @@
 
   background-color: #1E90FF;
   width: 100%;
-  height: 490px;
+  height: auto;
   position: relative;
   top: 20px;
   margin-top: 20px;
@@ -69,11 +69,14 @@
 
 .footer2 {
 	background-color: rgba(20,46,103,1); 
-	height: 15px; 
+	height: auto; 
 	color: white; 
 	font: Goergia; 
 	padding: 20px;
 	margin-top: 20px;
+	display: flex;
+	align-items: center;
+	width: 100%;
 }
 
 
