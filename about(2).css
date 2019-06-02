@@ -81,6 +81,12 @@ h1 {
   text-align: justify;
 }
 
+.footer h3 {
+  text-align: left;
+  margin-left: 0px;
+  margin-bottom: 19px;
+  margin-top: 19px;
+}
 
 /*column and row*/
 .column {
