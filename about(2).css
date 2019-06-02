@@ -1,0 +1,168 @@
+html, body {
+  margin: 0px;
+  padding: 0px;
+  width: 100%;
+  height: 100%;
+  background-color: #F5F5F5;
+}
+
+/*background image*/
+.bg-img { 
+  /* The image used */
+  background-image: url("aboutus.jpg");
+
+  /* half height */
+  height: 100%; 
+
+  /* Center and scale the image nicely */
+  min-height: 600px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.bg-white {
+  background-color: white;
+  width: 100%;
+}
+
+
+.bigTitle {
+  color: black;  
+  text-shadow: #343a40 1px 1px;
+  min-width: 100%;
+  min-height: 12em;
+  position: relative;
+  text-align: center;
+}
+
+h1 {
+  overflow: hidden;
+  align-items: center;
+  justify-content: center;
+}
+
+.title {
+  font-size: 30px; 
+  align: center; 
+  margin-top: 150px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.content h2, h3 {
+  width: 80%;
+  margin:0 auto;
+  margin-top: 50px;
+  text-align: center;
+}
+
+.content p{
+  width: 80%;
+  margin:0 auto;
+  margin-top: 30px;
+  padding: 10px;
+  word-spacing: 8px;
+  text-align: justify;
+}
+
+.text-exp {
+  text-align: justify; 
+  word-spacing: 8px;
+  margin-left: 30px;
+  margin-top: 0px;"
+}
+
+.align-left {
+  text-align: center;
+}
+
+.align-justify {
+  text-align: justify;
+}
+
+.footer h3 {
+  text-align: left;
+  margin-left: 0px;
+  margin-bottom: 19px;
+  margin-top: 19px;
+}
+
+/*column and row*/
+.column {
+  float: left;
+  width: 30%;
+  margin: 2%;
+  min-width: 450px;
+  align-self: center;
+}
+
+/* Responsive columns */
+@media screen and (max-width: 700px) {
+  .column {
+    margin-top: 50px;
+    width: auto;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    margin-bottom: 10%;
+  }
+
+}
+
+.row, .row-reverse {
+  margin: 0 auto;
+  margin-top: 50px;
+  margin-bottom: 63px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+@media screen and (max-width: 1061px) {
+
+  .row {
+    margin: 0 10%;
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .row_reverse {
+    flex-direction: column-reverse;
+  }
+}
+
+
+/* Style the course container */
+.course_container {
+  position: relative;
+  width: 54%;
+  /*width: 108%;*/
+}
+
+.image {
+  display: block;
+  height: auto;
+  width: 450px;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: .5s ease;
+  background-color: #40DBE5;
+}
+
+.course_container:hover .overlay {
+  opacity: 0.95;
+}
