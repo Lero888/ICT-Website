@@ -1,3 +1,10 @@
+html, body {
+  margin: 0px;
+  padding: 0px;;
+  height: 100%;
+  font-family: 'Arvo', Georgia, Times, serif;
+}
+
 .video_container {
   width: 100%;
   z-index: -100;
@@ -74,7 +81,6 @@
 
 .navbarcont{
 	padding: 5px 5px 0 5px;
-	width:100%;
 	height: auto;
 	display:flex;
 	justify-content: space-between;
@@ -144,4 +150,13 @@
   background-color: #4CAF50;
   color: white;
   box-shadow: 5px 5px 10px gray;
+}
+
+a{
+  text-decoration: none;
+}
+
+a:visited{
+  color: white;
+  text-decoration: none;
 }
