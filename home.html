@@ -3,15 +3,12 @@
 <head>
 	<title>ICT Main Page</title>
 	<link rel="stylesheet" type="text/css" href="home.css">
+
 </head>
 <body>
-
-
-
-	<header="header">
-		<div class="header_container">
+		<!-- <div class="header_container">
 			<a href="home.html">
-				<img src="logo.png" id="main_logo">	
+				<img src="xmumlogo.png" id="main_logo">	
 			</a>	
 
 			<div class="navigation_bar">
@@ -20,16 +17,33 @@
 				<div class="nav_item"><a href="Program Structure.html"><b>Program Structure</b></a></div>
 				<div class="nav_item"><a href="studentactivities.html"><b>Student Activities</b></a></div>
 				<div class="nav_item"><a href="about.html"><b>About</b></a></div>
-			</div>	
-		</div>
+			</div>	 
+		</div> -->
+	<div class="navbarcont">
+		<a href="home.html">
+			<img src="logo.png" class="navbarlogo">	
+		</a>	
+		<div class="navigationlist">
+			<div id="nav_item"><a href="home.html">Home</a></div>
+			<div id="nav_item"><a href="staff.html">Staff</a></div>
+			<div id="nav_item"><a href="Program Structure.html">Program Structure</a></div>
+			<div id="nav_item"><a href="studentactivities.html">Student Activities</a></div>
+			<div id="nav_item"><a href="#">About</a></div>
+		</div>	
+	</div>
 
-		<div class="video_container">
-			<video autoplay muted loop id="IntroVideo">
-				<source src="xiamen cut.mp4" type="video/mp4">
-			</video>
+	<div class="video_container">
+		<video autoplay muted loop id="IntroVideo">
+			<source src="xiamen cut.mp4" type="video/mp4">
+		</video>	
+	</div>	
+	<div class="contentcontainer">
+		<div class="title">
+			Welcome To School Of ICT
 		</div>
-	</header>
-
-	
+		<div class="content">
+			<button class="btn btn-success" onclick="window.location.href='#';">Learn more</button>
+		</div>
+	</div>
 </body>
 </html>
