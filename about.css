@@ -69,7 +69,7 @@ h2 {
 	position: relative;
 	width: 100%;
 	z-index: 1;
-	text-align: center;
+	text-align: justify;
 	font-size: 1.2em;
 	text-align: center;
 	line-height: 1.5em;
@@ -162,6 +162,9 @@ h2 {
 	text-align: center;
 	font-size: 1.2em;
 	padding-bottom: 8%;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
 	/*clip-path: polygon(0 0, 100% 20%, 100% 100%, 0 100%);*/
 }
 
@@ -179,34 +182,10 @@ h2 {
 	transform: skewY(-5deg);
 	z-index: -1;
 }
-/*.session2:before {
-	position: absolute;
-	content: '';
-	width: 50%;
-	height: 140px;
-	top: -110px;
-	left:0;
-	background-color: lightgray;
-	transform: skewY(10deg);
-	z-index: -1;
-}
-
-..session2:after {
-	position: absolute;
-	content: '';
-	width: 50%;
-	height: 140px;
-	top: -110px;
-	right:0;
-	background-color: lightgray;
-	transform: skewY(-10deg);
-	z-index: -1;
-}*/
 
 .content p{
 	width: 80%;
 	margin:0 auto;
-	margin-top: 3%;
 	text-align: justify;
 }
 
@@ -302,60 +281,59 @@ h2 {
 }
 
 
-
-
-
-.slider {
-  width: 450px;
-  height: 300px;
-  margin-left: auto;
-  margin-right: auto;
-  overflow: hidden;
-  text-align: center;
+.slide_container {
+	width: 450px;
+	margin: 0 auto;
 }
 
-.image_container {
-  width: 1350px;
-  height: 300px;
-  position: relative;
-  transition: left 2s;
-  -webkit-transition: left 2s;
-  overflow: hidden;
+.slide_content {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	/*flex-direction: column;*/
 }
 
-.image_container img {
-  width: 450px;
-  height: 300px;
+.slide_content img {
+	width: 450px;
+	height: 300px;
 }
 
-.slider_image {
-  float: left;
-  margin: 0px;
-  padding:0px;
+.slide_content2 {
+	width: 450px;
+	display: flex;
+	justify-content: space-between;
+	flex-direction: row;
+	color: white;
+	font-size: 1.4em;
+	padding: 0 15px;
 }
 
-.button_container {
-  top:-25px;
-  position: relative;
+
+
+
+
+.navigation_arrow {
+	position: relative;
+	top:-163px;
 }
 
-.slider_button {
-  display: inline-block;
-  height: 10px;
-  width: 10px;
-  border-radius: 5px;
-  background-color: white;
-  z-index: 1;
+.navigation_arrow, .dot, .fot2 {
+	cursor:pointer
 }
 
-#slider_image_1:target ~ .image_container {
-  left: 0px;
+.dot, .dot2 {
+	position: relative;
+	top:-35px;
+	height:13px;
+	width:13px;
+	padding:0;
+	/*background-color: rgba(20,46,103,1);*/
+	border-radius: 6px;
+	display: inline-block;
+	border: 1px solid white;
 }
 
-#slider_image_2:target ~ .image_container {
-  left: -450px;
+.dot:hover, .dot2 {
+	background-color: white;
 }
 
-#slider_image_3:target ~ .image_container {
-  left: -900px;
-}

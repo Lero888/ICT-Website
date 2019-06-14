@@ -3,7 +3,7 @@
 <head>
 	<title>About</title>
 	<link rel="stylesheet" type="text/css" href="about.css">
-	<link rel="stylesheet" type="text/css" href="footer2.css">
+	<link rel="stylesheet" type="text/css" href="footer.css">
 	<link rel="stylesheet" type="text/css" href="header.css">
 </head>
 <body>
@@ -26,16 +26,18 @@
 	</header> -->
 
 	<div class="navbarcont">
-		<a href="home.html">
-			<img src="logo.png" class="navbarlogo">	
-		</a>	
-		<div class="navigationlist">
-			<div id="nav_item"><a href="home.html">Home</a></div>
-			<div id="nav_item"><a href="staff.html">Staff</a></div>
-			<div id="nav_item"><a href="Program Structure.html">Program Structure</a></div>
-			<div id="nav_item"><a href="studentactivities.html">Student Activities</a></div>
-			<div id="nav_item"><a href="about.html">About</a></div>
-		</div>	
+		<div class="navbarcont2">
+			<div><a href="home.html">
+				<img src="logo.png" class="navbarlogo">	
+			</a></div>	
+			<div class="navigationlist">
+				<div id="nav_item"><a href="home.html">Home</a></div>
+				<div id="nav_item"><a href="staff.html">Staff</a></div>
+				<div id="nav_item"><a href="Program Structure.html">Program Structure</a></div>
+				<div id="nav_item"><a href="studentactivities.html">Student Activities</a></div>
+				<div id="nav_item"><a href="about.html">About</a></div>
+			</div>	
+		</div>
 	</div>
 
 	<div class="session1">
@@ -48,8 +50,12 @@
 	<div  class="session2">
 		<div class="content">
 			<h2>ABOUT OUR SCHOOL</h2>
-			<h3>School of Information Science and Technology</h3>
-			<p style="text-align: center; "><b>Technological innovation and international atmosphere – School of Information Science & Engineering and Software School, XMU</b></p>
+			<br>
+			<p style="text-align: center;"><b>School of Information Science and Technology</b></p>
+			<br>
+			<p style="text-align: center;"><b>Technological innovation and international atmosphere – School of Information Science & Engineering and Software School, XMU</b></p>
+			<br>
+			<br>
 			<p>As one of the earliest engineering schools in China with a comprehensive range of subjects, School of Information Science and Engineering has an exemplary national teaching center for electronic information and an Education Ministry Key Laboratory of Underwater Acoustic Communication and Marine Information Engineering. It has established extensive ties through academic exchange and cooperation with many world-renowned universities and enterprises. It has appointed over 20 internationally and domestically well-known scholars as part-time, guest or honorary professors including members of the Engineering Academies of the US and Canada. The Software School has won the Exemplary Software School Construction Achievements Prize conferred by the Chinese Ministry of Education.</p>
 		</div>
 	</div>
@@ -119,24 +125,25 @@
 	</div>
 
 	<div  class="session5">
-		<div class="content">
 			<h2>Gallery</h2>
-			<div class="slider">
-		        <span id="slider_image_1"></span>
-		        <span id="slider_image_2"></span>
-		        <span id="slider_image_3"></span>
-		        <div class="image_container">
-		          <img src="big.jpg" class="slider_image">
-		          <img src="download.jpg" class="slider_image">
-		          <img src="big.jpg" class="slider_image">
-		        </div>
-		        <div class="button_container">
-		          <a href="#slider_image_1" class="slider_button"></a>
-		          <a href="#slider_image_2" class="slider_button"></a>
-		          <a href="#slider_image_3" class="slider_button"></a>
-		        </div>
-		    </div>
-		</div>
+
+			<div class="slide_container">
+				<div class="slide_content">
+				  <img class="slide" src="recent4.jpg">
+				  <img class="slide" src="small1.jpg" >
+				  <img class="slide" src="small2.jpg">
+				</div>
+				
+				<div class="slide_content2">
+				    <div class="navigation_arrow" onclick="plusDivs(-1)">&#10094;</div>
+				    <div>
+				    	<div class="dot demo" onclick="currentDiv(1)"></div>
+				    	<div class="dot demo" onclick="currentDiv(2)"></div>
+				    	<div class="dot demo" onclick="currentDiv(3)"></div>
+				    </div>
+				    <div class="navigation_arrow" onclick="plusDivs(1)">&#10095;</div>
+				</div>
+			</div>
 	</div>
 
 	<!-- Footer section -->
@@ -193,7 +200,34 @@
 
 	</footer>
 
+<script>
+var slideIndex = 1;
+showDivs(slideIndex);
 
+function plusDivs(n) {
+  showDivs(slideIndex += n);
+}
+
+function currentDiv(n) {
+  showDivs(slideIndex = n);
+}
+
+function showDivs(n) {
+  var i;
+  var x = document.getElementsByClassName("slide");
+  var dots = document.getElementsByClassName("demo");
+  if (n > x.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = x.length}
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" dot2", " dot");
+  }
+  x[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " dot2";
+}
+</script>
 
 </body>
 </html>
