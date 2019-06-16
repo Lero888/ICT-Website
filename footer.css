@@ -10,6 +10,7 @@
   padding-left: 15px;
   margin-right: auto;
   margin-left: auto;
+  font-family: 'Arvo', Georgia, Times, serif;
 }
 
 .footer img {
@@ -20,7 +21,7 @@
 .text-white {
   color: white;
   padding: 50px;
-  font-size: 20px;
+  font-size: 1.1em;
 }
 
 *, *::before, *::after {
@@ -37,7 +38,7 @@
     margin-right: -15px;
     margin-left: -15px;
     padding: 20px;
-    color:rgba(20,46,103,1)
+    color:rgba(20,46,103,1);
 }
 
 @media (min-width: 992px) {
@@ -71,7 +72,7 @@
 	background-color: rgba(20,46,103,1); 
 	height: auto; 
 	color: white; 
-	font: Goergia; 
+	font-family: 'Arvo', Georgia, Times, serif; 
 	padding: 20px;
 	margin-top: 20px;
 	display: flex;

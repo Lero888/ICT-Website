@@ -8,13 +8,13 @@ html, body {
 
 .bg-img { 
   /* The image used */
-  background-image: url("staff banner.jpg");
+  background-image: url("PS - banner.jpg");
 
   /* half height */
   height: 50%; 
 
   /* Center and scale the image nicely */
-  min-height: 600px;
+  min-height: 400px;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
