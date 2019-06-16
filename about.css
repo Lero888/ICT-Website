@@ -318,7 +318,7 @@ h2 {
 }
 
 .navigation_arrow, .dot, .fot2 {
-	cursor:pointer
+	cursor:pointer;
 }
 
 .dot, .dot2 {
