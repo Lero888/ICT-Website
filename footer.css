@@ -5,7 +5,6 @@
   height: auto;
   position: relative;
   top: 20px;
-  margin-top: 20px;
   text-align: left;
   padding-right: 15px;
   padding-left: 15px;
@@ -14,7 +13,8 @@
 }
 
 .footer img {
-	max-width = 30px;
+	max-width: 30px;
+  max-height: 30px;
 }
 
 .text-white {
@@ -42,7 +42,7 @@
 
 @media (min-width: 992px) {
   .footerrow {
-      padding: 85px;
+      padding: 40px, 85px, 40px, 85px;
   }
 }
 
@@ -51,9 +51,9 @@
     -ms-flex: 0 0 100%;
     flex: 0 0 100%;
     max-width: 100%;
-    padding-left: 15px;
-    padding-right: 15px;
-    line-height: 1.6;
+    padding-left: 10px;
+    padding-right: 10px;
+    line-height: 1.4;
 }
 
 @media (min-width: 992px) {
