@@ -152,6 +152,7 @@ html, body{
 	margin-left: 25px;
 	border-bottom: 1px solid #ededed;
 	display:inline-flex;
+	width:100%;
 }
 
 .mostreadcontent > a:visited{
