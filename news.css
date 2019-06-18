@@ -1,0 +1,20 @@
+.contentcontainer{
+	width:100%;
+	height:auto;
+	display:flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+.imgcontainer{
+	padding: 30px 0 0 0;
+}
+
+.content{
+	width:80%;
+	height:100%;
+	padding-left: 150px;
+	text-align:left;
+	line-height: 2em;
+}
