@@ -1,0 +1,41 @@
+.container{
+	width:100%;
+	height:100%;
+	display:flex;
+	padding:20px 50px 20px 50px;
+	justify-content: center;
+}
+
+.recentcontent{
+  display:flex;
+  justify-content: center;
+  padding-top: 5px;
+  width:100%;
+}
+
+.newsimg{
+   width:250px; 
+   height: 150px; 
+   border:15px;
+}
+
+button{
+  display:flex;
+  justify-content: space-between;
+  text-align:left;
+  border: none;
+  background-color:white;
+  border-radius: 15px;
+  padding: 0 50px 0 50px;
+  width:100%;
+}
+
+button:hover{
+  cursor:pointer;
+  background-color:buttonface;
+}
+
+.date{
+  padding-top:5px;
+  color:#cecece;
+}

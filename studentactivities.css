@@ -146,38 +146,9 @@ figure{
    border-radius:15px;
 }
 
-.categorycontainer{
-  display:flex; 
-  flex-direction: column;
-  align-items: flex-start;
-  height:100%;
-  padding-left:150px;
-  text-align:center;
-}
-
-.followcontainer{
-  height: 100%;
-  width: 80%;
-}
-
-.followcontent{
-  padding: 10px 10px 0 10px;
-  height: 100%;
-  width: 100%;
-  display:flex;
-  flex-direction: row;
-  justify-content: flex-end;
-}
-
 .icon{
   font-size:35px;
   margin: 0 5px 0 5px;
-}
-
-.xmux{
-  height:35px;
-  width:35px; 
-  border-radius:15px;
 }
 
 button{
@@ -198,7 +169,7 @@ button:hover{
 
 .date{
   padding-top:5px;
-  color:#cecece;
+  color:#727272;
 }
 
 .navbarcont{
@@ -233,4 +204,28 @@ button:hover{
 .navbarlogo{
   height: 50px;
   width:250px;
+}
+
+#highlight{
+  border-bottom: none;
+}
+
+.showmore{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 50px;
+}
+
+.showmore > button{
+  height:50px;
+  width: auto;
+  border-radius: 0;
+  border:1px solid black;
+}
+
+.showmore > button:hover{
+  color:#3664e2;
+  background-color: white;
+  border-color:#3664e2;
 }
