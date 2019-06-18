@@ -5,22 +5,23 @@
   height: auto;
   position: relative;
   top: 20px;
-  margin-top: 20px;
   text-align: left;
   padding-right: 15px;
   padding-left: 15px;
   margin-right: auto;
   margin-left: auto;
+  font-family: 'Arvo', Georgia, Times, serif;
 }
 
 .footer img {
-	max-width = 30px;
+	max-width: 30px;
+  max-height: 30px;
 }
 
 .text-white {
   color: white;
   padding: 50px;
-  font-size: 20px;
+  font-size: 1.1em;
 }
 
 *, *::before, *::after {
@@ -37,12 +38,12 @@
     margin-right: -15px;
     margin-left: -15px;
     padding: 20px;
-    color:rgba(20,46,103,1)
+    color:rgba(20,46,103,1);
 }
 
 @media (min-width: 992px) {
   .footerrow {
-      padding: 85px;
+      padding: 40px, 85px, 40px, 85px;
   }
 }
 
@@ -51,9 +52,9 @@
     -ms-flex: 0 0 100%;
     flex: 0 0 100%;
     max-width: 100%;
-    padding-left: 15px;
-    padding-right: 15px;
-    line-height: 1.6;
+    padding-left: 10px;
+    padding-right: 10px;
+    line-height: 1.4;
 }
 
 @media (min-width: 992px) {
@@ -71,7 +72,7 @@
 	background-color: rgba(20,46,103,1); 
 	height: auto; 
 	color: white; 
-	font: Goergia; 
+	font-family: 'Arvo', Georgia, Times, serif; 
 	padding: 20px;
 	margin-top: 20px;
 	display: flex;
