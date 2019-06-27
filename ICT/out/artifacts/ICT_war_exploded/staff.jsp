@@ -38,7 +38,7 @@
 
 				<%
 					Class.forName("com.mysql.jdbc.Driver");
-					Statement stm = DriverManager.getConnection("jdbc:mysql://localhost:3306/ICT", "root", "1234").createStatement();
+					Statement stm = DriverManager.getConnection("jdbc:mysql://localhost:3306/ICT", "root", "xmuy").createStatement();
 					String sql = "select staff_id as sid, staff_name as name, image as image\n" +
 							"from staff";
 					ResultSet rs= stm.executeQuery(sql);

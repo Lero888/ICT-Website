@@ -29,8 +29,8 @@
 	<%
 	String sid = request.getParameter("sid");
 	Class.forName("com.mysql.jdbc.Driver");
-	Statement stm = DriverManager.getConnection("jdbc:mysql://localhost:3306/ICT", "root", "1234").createStatement();
-	String sql = "select staff.staff_name as name, staff.image as image, staff.position as pos, staff.programme as prog, staff.tel as tel, staff.email as email\n" +
+	Statement stm = DriverManager.getConnection("jdbc:mysql://localhost:3306/ICT", "root", "xmuy").createStatement();
+	String sql = "select staff.staff_name as name, staff.image as image, staff.position as pos, staff.school as sch, staff.tel as tel, staff.email as email\n" +
 			"from staff\n" +
 			"where staff_id = '"+ sid +"'";
 	System.out.println(sql);
@@ -59,7 +59,7 @@
 							</tr>
 							<tr>
 								<td>Programme: </td>
-								<td class="c2"><%=rs.getString("prog")%></td>
+								<td class="c2"><%=rs.getString("sch")%></td>
 							</tr>
 							<tr>
 								<td>Tel: </td>
@@ -78,7 +78,7 @@
 				<h2>educational background</h2>
 				<ul>
 					<%
-						Statement stm2 = DriverManager.getConnection("jdbc:mysql://localhost:3306/ICT", "root", "1234").createStatement();
+						Statement stm2 = DriverManager.getConnection("jdbc:mysql://localhost:3306/ICT", "root", "xmuy").createStatement();
 						String sql2 = "select edu_bg.description as description\n" +
 								"from staff, edu_bg\n" +
 								"where staff.staff_id = edu_bg.staff_id and staff.staff_id = '"+ sid +"' ";
@@ -98,7 +98,7 @@
 				<h2>RESEARCH INTERESTS</h2>
 				<ul>
 					<%
-						Statement stm3 = DriverManager.getConnection("jdbc:mysql://localhost:3306/ICT", "root", "1234").createStatement();
+						Statement stm3 = DriverManager.getConnection("jdbc:mysql://localhost:3306/ICT", "root", "xmuy").createStatement();
 						String sql3 = "select r_interest.description as description\n" +
 								"from staff, r_interest\n" +
 								"where staff.staff_id = r_interest.staff_id and staff.staff_id = '"+ sid +"'";
@@ -118,7 +118,7 @@
 				<h2>ACADEMIC EXPERIENCE</h2>
 				<ul>
 					<%
-						Statement stm4 = DriverManager.getConnection("jdbc:mysql://localhost:3306/ICT", "root", "1234").createStatement();
+						Statement stm4 = DriverManager.getConnection("jdbc:mysql://localhost:3306/ICT", "root", "xmuy").createStatement();
 						String sql4 = "select acad_exp.description as description\n" +
 								"from staff, acad_exp\n" +
 								"where staff.staff_id = acad_exp.staff_id and staff.staff_id = '"+ sid +"'";
@@ -138,7 +138,7 @@
 				<h2>REPRESENTATIVE PUBLICATIONS</h2>
 				<ul>
 					<%
-						Statement stm5 = DriverManager.getConnection("jdbc:mysql://localhost:3306/ICT", "root", "1234").createStatement();
+						Statement stm5 = DriverManager.getConnection("jdbc:mysql://localhost:3306/ICT", "root", "xmuy").createStatement();
 						String sql5 = "select rep_pub.description as description\n" +
 								"from staff, rep_pub\n" +
 								"where staff.staff_id = rep_pub.staff_id and staff.staff_id = '"+ sid +"'";

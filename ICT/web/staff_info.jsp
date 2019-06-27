@@ -30,7 +30,7 @@
 	String sid = request.getParameter("sid");
 	Class.forName("com.mysql.jdbc.Driver");
 	Statement stm = DriverManager.getConnection("jdbc:mysql://localhost:3306/ICT", "root", "xmuy").createStatement();
-	String sql = "select staff.staff_name as name, staff.image as image, staff.position as pos, staff.programme as prog, staff.tel as tel, staff.email as email\n" +
+	String sql = "select staff.staff_name as name, staff.image as image, staff.position as pos, staff.school as sch, staff.tel as tel, staff.email as email\n" +
 			"from staff\n" +
 			"where staff_id = '"+ sid +"'";
 	System.out.println(sql);
@@ -59,7 +59,7 @@
 							</tr>
 							<tr>
 								<td>Programme: </td>
-								<td class="c2"><%=rs.getString("prog")%></td>
+								<td class="c2"><%=rs.getString("sch")%></td>
 							</tr>
 							<tr>
 								<td>Tel: </td>
