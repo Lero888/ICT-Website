@@ -75,7 +75,6 @@ h2 {
 	line-height: 1.5em;
 	display: table;
 	padding-bottom: 30px;
-	min-height: 100vh;
 }
 
 .session2:after {
@@ -105,7 +104,6 @@ h2 {
 	z-index: -1;
 	text-align: center;
 	font-size: 1.2em;
-	min-height: 100vh;
 }
 
 
@@ -121,7 +119,6 @@ h2 {
 	text-align: center;
 	font-size: 1.2em;
 	padding-bottom: 8%;
-	min-height: 100vh;
 	/*clip-path: polygon(0 0, 100% 20%, 100% 100%, 0 100%);*/
 }
 
@@ -182,7 +179,6 @@ h2 {
 	display: flex;
 	justify-content: center;
 	flex-direction: column;
-	min-height: 100vh;
 	/*clip-path: polygon(0 0, 100% 20%, 100% 100%, 0 100%);*/
 }
 
