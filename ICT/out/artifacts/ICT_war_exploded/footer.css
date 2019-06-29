@@ -1,0 +1,86 @@
+.footer {
+
+  background-color: #1E90FF;
+  width: 100%;
+  height: auto;
+  position: relative;
+  top: 20px;
+  text-align: left;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+  font-family: 'Arvo', Georgia, Times, serif;
+}
+
+.footer img {
+	max-width: 30px;
+  max-height: 30px;
+}
+
+.text-white {
+  color: white;
+  padding-left: 0px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-size: 1.1em;
+}
+
+*, *::before, *::after {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.footer-container {
+  	display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+    padding: 45px;
+    padding-left: 90px;
+    padding-bottom: 45px;
+    color:rgba(20,46,103,1);
+}
+
+@media (min-width: 992px) {
+  .footer-container {
+      padding: 40px, 85px, 40px, 85px;
+  }
+}
+
+.footer-column {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 100%;
+    flex: 0 0 100%;
+    max-width: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
+    line-height: 1.4;
+}
+
+@media (min-width: 992px) {
+  .footer-column {
+      -ms-flex-preferred-size: 0;
+      flex-basis: 0;
+      -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+      flex-grow: 1;
+      max-width: 100%;
+  }
+}
+
+.footer2 {
+	background-color: rgba(20,46,103,1); 
+	height: auto; 
+	color: white; 
+	font-family: 'Arvo', Georgia, Times, serif; 
+	padding: 20px;
+	margin-top: 20px;
+	display: flex;
+	align-items: center;
+	width: 100%;
+  padding-left: 97px;
+}
