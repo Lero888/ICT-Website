@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Program Structure</title>
+	<title>School-Modify</title>
 	<link rel="stylesheet" type="text/css" href="header.css">
 	<link rel="stylesheet" type="text/css" href="footer.css">
-	<link rel="stylesheet" type="text/css" href="program-structure.css">
+	<link rel="stylesheet" type="text/css" href="admin-personalinfo.css">
 <!-- 	<script src="scroll-to-top-btn.js"></script>
 	 -->
 	<style>
@@ -28,57 +28,126 @@
 			</div>	
 		</div>
 	</div>
+
+	<div style = "margin: 50px; text-align: center;">
+		<h1>Staff Information</h1>
+	</div>
 	
-	<div class = "bg-img">
-	</div>
+	<div class = "flexcontainer">
+		<div class="flexbox">
+	  		<div class="col">
+	  			<h2>Personal Info</h2>
+	  			<hr></hr>
 
-	<!-- body section-->
-<!-- 		<button onclick="topFunction()" id="topBtn" title="Go to top">Top</button> -->
+	  			<div class = "infocontainer">
+	  				<div class = "infobox">
+	  					<div class = "column">
+	  						<p>NameFromDatabase</p>
+	  					</div>
 
-	<div class = "row" style = "margin-bottom: -50px;">
-		<p style = "font-size: 30px"><b>Program Structure</b></p>
-	</div>
+	  					<div class = "column">
+	  						<p>Name</p>
+	  					</div>
 
-	<div class = "row" style = "margin-bottom: 10px;">
-		<p style = "font-size: 19px">School of Information Science & Engineering and Software School</p>
-	</div>
+	  					<div class = "column">
+	  						<p><a href = "name-modify.html">Edit</a></p>
+	  					</div>
+	  				</div>
 
-	<hr size="1" width="30%" align="center" color="grey">
+	  				<div class = "infobox" style = "padding-top: 0px;">
+	  					<div class = "column">
+	  						<p>Assistant Lecturer</p>
+	  					</div>
 
-	<div class = "row" >
-		<div class = "column">
-			<a href="computer-science-tech.html">
-				<div class="course_container">
-					 <img src="PS - cst.png" alt="Computer Science Technology" class="image">
-						<div class="overlay">
-	   						<div class="text">Computer Science Technology</div>
-						</div>
-				</div>
-			</a>
+	  					<div class = "column">
+	  						<p>Position</p>
+	  					</div>
+
+	  					<div class = "column">
+	  						<p><a href = "position-modify.html">Edit</a></p>
+	  					</div>
+	  				</div>
+
+	  				<div class = "infobox" style = "padding-top: 0px;">
+	  					<div class = "column">
+	  						<form style = "padding-top: 15px;">
+								<select name="school">
+									<option value="School of Energy and Chemical Engineering">School of Energy and Chemical Engineering</option>
+								    <option value="School of Information Science and Technology">School of Information Science and Technology</option>
+								    <option value="School of Ocean and Environment">School of Ocean and Environment</option>
+								</select>
+							</form>
+	  					</div>
+
+	  					<div class = "column">
+	  						<p>School</p>
+	  						<form action = "admin-personalinfo.html">
+	  							<input type = "submit" value = "Save Changes">
+	  							<input type = "submit" value = "Cancel">
+	  						</form>
+	  					</div>
+
+	  					<div class = "column">
+	  						<p><a href = " ">Edit</a></p>
+	  					</div>
+	  				</div>
+
+	  				<div class = "infobox" style = "padding-top: 0px;">
+	  					<div class = "column">
+	  						<p>XXX</p>
+	  					</div>
+
+	  					<div class = "column">
+	  						<p>Tel</p>
+	  					</div>
+
+	  					<div class = "column">
+	  						<p><a href = " ">Edit</a></p>
+	  					</div>
+	  				</div>
+
+	  				<div class = "infobox" style = "padding-top: 0px; border-bottom: none;">
+	  					<div class = "column">
+	  						<p>staff@xmu.edu.my</p>
+	  					</div>
+
+	  					<div class = "column">
+	  						<p>Email</p>
+	  					</div>
+
+	  					<div class = "column">
+	  						<p><a href = "">Edit</a></p>
+	  					</div>
+	  				</div>
+	  			</div>
+	  			<hr></hr>
+	  		</div>
+	  		
+	  		<div class="col">
+	  			<img src = "profile.png" alt = "staff">
+	  			<p>Name</p>
+
+	  			<div class = "title-box">
+	  				<div class = "hover">
+	  					<h3><a href = "admin-personalinfo.html">Personal Info</a></h3>
+	  				</div>
+	  			</div>
+
+	  			<div class = "title-box">
+	  				<div class = "hover">
+	  					<h3><a href = "admin-image">Image</a></h3>
+	  				</div>	
+	  			</div>
+
+	  			<div class = "title-box">
+	  				<div class = "hover">
+	  					<h3><a href = "admin-background">Background and Expertise</a></h3>
+	  				</div>
+	  			</div>
+	  		</div>
 		</div>
-
-		<div class = "column">
-			<a href="software-engineering.html">
-				<div class="course_container">
-					 <img src="PS - swe.png" alt="Software Engineering" class="image">
-  						<div class="overlay">
-	   						<div class="text">Software Engineering</div>
-					</div>
-				</div>
-			</a>
-		</div>
-
-		<div class = "column">
-			<a href="digital-media-tech.html">
-				<div class="course_container">
- 					 <img src="PS - dmt.png" alt="Digital Media Technology" class="image">
-  						<div class="overlay">
-    						<div class="text">Digital Media Technology</div>
-  						</div>
-				</div>
-			</a>
-		</div>
 	</div>
+
 
 	<!-- Footer section -->
 	<footer>
