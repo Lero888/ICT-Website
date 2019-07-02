@@ -13,15 +13,15 @@
 <body>
 	<div class="navbarcont">
 		<div class="navbarcont2">
-			<div><a href="home.html">
+			<div><a href="home.jsp">
 				<img src="images/logo.png" class="navbarlogo">
 			</a></div>	
 			<div class="navigationlist">
-				<div id="nav_item"><a href="home.html">Home</a></div>
-				<div id="nav_item"><a href="staff.html">Staff</a></div>
-				<div id="nav_item"><a href="Program Structure.html">Program Structure</a></div>
-				<div id="nav_item"><a href="studentactivities.html">Student Activities</a></div>
-				<div id="nav_item"><a href="about.html">About</a></div>
+                <div id="nav_item"><a href="home.jsp">Home</a></div>
+                <div id="nav_item"><a href="staff.jsp">Staff</a></div>
+                <div id="nav_item"><a href="program-structure.jsp">Program Structure</a></div>
+                <div id="nav_item"><a href="student-activities.jsp">Student Activities</a></div>
+                <div id="nav_item"><a href="about.jsp">About</a></div>
 			</div>	
 		</div>
 	</div>
@@ -30,7 +30,7 @@
 	String sid = request.getParameter("sid");
 	Class.forName("com.mysql.jdbc.Driver");
 	Statement stm = DriverManager.getConnection("jdbc:mysql://localhost:3306/ICT", "root", "xmuy").createStatement();
-	String sql = "select staff.staff_name as name, staff.image as image, staff.position as pos, staff.programme as prog, staff.tel as tel, staff.email as email\n" +
+	String sql = "select staff.staff_name as name, staff.image as image, staff.position as pos, staff.school as sch, staff.tel as tel, staff.email as email\n" +
 			"from staff\n" +
 			"where staff_id = '"+ sid +"'";
 	System.out.println(sql);
@@ -59,7 +59,7 @@
 							</tr>
 							<tr>
 								<td>Programme: </td>
-								<td class="c2"><%=rs.getString("prog")%></td>
+								<td class="c2"><%=rs.getString("sch")%></td>
 							</tr>
 							<tr>
 								<td>Tel: </td>
@@ -160,63 +160,64 @@
 		</div>
 
 		<!-- Footer section -->
-		<footer="footer">
-		<section class="footer">
+		<footer>
+			<section class="footer">
 
-
-
-			<div class="footerrow">
-				<div class="footercolumn">
-					<h3>EXPLORE</h3>
-					<u1 style = "list-style-type: none;" class="text-white">
-						<li><a href="../../../Documents/GitHub/ICT-Website/home.html">Home</a></li>
-						<li><a href="staff.jsp">Staff</a></li>
-						<li><a href="../../../Documents/GitHub/ICT-Website/Program%20Structure.html">Program Structure</a></li>
-						<li><a href="../../../Documents/GitHub/ICT-Website/studentactivities.html">Student Activities</a></li>
-						<li><a href="../../../Documents/GitHub/ICT-Website/about.html">About</a></li>
+				<div class="footer-container">
+					<div class="footer-column">
+						<h3>EXPLORE</h3>
+						<ul style = "list-style-type: none;" class="text-white">
+							<li><a href="home.jsp">Home</a></li>
+							<li><a href="staff.jsp">Staff</a></li>
+							<li><a href="program-structure.jsp">Program Structure</a></li>
+							<li><a href="student-activities.jsp">Student Activities</a></li>
+							<li><a href ="about.jsp">About</a></li>
 						</ul>
+					</div>
+
+					<div class="footer-column">
+						<h3>QUICK LINK</h3>
+						<ul style = "list-style-type: none;" class="text-white">
+							<li><a href="http://www.xmu.edu.my/">Xiamen University Malaysia</a></li>
+							<li><a href="https://linc.xmu.edu.my/">Library</a></li>
+						</ul>
+					</div>
+
+					<div class="footer-column">
+						<h3>OFFICE ADDRESS</h3>
+						<ul style = "list-style-type: none;" class="text-white">
+							<li>Xiamen University Malaysia</li>
+							<li>10, Jalan Sunsuria,</li>
+							<li>Bandar Sunsuria,</li>
+							<li>43900 Sepang,</li>
+							<li>Selangor Darul Ehsan, Malaysia.</li>
+						</ul>
+					</div>
+
+					<div class="footer-column">
+						<h3>CONTACT US</h3>
+						<ul style = "list-style-type: none;" class="text-white">
+							<li>
+								<a href = "https://www.facebook.com/SWEstudentunion/?ref=br_rs">
+									<img src = "images\facebook.png">
+								</a>
+								<a href = "mailto: SWEstudentunion@outlook.com">
+									<img src = "images\mail.png">
+								</a>
+								<a href = "https://xmux.xdea.top/">
+									<img src = "images\xmux.jpg">
+								</a>
+
+							</li>
+						</ul>
+					</div>
 				</div>
 
-				<div class="footercolumn">
-					<h3>QUICK LINK</h3>
-					<u1 style = "list-style-type: none;" class="text-white">
-						<li><a href="http://www.xmu.edu.my/">Xiamen University Malaysia</a></li>
-						<li><a href="https://linc.xmu.edu.my/">Library</a></li>
-						</ul>
-				</div>
+			</section>
 
-				<div class="footercolumn">
-					<h3>OFFICE ADDRESS</h3>
-					<u1 style = "list-style-type: none;" class="text-white">
-						<li>XIAMEN UNIVERSITY MALAYSIA</li>
-						<li>10, Jalan Sunsuria, Bandar Sunsuria, 43900 Sepang, Selangor Darul Ehsan, Malaysia.</li>
-						</ul>
-				</div>
-
-				<div class="footercolumn">
-					<h3>CONTACT US</h3>
-					<u1 style = "list-style-type: none;" class="text-white">
-						<li>
-							<img src = "images/facebook.png">
-							<img src = "images/twitter.png">
-							<img src = "images/google_plusone_share.png">
-							<img src = "images/sinaweibo.png">
-							<img src = "images/addthis.png">
-						</li>
-						</ul>
-				</div>
-
+			<div class = "footer2">
+				Copyright &#0169 2019 Information Technology Xiamen University Malaysia. All rights reserved.
 			</div>
-
-
-
-		</section>
-
-		<div class = "footer2">
-			Copyright &#0169 2019 Information Technology Xiamen University Malaysia. All rights reserved.
-		</div>
-
-
 		</footer>
 
 	</div>
