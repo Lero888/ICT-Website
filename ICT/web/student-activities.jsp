@@ -2,10 +2,10 @@
 <html>
 <head>
 	<title>Student Life</title>
-	<link rel="stylesheet" type="text/css" href="student-activities.css">
+	<link rel="stylesheet" type="text/css" href="../../student-activities.css">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
-	<link rel="stylesheet" type="text/css" href="header.css">
-	<link rel="stylesheet" type="text/css" href="footer.css">
+	<link rel="stylesheet" type="text/css" href="../../header.css">
+	<link rel="stylesheet" type="text/css" href="../../footer.css">
 </head>
 <body>
 	<!-- <header="header">
@@ -25,15 +25,15 @@
 	</header> -->
 	<div class="navbarcont" style="height:auto;">
 		<div class="navbarcont2">
-			<div><a href="home.html">
-				<img src="logo.png" class="navbarlogo">	
+			<div><a href="../../home.html">
+				<img src="../../logo.png" class="navbarlogo">
 			</a></div>	
 			<div class="navigationlist">
-				<div id="nav_item"><a href="home.html">Home</a></div>
-				<div id="nav_item"><a href="staff.html">Staff</a></div>
-				<div id="nav_item"><a href="program-structure.html">Program Structure</a></div>
+				<div id="nav_item"><a href="../../home.html">Home</a></div>
+				<div id="nav_item"><a href="../../staff.html">Staff</a></div>
+				<div id="nav_item"><a href="../../program-structure.html">Program Structure</a></div>
 				<div id="nav_item"><a href="student-activities.html">Student Activities</a></div>
-				<div id="nav_item"><a href="about.html">About</a></div>
+				<div id="nav_item"><a href="../../about.html">About</a></div>
 			</div>	
 		</div>
 	</div>
@@ -48,7 +48,7 @@
 			</div>
 			<figure class="bignews" style="margin-bottom:3.33px">
 				<!-- bignews -->
-				<a href="news.html"><img src="big.jpg" class="image" style="width:500px; height:100%;"></a>
+				<a href="../../news.jsp"><img src="../../big.jpg" class="image" style="width:500px; height:100%;"></a>
 				<figcaption class="absolutecapt"s>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 				tempor incididunt ut labore et dolore magna aliqua.</figcaption>
 			</figure>
@@ -57,24 +57,24 @@
 				<div style="display:inline-block;">
 					<figure class="relativeimg">
 						<!-- topleft -->
-						<a href="news.html"><img src="small1.jpg" class="image" style="width:300px; height:200px; margin-bottom:10px;"></a>
+						<a href="../../news.jsp"><img src="../../small1.jpg" class="image" style="width:300px; height:200px; margin-bottom:10px;"></a>
 						<figcaption class="absolutecapt">Lorem ipsum dolor sit amet, consectetur adipisicing elit</figcaption>
 					</figure>
 					<figure class="relativeimg">
 						<!-- bottomleft -->
-						<a href="news.html"><img src="small2.jpg" class="image" style="width:300px; height:200px;"></a>
+						<a href="../../news.jsp"><img src="../../small2.jpg" class="image" style="width:300px; height:200px;"></a>
 						<figcaption class="absolutecapt">Lorem ipsum dolor sit amet, consectetur adipisicing elit</figcaption>
 					</figure>
 				</div>
 				<div style="display:inline-block;">
 					<figure class="relativeimg">
 						<!-- topright -->
-						<a href="news.html"><img src="small3.jpg" class="image" style="width:300px; height:200px; margin-bottom: 10px"></a>
+						<a href="../../news.jsp"><img src="../../small3.jpg" class="image" style="width:300px; height:200px; margin-bottom: 10px"></a>
 						<figcaption class="absolutecapt">Lorem ipsum dolor sit amet, consectetur adipisicing elit</figcaption>
 					</figure>
 					<figure class="relativeimg">
 						<!-- bottomright -->
-						<a href="news.html"><img src="small4.jpg" class="image" style="width:300px; height:200px;"></a>
+						<a href="../../news.jsp"><img src="../../small4.jpg" class="image" style="width:300px; height:200px;"></a>
 						<figcaption class="absolutecapt">Lorem ipsum dolor sit amet, consectetur adipisicing elit</figcaption>
 					</figure>
 				</div>
@@ -89,15 +89,15 @@
 						<strong>RECENT</strong>
 					</div>
 					<div class="rightcc">
-						<a href="morenews.html">More...</a>
+						<a href="../../morenews.jsp">More...</a>
 					</div>
 				</div>
 				<div>
 					<div class="recentcontent">
-						<button type="button" onclick="location.href='news.html';">
+						<button type="button" onclick="location.href='news.jsp';">
 							<div style="display:flex;">
 								<!-- img -->
-								<img src="recent1.jpg" class="newsimg">
+								<img src="../../recent1.jpg" class="newsimg">
 							</div>
 							<div style="width:70%; display:flex;">
 								<div style="padding:10px 0 0 20px;">
@@ -116,10 +116,10 @@
 						</button>
 					</div>
 					<div class="recentcontent">
-						<button type="button" onclick="location.href='news.html';">
+						<button type="button" onclick="location.href='news.jsp';">
 							<div style="display:flex;">
 								<!-- img -->
-								<img src="recent2.jpg" class="newsimg">
+								<img src="../../recent2.jpg" class="newsimg">
 							</div>
 							<div style="width:70%; display:flex;">
 								<div style="padding:10px 0 0 20px;">
@@ -138,10 +138,10 @@
 						</button>
 					</div>
 					<div class="recentcontent">
-						<button type="button" onclick="location.href='news.html';">
+						<button type="button" onclick="location.href='news.jsp';">
 							<div style="display:flex;">
 								<!-- img -->
-								<img src="recent3.jpg" class="newsimg">
+								<img src="../../recent3.jpg" class="newsimg">
 							</div>
 							<div style="width:70%; display:flex;">
 								<div style="padding:10px 0 0 20px;">
@@ -160,10 +160,10 @@
 						</button>
 					</div>
 					<div class="recentcontent">
-						<button type="button" onclick="location.href='news.html';">
+						<button type="button" onclick="location.href='news.jsp';">
 							<div style="display:flex;">
 								<!-- img -->
-								<img src="recent4.jpg" class="newsimg">
+								<img src="../../recent4.jpg" class="newsimg">
 							</div>
 							<div style="width:70%; display:flex;">
 								<div style="padding:10px 0 0 20px;">
@@ -182,7 +182,7 @@
 						</button>
 					</div>
 					<div class="showmore">
-						<button type="button" onclick="location.href='morenews.html';">
+						<button type="button" onclick="location.href='morenews.jsp';">
 								<b>Show more news</b>
 						</button>
 					</div>
@@ -200,11 +200,11 @@
 	            <div class="footer-column">
 	                <h3>EXPLORE</h3>
 	                <ul style = "list-style-type: none;" class="text-white">
-	                    <li><a href="home.html">Home</a></li>
-	                    <li><a href="staff.html">Staff</a></li>
-	                    <li><a href="program-structure.html">Program Structure</a></li>
+	                    <li><a href="../../home.html">Home</a></li>
+	                    <li><a href="../../staff.html">Staff</a></li>
+	                    <li><a href="../../program-structure.html">Program Structure</a></li>
 	                    <li><a href="student-activities.html">Student Activities</a></li>
-	                    <li><a href ="about.html">About</a></li>
+	                    <li><a href ="../../about.html">About</a></li>
 	                </ul>
 	            </div>
 
@@ -232,13 +232,13 @@
 	                <ul style = "list-style-type: none;" class="text-white">
 	                    <li>
 							<a href = "https://www.facebook.com/SWEstudentunion/?ref=br_rs"> 
-								<img src = "facebook.png">
+								<img src = "../../facebook.png">
 							</a>
 							<a href = "mailto: SWEstudentunion@outlook.com">
-								<img src = "mail.png">
+								<img src = "../../mail.png">
 							</a>
 							<a href = "https://xmux.xdea.top/">
-								<img src = "xmux.jpg">
+								<img src = "../../xmux.jpg">
 							</a>
 
 	                    </li>
