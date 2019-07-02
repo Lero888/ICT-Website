@@ -11,20 +11,20 @@
 	<link rel="stylesheet" type="text/css" href="footer.css">
 </head>
 <body>
-<div class="navbarcont">
-	<div class="navbarcont2">
-		<div><a href="home.jsp">
-			<img src="images/logo.png" class="navbarlogo">
-		</a></div>
-		<div class="navigationlist">
-			<div id="nav_item"><a href="home.jsp">Home</a></div>
-			<div id="nav_item"><a href="staff.jsp">Staff</a></div>
-			<div id="nav_item"><a href="program-structure.jsp">Program Structure</a></div>
-			<div id="nav_item"><a href="student-activities.jsp">Student Activities</a></div>
-			<div id="nav_item"><a href="about.jsp">About</a></div>
+	<div class="navbarcont">
+		<div class="navbarcont2">
+			<div><a href="home.jsp">
+				<img src="images/logo.png" class="navbarlogo">
+			</a></div>
+			<div class="navigationlist">
+				<div id="nav_item"><a href="home.jsp">Home</a></div>
+				<div id="nav_item"><a href="staff.jsp">Staff</a></div>
+				<div id="nav_item"><a href="program-structure.jsp">Program Structure</a></div>
+				<div id="nav_item"><a href="student-activities.jsp">Student Activities</a></div>
+				<div id="nav_item"><a href="about.jsp">About</a></div>
+			</div>
 		</div>
 	</div>
-</div>
 	
 	<div class="banner_body">
 
