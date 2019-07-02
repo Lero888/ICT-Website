@@ -4,35 +4,35 @@
 	<title>Student Life</title>
 	
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
-	<link rel="stylesheet" type="text/css" href="header.css">
+	<link rel="stylesheet" type="text/css" href="../../header.css">
 
-	<link rel="stylesheet" type="text/css" href="footer.css">
-	<link rel="stylesheet" type="text/css" href="morenews.css">
+	<link rel="stylesheet" type="text/css" href="../../footer.css">
+	<link rel="stylesheet" type="text/css" href="../../morenews.css">
 </head>
 <body>
 	<div class="navbarcont">
 		<div class="navbarcont2">
-			<div><a href="home.jsp">
+			<div><a href="../../home.html">
 				<img src="../../logo.png" class="navbarlogo">
 			</a></div>	
 			<div class="navigationlist">
-				<div id="nav_item"><a href="home.jsp">Home</a></div>
-				<div id="nav_item"><a href="staff.jsp">Staff</a></div>
-				<div id="nav_item"><a href="program-structure.jsp">Program Structure</a></div>
-				<div id="nav_item"><a href="student-activities.jsp">Student Activities</a></div>
-				<div id="nav_item"><a href="about.jsp">About</a></div>
+				<div id="nav_item"><a href="../../home.html">Home</a></div>
+				<div id="nav_item"><a href="../../staff.html">Staff</a></div>
+				<div id="nav_item"><a href="../../program-structure.html">Program Structure</a></div>
+				<div id="nav_item"><a href="student-activities.html">Student Activities</a></div>
+				<div id="nav_item"><a href="../../about.html">About</a></div>
 			</div>	
 		</div>
 	</div>
 
 	<div class="container">
 		<div class="newscontainer">	
-			<a href="news.jsp">
+			<a href="news.html">
 				<img src="../../recent1.jpg" class="newsimg" title="Lorem ipsum dolor sit amet image" style="height:200px; width: 300px;">
 			</a	>
 			<div style="width:70%;display:flex; padding:10px 50px 0 70px; flex-direction: column;">
 				<!-- title -->
-				<a href="news.jsp" id="t">
+				<a href="news.html" id="t">
 					Lorem ipsum dolor sit amet
 				</a>
 				<div class="date">
@@ -47,12 +47,12 @@
 		</div>
 
 		<div class="newscontainer">	
-			<a href="news.jsp">
+			<a href="news.html">
 				<img src="../../recent2.jpg" class="newsimg" title="Lorem ipsum dolor sit amet image" style="height:200px; width: 300px;">
 			</a	>
 			<div style="width:70%;display:flex; padding:10px 50px 0 70px; flex-direction: column;">
 				<!-- title -->
-				<a href="news.jsp" id="t">
+				<a href="news.html" id="t">
 					Lorem ipsum dolor sit amet
 				</a>
 				<div class="date">
@@ -67,12 +67,12 @@
 		</div>
 
 		<div class="newscontainer">	
-			<a href="news.jsp">
+			<a href="news.html">
 				<img src="../../recent3.jpg" class="newsimg" title="Lorem ipsum dolor sit amet image" style="height:200px; width: 300px;">
 			</a	>
 			<div style="width:70%;display:flex; padding:10px 50px 0 70px; flex-direction: column;">
 				<!-- title -->
-				<a href="news.jsp" id="t">
+				<a href="news.html" id="t">
 					Lorem ipsum dolor sit amet
 				</a>
 				<div class="date">
@@ -87,12 +87,12 @@
 		</div>
 
 		<div class="newscontainer">	
-			<a href="news.jsp">
+			<a href="news.html">
 				<img src="../../recent4.jpg" class="newsimg" title="Lorem ipsum dolor sit amet image" style="height:200px; width: 300px;">
 			</a	>
 			<div style="width:70%;display:flex; padding:10px 50px 0 70px; flex-direction: column;">
 				<!-- title -->
-				<a href="news.jsp" id="t">
+				<a href="news.html" id="t">
 					Lorem ipsum dolor sit amet
 				</a>
 				<div class="date">
@@ -118,11 +118,11 @@
 	            <div class="footer-column">
 	                <h3>EXPLORE</h3>
 	                <ul style = "list-style-type: none;" class="text-white">
-	                    <li><a href="home.jsp">Home</a></li>
-	                    <li><a href="staff.jsp">Staff</a></li>
-	                    <li><a href="program-structure.jsp">Program Structure</a></li>
-	                    <li><a href="student-activities.jsp">Student Activities</a></li>
-	                    <li><a href ="about.jsp">About</a></li>
+	                    <li><a href="../../home.html">Home</a></li>
+	                    <li><a href="../../staff.html">Staff</a></li>
+	                    <li><a href="../../program-structure.html">Program Structure</a></li>
+	                    <li><a href="student-activities.html">Student Activities</a></li>
+	                    <li><a href ="../../about.html">About</a></li>
 	                </ul>
 	            </div>
 

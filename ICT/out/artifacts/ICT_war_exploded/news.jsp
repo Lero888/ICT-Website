@@ -2,23 +2,23 @@
 <html>
 <head>
 	<title>Student Life</title>
-	<link rel="stylesheet" type="text/css" href="news.css">
+	<link rel="stylesheet" type="text/css" href="../../news.css">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
-	<link rel="stylesheet" type="text/css" href="header.css">
-	<link rel="stylesheet" type="text/css" href="footer.css">
+	<link rel="stylesheet" type="text/css" href="../../header.css">
+	<link rel="stylesheet" type="text/css" href="../../footer.css">
 </head>
 <body>
 	<div class="navbarcont">
 		<div class="navbarcont2">
-			<div><a href="home.jsp">
-				<img src="logo.png" class="navbarlogo">
+			<div><a href="../../home.html">
+				<img src="../../logo.png" class="navbarlogo">
 			</a></div>	
 			<div class="navigationlist">
-				<div id="nav_item"><a href="home.jsp">Home</a></div>
-				<div id="nav_item"><a href="staff.jsp">Staff</a></div>
-				<div id="nav_item"><a href="program-structure.jsp">Program Structure</a></div>
-				<div id="nav_item"><a href="student-activities.jsp">Student Activities</a></div>
-				<div id="nav_item"><a href="about.jsp">About</a></div>
+				<div id="nav_item"><a href="../../home.html">Home</a></div>
+				<div id="nav_item"><a href="../../staff.html">Staff</a></div>
+				<div id="nav_item"><a href="../../program-structure.html">Program Structure</a></div>
+				<div id="nav_item"><a href="student-activities.html">Student Activities</a></div>
+				<div id="nav_item"><a href="../../about.html">About</a></div>
 			</div>	
 		</div>
 	</div>
@@ -166,11 +166,11 @@
 	            <div class="footer-column">
 	                <h3>EXPLORE</h3>
 	                <ul style = "list-style-type: none;" class="text-white">
-	                    <li><a href="home.jsp">Home</a></li>
-	                    <li><a href="staff.jsp">Staff</a></li>
-	                    <li><a href="program-structure.jsp">Program Structure</a></li>
-	                    <li><a href="student-activities.jsp">Student Activities</a></li>
-	                    <li><a href ="about.jsp">About</a></li>
+	                    <li><a href="../../home.html">Home</a></li>
+	                    <li><a href="../../staff.html">Staff</a></li>
+	                    <li><a href="../../program-structure.html">Program Structure</a></li>
+	                    <li><a href="student-activities.html">Student Activities</a></li>
+	                    <li><a href ="../../about.html">About</a></li>
 	                </ul>
 	            </div>
 
