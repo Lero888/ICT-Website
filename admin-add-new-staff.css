@@ -2,7 +2,7 @@ html, body {
   margin: 0px;
   padding: 0px;;
   height: 100%;
-  background-color: #F5F5F5;
+  background-color: #FFFFFF;
   height: 100%;
 }
 
@@ -17,8 +17,7 @@ html, body {
 }
 
 .flexcontainer {
-  margin: 50px;
-
+  margin: 90px;
 }
 
 .flexbox {
@@ -38,14 +37,15 @@ html, body {
 
 .flexbox .col:nth-child(1) {
   order: 1;
-  flex: 8;
+  flex: 9;
   text-align: left;
 }
 
 .flexbox .col:nth-child(2) {
   order: 0;
-  flex: 2;
+  flex: 1;
   text-align: left;
+  min-width: 114.5px;
 }
 
 .flexcontainer img {
@@ -61,4 +61,7 @@ html, body {
 
 .flexcontainer textarea {
 	margin-top: 15px;
+  width:100%; 
+  height:150px;
+  min-width: 500.59px;
 }

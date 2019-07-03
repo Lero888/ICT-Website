@@ -1,0 +1,115 @@
+html, body {
+  margin: 0px;
+  padding: 0px;
+  height: 100%;
+  background-color: #F5F5F5;
+  height: 100%;
+}
+
+/* The image for background */
+.bg-img { 
+   /* half height */
+  height: 50%; 
+
+  /* Center and scale the image nicely */
+  min-height: 400px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.course-logo {
+  border-radius: 50%;
+  width: auto;
+  height: auto;
+  max-width: 325px;
+  max-height: 250px;
+  margin-top: -70px;
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+
+.column {
+  float: left;
+  width: 30%;
+  margin:1.6%;
+  min-width: 250px;
+}
+
+.row {
+	/*margin: 0 5px;*/
+	margin: 0 10%;
+  margin-top: 2px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Responsive columns */
+@media screen and (max-width: 700px) {
+  .column {
+    margin-top: 2px;
+    width: 30%;
+    display: block;
+    margin-bottom: 1%;
+  }
+
+}
+
+@media screen and (max-width: 1061px) {
+
+  .row {
+  /*margin: 0 5px;*/
+  margin-top: 2px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  }
+}
+
+#table-course { 
+  border: solid thin; 
+  border-collapse: collapse; 
+  margin-top: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 50px;
+}
+#table-course caption { 
+  padding-bottom: 0.5em; 
+}
+#table-course th, 
+#table-course td { 
+  border: solid thin;
+  padding: 0.5rem 2rem;
+}
+#table-course td {
+  white-space: nowrap;
+}
+#table-course th { 
+  font-weight: bold; 
+}
+#table-course td { 
+  border-style: none solid; 
+  vertical-align: top; 
+}
+#table-course th { 
+  padding: 0.2em; 
+  vertical-align: middle; 
+  text-align: center; 
+}
+
+#table-course tbody td:first-child::after { 
+  content: leader(". "); '
+}
+
+
+
