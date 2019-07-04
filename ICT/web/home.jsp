@@ -10,7 +10,7 @@
 	<div class="navbarcont">
 		<div class="navbarcont2">
 			<div><a href="home.jsp">
-				<img src="images\logo.png" class="navbarlogo">
+				<img src="images/logo.png" class="navbarlogo">
 			</a></div>	
 			<div class="navigationlist">
 				<div id="nav_item"><a href="home.jsp">Home</a></div>
@@ -24,7 +24,7 @@
 
 	<div class="video_container">
 		<video autoplay muted loop id="IntroVideo">
-			<source src="images\xiamen cut.mp4" type="video/mp4">
+			<source src="images/xiamen cut.mp4" type="video/mp4">
 		</video>	
 	</div>	
 	<div class="contentcontainer">

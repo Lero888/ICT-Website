@@ -57,7 +57,7 @@
 				
 			</div>
 
-			<div class="delete"><a href="./DeleteStaffServlet?sid=<%=rs.getString("sid")%>"><img src="images\delete.png"></a></div>
+			<div class="delete"><a href="./DeleteStaffServlet?sid=<%=rs.getString("sid")%>"><img src="images/delete.png"></a></div>
 			
 
 		</div>
@@ -67,7 +67,7 @@
 		%>
 
 		
-		<div class="new"><img src="images\add.png"> Add Staff</div>
+		<div class="new"><img src="images/add.png"> Add Staff</div>
 
 	</div>
 
@@ -112,13 +112,13 @@
 						<ul style = "list-style-type: none;" class="text-white">
 							<li>
 								<a href = "https://www.facebook.com/SWEstudentunion/?ref=br_rs">
-									<img src = "images\facebook.png">
+									<img src = "images/facebook.png">
 								</a>
 								<a href = "mailto: SWEstudentunion@outlook.com">
-									<img src = "images\mail.png">
+									<img src = "images/mail.png">
 								</a>
 								<a href = "https://xmux.xdea.top/">
-									<img src = "images\xmux.jpg">
+									<img src = "images/xmux.jpg">
 								</a>
 
 							</li>
