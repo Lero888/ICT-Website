@@ -11,7 +11,7 @@
 	<div class="navbarcont">
 		<div class="navbarcont2">
 			<div><a href="home.jsp">
-				<img src="logo.png" class="navbarlogo">
+				<img src="images/logo.png" class="navbarlogo">
 			</a></div>	
 			<div class="navigationlist">
 				<div id="nav_item"><a href="home.jsp">Home</a></div>
@@ -197,14 +197,14 @@
 	                <h3>CONTACT US</h3>
 	                <ul style = "list-style-type: none;" class="text-white">
 	                    <li>
-							<a href = "https://www.facebook.com/SWEstudentunion/?ref=br_rs"> 
-								<img src = "../../facebook.png">
+							<a href = "https://www.facebook.com/SWEstudentunion/?ref=br_rs">
+								<img src = "images/facebook.png">
 							</a>
 							<a href = "mailto: SWEstudentunion@outlook.com">
-								<img src = "../../mail.png">
+								<img src = "images/mail.png">
 							</a>
 							<a href = "https://xmux.xdea.top/">
-								<img src = "../../xmux.jpg">
+								<img src = "images/xmux.jpg">
 							</a>
 
 	                    </li>
