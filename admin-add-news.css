@@ -1,0 +1,66 @@
+html, body {
+  margin: 0px;
+  padding: 0px;;
+  height: 100%;
+  background-color: #FFFFFF;
+  height: 100%;
+}
+
+/*Large box*/
+.flexcontainer a {
+  color: #000000;
+  text-decoration: none;
+}
+
+.flexcontainer a:link, .flexcontainer a:visited, .flexcontainer a:hover {
+  color: #000000;
+}
+
+.flexcontainer {
+  margin: 90px;
+
+}
+
+.flexbox {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  overflow: hidden;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+
+}
+
+.flexbox .col {
+  flex: 1;
+  padding: 2px;
+}
+
+.flexbox .col:nth-child(1) {
+  order: 1;
+  flex: 9;
+  text-align: left;
+}
+
+.flexbox .col:nth-child(2) {
+  order: 0;
+  flex: 1;
+  text-align: left;
+  min-width: 114.5px;
+}
+
+.flexcontainer img {
+  border-radius: 50%;
+  border: 1px solid black;
+  max-width: 150px;
+  max-height: 180px;
+}
+
+.flexcontainer form {
+	margin-top: 15px;
+}
+
+.flexcontainer textarea {
+	margin-top: 15px;
+  min-width: 697.59px;
+}

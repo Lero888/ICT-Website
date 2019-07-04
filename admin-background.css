@@ -1,0 +1,150 @@
+html, body {
+  margin: 0px;
+  padding: 0px;;
+  height: 100%;
+  background-color: #FFFFFF;
+  height: 100%;
+}
+
+/*Large box*/
+.flexcontainer a {
+  color: #000000;
+  text-decoration: none;
+}
+
+.flexcontainer a:link, .flexcontainer a:visited, .flexcontainer a:hover {
+  color: #000000;
+}
+
+.flexcontainer {
+  margin: 50px;
+
+}
+
+.flexbox {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  overflow: hidden;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+
+}
+
+.flexbox .col {
+  flex: 1;
+  padding: 30px;
+}
+
+.flexbox .col:nth-child(1) {
+  order: 1;
+  flex: 7;
+  border-left: 1px solid black;
+}
+
+.flexbox .col:nth-child(2) {
+  order: 0;
+  flex: 3;
+  text-align: center;
+}
+
+.flexbox .title-box {
+  text-align: left;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+/*Style of each title of section*/
+.title-box h3 {
+  margin: 0 auto;
+  color: #000000;
+  display: block;
+  padding: 1em;
+}
+
+.hover {
+  position: relative;
+  top: 20%;
+  margin: 0 auto;
+  text-align: left;
+  width: 100%;
+  transition: transform 300ms ease-in-out;
+  transition: 600ms ease-in-out;
+}
+
+.hover:hover {
+  background: #f0f0f0;
+  transform: scale(1.1, 1.1);
+  border: 2px #eee solid;
+}
+
+.flexcontainer hr {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  border: 1px solid black;
+}
+
+.flexcontainer img {
+  border-radius: 50%;
+  border: 1px solid black;
+  max-width: 150px;
+  max-height: 180px;
+}
+
+/*Smaller box at right column of large box*/
+.infocontainer {
+  margin: 0 auto;
+  margin-top: 15px;
+
+}
+
+.infobox {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  overflow: hidden;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  border-bottom: 0.5px solid lightgrey;
+
+}
+
+.infobox .column {
+  flex: 1;
+  padding: 10px;
+}
+
+.column a {
+  color: #365899;
+  text-decoration: none;
+}
+
+.column a:link, .column a:visited {
+  color: #365899;
+}
+
+.column a:hover {
+  color: #666565;
+  text-decoration: underline;
+}
+
+.infobox .column:nth-child(1) {
+  order: 1;
+  flex: 5;
+  text-align: left;
+}
+
+.infobox .column:nth-child(2) {
+  order: 0;
+  flex: 3;
+  text-align: left;
+  font-weight: bold;
+}
+
+.infobox .column:nth-child(3) {
+  order: 2;
+  flex: 2;
+  color: rgb(0, 0, 255)
+  text-align: right;
+}
