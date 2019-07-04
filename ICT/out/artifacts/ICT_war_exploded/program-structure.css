@@ -6,9 +6,12 @@ html, body {
   height: 100%;
 }
 
-.bg-img { 
+.bg-img {
+  /* The image used */
+  background-image: url("images/PS - banner.jpg");
+
   /* half height */
-  height: 50%; 
+  height: 50%;
 
   /* Center and scale the image nicely */
   min-height: 400px;
