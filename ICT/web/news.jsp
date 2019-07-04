@@ -1,3 +1,6 @@
+<%@ page import="java.sql.DriverManager" %>
+<%@ page import="java.sql.ResultSet" %>
+<%@ page import="java.sql.Statement" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -81,14 +84,24 @@
 					Latest News
 				</div>
 				<div class="sidecontent">
+					<%
+						Class.forName("com.mysql.jdbc.Driver");
+						Statement stm = DriverManager.getConnection("jdbc:mysql://localhost:3306/ICT", "root", "xmuy").createStatement();
+						String sql = "select idnews as nid, title as nt, content as nc, thumbnail as img, datecreated as date\n" +
+								"from news\n" +
+								"where category=highlight";
+						ResultSet rs= stm.executeQuery(sql);
+						while(rs.next())
+						{
+					%>
 					<div class="story">
 						<div class="sidect">
-							<a href="#"><b>Lorem ipsum dolor sit amet, consectetur adipisicing</b></a>
+							<a href="#"><b><%=rs.getString("nt")%></b></a>
 						</div>
 						<div class="sidecc">
 							<div class="datecreated" id="sidedate">
 								<i class="fas fa-clock" style="margin-right:5px;"></i>
-								<time datetime="2018-05-21">2019-05-21</time>
+								<time datetime="2018-05-21"><%=rs.getString("date")%></time>
 							</div>
 						</div>
 					</div>
@@ -100,7 +113,7 @@
 						<div class="sidecc">
 							<div class="datecreated" id="sidedate">
 								<i class="fas fa-clock" style="margin-right:5px;"></i>
-								<time datetime="2018-05-21">2019-05-21</time>
+								<time datetime="2018-05-21"><%=rs.getString("date")%></time>
 							</div>
 						</div>
 					</div>
@@ -112,10 +125,13 @@
 						<div class="sidecc">
 							<div class="datecreated" id="sidedate">
 								<i class="fas fa-clock" style="margin-right:5px;"></i>
-								<time datetime="2018-05-21">2019-05-21</time>
+								<time datetime="2018-05-21"><%=rs.getString("date")%></time>
 							</div>
 						</div>
 					</div>
+					<%
+						}
+					%>
 				</div>
 			</div>
 

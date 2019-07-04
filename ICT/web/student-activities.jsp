@@ -54,7 +54,7 @@
 				Statement stm = DriverManager.getConnection("jdbc:mysql://localhost:3306/ICT", "root", "xmuy").createStatement();
 				String sql = "select idnews as nid, title as nt, content as nc, thumbnail as img, datecreated as date\n" +
 						"from news\n" +
-						"where datecreated=";
+						"where category=highlight";
 				ResultSet rs= stm.executeQuery(sql);
 				while(rs.next())
 				{
@@ -69,7 +69,7 @@
 				<div style="display:inline-block;">
 					<figure class="relativeimg">
 						<!-- topleft -->
-						<a href="news.jsp?nid=<%=rs.getInt("nid")%>"><img src="../../small1.jpg" class="image" style="width:300px; height:200px; margin-bottom:10px;"></a>
+						<a href="news.jsp?nid=<%=rs.getInt("nid")%>"><img src="small1.jpg" class="image" style="width:300px; height:200px; margin-bottom:10px;"></a>
 						<figcaption class="absolutecapt"><%=rs.getString("nc")%></figcaption>
 					</figure>
 					<figure class="relativeimg">
@@ -89,6 +89,9 @@
 						<a href="news.jsp?nid=<%=rs.getInt("nid")%>"><img src="../../small4.jpg" class="image" style="width:300px; height:200px;"></a>
 						<figcaption class="absolutecapt"><%=rs.getString("nc")%></figcaption>
 					</figure>
+					<%
+						}
+					%>
 				</div>
 			</div>
 		</div>
@@ -109,7 +112,7 @@
 						<button type="button" onclick="location.href='news.jsp?nid=<%=rs.getInt("nid")%>';">
 							<div style="display:flex;">
 								<!-- img -->
-								<img src="../../recent1.jpg" class="newsimg">
+								<img src="recent1.jpg" class="newsimg">
 							</div>
 							<div style="width:70%; display:flex;">
 								<div style="padding:10px 0 0 20px;">
@@ -130,7 +133,7 @@
 						<button type="button" onclick="location.href='news.jsp?nid=<%=rs.getInt("nid")%>';">
 							<div style="display:flex;">
 								<!-- img -->
-								<img src="../../recent2.jpg" class="newsimg">
+								<img src="recent2.jpg" class="newsimg">
 							</div>
 							<div style="width:70%; display:flex;">
 								<div style="padding:10px 0 0 20px;">
@@ -151,7 +154,7 @@
 						<button type="button" onclick="location.href='news.jsp?nid=<%=rs.getInt("nid")%>';">
 							<div style="display:flex;">
 								<!-- img -->
-								<img src="../../recent3.jpg" class="newsimg">
+								<img src="recent3.jpg" class="newsimg">
 							</div>
 							<div style="width:70%; display:flex;">
 								<div style="padding:10px 0 0 20px;">
@@ -172,7 +175,7 @@
 						<button type="button" onclick="location.href='news.jsp?nid=<%=rs.getInt("nid")%>';">
 							<div style="display:flex;">
 								<!-- img -->
-								<img src="../../recent4.jpg" class="newsimg">
+								<img src="recent4.jpg" class="newsimg">
 							</div>
 							<div style="width:70%; display:flex;">
 								<div style="padding:10px 0 0 20px;">
