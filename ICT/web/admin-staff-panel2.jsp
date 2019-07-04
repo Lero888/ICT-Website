@@ -4,8 +4,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Admin-Post-Panel</title>
-	<link rel="stylesheet" type="text/css" href="Panel.css">
+	<title>Admin-Staff-Panel</title>
+	<link rel="stylesheet" type="text/css" href="panel.css">
 	<link rel="stylesheet" type="text/css" href="footer.css">
 	<link rel="stylesheet" type="text/css" href="header.css">
 </head>
@@ -27,13 +27,13 @@
 	</div>
 
 
-	<h1>Post Management Panel</h1>
+	<h1>Staff Management Panel</h1>
 
 	<div class="table-container">
 		<table cellpadding="10">
 			<tr class="title-row">
 				<td class = "c1"><b>No</b></td>
-				<td class = "c2"><b>Post Title</b></td>
+				<td class = "c2"><b>Staff Name</b></td>
 				<td class = "c3"><b>Operation</b></td>
 			</tr>
 
@@ -54,7 +54,7 @@
 			<tr class="row-color1">
 				<td class = "c1"><%=cnt%></td>
 				<td class = "c2"><%=rs.getString("name")%></td>
-				<td class = "c3">[del]</td>
+				<td class = "c3"><a href="./DeleteStaffServlet?sid=<%=rs.getString("sid")%>">[del]</a></td>
 			</tr>
 
 
@@ -67,7 +67,7 @@
 			<tr class="row-color2">
 				<td class = "c1"><%=cnt%></td>
 				<td class = "c2"><%=rs.getString("name")%></td>
-				<td class = "c3">[del]</td>
+				<td class = "c3"><a href="./DeleteStaffServlet?sid=<%=rs.getString("sid")%>">[del]</a></td>
 			</tr>
 
 			<%
@@ -76,7 +76,7 @@
 				}
 			%>
 		</table>
-		<div class="new"><img src="images\add.png"> Add new staff</div>
+		<a href="admin-personal-info.jsp"><div class="new"><img src="images\add.png"> Add New Staff</div></a>
 
 	</div>
 
