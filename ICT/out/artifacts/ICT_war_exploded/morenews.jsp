@@ -33,7 +33,8 @@
 			Class.forName("com.mysql.jdbc.Driver");
 			Statement stm = DriverManager.getConnection("jdbc:mysql://localhost:3306/ICT", "root", "xmuy").createStatement();
 			String sql = "select idnews as nid, title as nt, content as nc, caption as capt, thumbnail as img, datecreated as date\n" +
-					"from news\n";
+					"from news\n" +
+					"order by datecreated DESC";
 			ResultSet rs= stm.executeQuery(sql);
 			if (rs.next()){
 		%>
