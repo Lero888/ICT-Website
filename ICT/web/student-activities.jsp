@@ -54,7 +54,7 @@
 				Statement stm = DriverManager.getConnection("jdbc:mysql://localhost:3306/ICT", "root", "xmuy").createStatement();
 				String sql = "select idnews as nid, title as nt, content as nc, thumbnail as img, datecreated as date\n" +
 						"from news\n" +
-						"where category=highlight";
+						"where category='highlight'";
 				ResultSet rs= stm.executeQuery(sql);
 				while(rs.next())
 				{
