@@ -27,9 +27,7 @@
         </div>
     </div>
 
-	<div class = "bg-img">
-        <img src = "images\course-banner.jpg" alt = "banner">
-	</div>
+	<div class = "bg-img"></div>
 
 	<div class = "center">
 		<img class = "course-logo" src = "images\PS - swe.png" alt = "software-engineering">

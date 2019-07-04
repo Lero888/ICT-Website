@@ -7,9 +7,12 @@ html, body {
 }
 
 /* The image for background */
-.bg-img { 
-   /* half height */
-  height: 50%; 
+.bg-img {
+  /* The image used */
+  background-image: url("images/course-banner.jpg");
+
+  /* half height */
+  height: 50%;
 
   /* Center and scale the image nicely */
   min-height: 400px;
