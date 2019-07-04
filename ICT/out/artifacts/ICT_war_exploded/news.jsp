@@ -1,6 +1,7 @@
 <%@ page import="java.sql.DriverManager" %>
 <%@ page import="java.sql.ResultSet" %>
 <%@ page import="java.sql.Statement" %>
+<%@ page import="java.lang.String" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -28,13 +29,22 @@
 
 	<div class="container">
 		<div class="contentcontainer">
+			<%
+				Class.forName("com.mysql.jdbc.Driver");
+				Statement stm = DriverManager.getConnection("jdbc:mysql://localhost:3306/ICT", "root", "xmuy").createStatement();
+				String sql = "select idnews as nid, title as nt, content as nc, thumbnail as img, datecreated as date\n" +
+						"from news\n" +
+						"where idnews = " + request.getParameter("nid");
+				ResultSet rs= stm.executeQuery(sql);
+				if (rs.next()){
+			%>
 			<div class="titlecontainer">
-				<h1>Lorem ipsum dolor sit amet</h1>
+				<h1><%=rs.getString("nt")%></h1>
 				<div class="details">
 					<div style="display:inline-flex; justify-content: space-between; width:100%;">
 						<div class="datecreated">
 							<i class="fas fa-clock" style="font-size: 15px; margin-right:5px;"></i>
-							<time datetime="2018-05-21">2019-05-21</time>
+							<time datetime="2018-05-21"><%=rs.getDate("date")%></time>
 						</div>
 						<div class="icon">
 							<div id="fb">
@@ -51,32 +61,12 @@
 				</div>
 			</div>
 			<div class="imgcontainer">
-				<img src="../../recent4.jpg" style="min-width:100%; min-height:300px; max-height: 500px;">
+				<img src="<%=rs.getString("img")%>" style="min-width:100%; min-height:300px; max-height: 500px;">
 			</div>
 			<div class="content">
-				
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-				proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-				proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-				proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+				<p><%=rs.getString("nc")%></p>
 			</div>
+			<% } %>
 		</div>
 		<div style="display:flex; flex-direction: column; width:20%; margin-left: 20px">
 			<div class="sidecontainer">
@@ -86,17 +76,18 @@
 				<div class="sidecontent">
 					<%
 						Class.forName("com.mysql.jdbc.Driver");
-						Statement stm = DriverManager.getConnection("jdbc:mysql://localhost:3306/ICT", "root", "xmuy").createStatement();
-						String sql = "select idnews as nid, title as nt, content as nc, thumbnail as img, datecreated as date\n" +
+						stm = DriverManager.getConnection("jdbc:mysql://localhost:3306/ICT", "root", "xmuy").createStatement();
+						sql = "select idnews as nid, title as nt, content as nc, thumbnail as img, datecreated as date\n" +
 								"from news\n" +
-								"where category=highlight";
-						ResultSet rs= stm.executeQuery(sql);
-						while(rs.next())
+								"where category='highlight'" +
+								"order by datecreated DESC";
+						rs= stm.executeQuery(sql);
+						if(rs.next())
 						{
 					%>
 					<div class="story">
 						<div class="sidect">
-							<a href="#"><b><%=rs.getString("nt")%></b></a>
+							<a href="news.jsp?nid=<%=rs.getInt("nid")%>"><b><%=rs.getString("nt")%></b></a>
 						</div>
 						<div class="sidecc">
 							<div class="datecreated" id="sidedate">
@@ -105,10 +96,10 @@
 							</div>
 						</div>
 					</div>
-					
+					<% }if(rs.next()){ %>
 					<div class="story">
 						<div class="sidect">
-							<a href="#"><b>Lorem ipsum dolor sit amet, consectetur adipisicing</b></a>
+							<a href="news.jsp?nid=<%=rs.getInt("nid")%>"><b><%=rs.getString("nt")%></b></a>
 						</div>
 						<div class="sidecc">
 							<div class="datecreated" id="sidedate">
@@ -117,10 +108,10 @@
 							</div>
 						</div>
 					</div>
-
+					<% }if(rs.next()){ %>
 					<div class="story">
 						<div class="sidect">
-							<a href="#"><b>Lorem ipsum dolor sit amet, consectetur adipisicing</b></a>
+							<a href="news.jsp?nid=<%=rs.getInt("nid")%>"><b><%=rs.getString("nt")%></b></a>
 						</div>
 						<div class="sidecc">
 							<div class="datecreated" id="sidedate">

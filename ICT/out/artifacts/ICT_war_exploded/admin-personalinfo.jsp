@@ -108,7 +108,7 @@
 	  					</div>
 
 	  					<div class = "column">
-	  						<p><a href = " ">Edit</a></p>
+	  						<p><a href = "tel=modify.jsp">Edit</a></p>
 	  					</div>
 	  				</div>
 
@@ -122,7 +122,7 @@
 	  					</div>
 
 	  					<div class = "column">
-	  						<p><a href = "">Edit</a></p>
+	  						<p><a href = "email-modify.jsp">Edit</a></p>
 	  					</div>
 	  				</div>
 	  			</div>
@@ -195,13 +195,13 @@
 	                <ul style = "list-style-type: none;" class="text-white">
 	                    <li>
 							<a href = "https://www.facebook.com/SWEstudentunion/?ref=br_rs"> 
-								<img src = "../images/facebook.png">
+								<img src = "../images/facebook.png" alt = "facebook">
 							</a>
 							<a href = "mailto: SWEstudentunion@outlook.com">
-								<img src = "../images/mail.png">
+								<img src = "../images/mail.png" alt = "mail">
 							</a>
 							<a href = "https://xmux.xdea.top/">
-								<img src = "../images/xmux.jpg">
+								<img src = "../images/xmux.jpg" alt = "xmux">
 							</a>
 
 	                    </li>

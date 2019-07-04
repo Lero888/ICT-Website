@@ -52,43 +52,54 @@
 			<%
 				Class.forName("com.mysql.jdbc.Driver");
 				Statement stm = DriverManager.getConnection("jdbc:mysql://localhost:3306/ICT", "root", "xmuy").createStatement();
-				String sql = "select idnews as nid, title as nt, content as nc, thumbnail as img, datecreated as date\n" +
+				String sql = "select idnews as nid, title as nt, content as nc, caption as capt, thumbnail as img, datecreated as date\n" +
 						"from news\n" +
-						"where datecreated=";
+						"where category='highlight'\n" +
+						"order by datecreated DESC";
 				ResultSet rs= stm.executeQuery(sql);
-				while(rs.next())
+				if(rs.next())
 				{
 			%>
 			<figure class="bignews" style="margin-bottom:3.33px">
 				<!-- bignews -->
-				<a href="news.jsp?nid=<%=rs.getInt("nid")%>"><img src="big/<%=rs.getString("img")%>" class="image" style="width:500px; height:100%;"></a>
-				<figcaption class="absolutecapt"><%=rs.getString("nc")%></figcaption>
+				<a href="news.jsp?nid=<%=rs.getInt("nid")%>"><img src="<%=rs.getString("img")%>" class="image" style="width:500px; height:100%;"></a>
+				<figcaption class="absolutecapt"><%=rs.getString("capt")%></figcaption>
 			</figure>
+			<% }if(rs.next()){ %>
 			<div>
 				<!-- smallnews -->
 				<div style="display:inline-block;">
 					<figure class="relativeimg">
 						<!-- topleft -->
-						<a href="news.jsp?nid=<%=rs.getInt("nid")%>"><img src="../../small1.jpg" class="image" style="width:300px; height:200px; margin-bottom:10px;"></a>
-						<figcaption class="absolutecapt"><%=rs.getString("nc")%></figcaption>
+						<a href="news.jsp?nid=<%=rs.getInt("nid")%>"><img src="<%=rs.getString("img")%>" class="image" style="width:300px; height:200px; margin-bottom:10px;"></a>
+						<figcaption class="absolutecapt"><%=rs.getString("capt")%></figcaption>
 					</figure>
+					<%}
+					if(rs.next()){%>
 					<figure class="relativeimg">
 						<!-- bottomleft -->
-						<a href="news.jsp?nid=<%=rs.getInt("nid")%>"><img src="../../small2.jpg" class="image" style="width:300px; height:200px;"></a>
-						<figcaption class="absolutecapt"><%=rs.getString("nc")%></figcaption>
+						<a href="news.jsp?nid=<%=rs.getInt("nid")%>"><img src="<%=rs.getString("img")%>" class="image" style="width:300px; height:200px;"></a>
+						<figcaption class="absolutecapt"><%=rs.getString("capt")%></figcaption>
 					</figure>
+					<%}
+						if(rs.next()){%>
 				</div>
 				<div style="display:inline-block;">
 					<figure class="relativeimg">
 						<!-- topright -->
-						<a href="news.jsp?nid=<%=rs.getInt("nid")%>"><img src="../../small3.jpg" class="image" style="width:300px; height:200px; margin-bottom: 10px"></a>
-						<figcaption class="absolutecapt"><%=rs.getString("nc")%></figcaption>
+						<a href="news.jsp?nid=<%=rs.getInt("nid")%>"><img src="<%=rs.getString("img")%>" class="image" style="width:300px; height:200px; margin-bottom: 10px"></a>
+						<figcaption class="absolutecapt"><%=rs.getString("capt")%></figcaption>
 					</figure>
+					<%}
+						if(rs.next()){%>
 					<figure class="relativeimg">
 						<!-- bottomright -->
-						<a href="news.jsp?nid=<%=rs.getInt("nid")%>"><img src="../../small4.jpg" class="image" style="width:300px; height:200px;"></a>
-						<figcaption class="absolutecapt"><%=rs.getString("nc")%></figcaption>
+						<a href="news.jsp?nid=<%=rs.getInt("nid")%>"><img src="<%=rs.getString("img")%>" class="image" style="width:300px; height:200px;"></a>
+						<figcaption class="absolutecapt"><%=rs.getString("capt")%></figcaption>
 					</figure>
+					<%
+						}
+					%>
 				</div>
 			</div>
 		</div>
@@ -105,11 +116,21 @@
 					</div>
 				</div>
 				<div>
+					<%
+						Class.forName("com.mysql.jdbc.Driver");
+						stm = DriverManager.getConnection("jdbc:mysql://localhost:3306/ICT", "root", "xmuy").createStatement();
+						sql = "select idnews as nid, title as nt, content as nc, caption as capt, thumbnail as img, datecreated as date\n" +
+								"from news\n" +
+								"order by datecreated DESC";
+						rs= stm.executeQuery(sql);
+						if(rs.next())
+						{
+					%>
 					<div class="recentcontent">
 						<button type="button" onclick="location.href='news.jsp?nid=<%=rs.getInt("nid")%>';">
 							<div style="display:flex;">
 								<!-- img -->
-								<img src="../../recent1.jpg" class="newsimg">
+								<img src="<%=rs.getString("img")%>" class="newsimg">
 							</div>
 							<div style="width:70%; display:flex;">
 								<div style="padding:10px 0 0 20px;">
@@ -121,16 +142,18 @@
 										Date Created: <time datetime="2018-05-21"><%=rs.getDate("date")%></time>
 									</div>
 									<!-- content -->
-									<p><%=rs.getString("nc")%></p>
+									<p><%=rs.getString("capt")%></p>
 								</div>
 							</div>
 						</button>
 					</div>
+					<%}
+						if(rs.next()){%>
 					<div class="recentcontent">
 						<button type="button" onclick="location.href='news.jsp?nid=<%=rs.getInt("nid")%>';">
 							<div style="display:flex;">
 								<!-- img -->
-								<img src="../../recent2.jpg" class="newsimg">
+								<img src="<%=rs.getString("img")%>" class="newsimg">
 							</div>
 							<div style="width:70%; display:flex;">
 								<div style="padding:10px 0 0 20px;">
@@ -142,16 +165,18 @@
 										Date Created: <time datetime="2018-05-21"><%=rs.getDate("date")%></time>
 									</div>
 									<!-- content -->
-									<p><%=rs.getString("nc")%></p>
+									<p><%=rs.getString("capt")%></p>
 								</div>
 							</div>
 						</button>
 					</div>
+					<%}
+						if(rs.next()){%>
 					<div class="recentcontent">
 						<button type="button" onclick="location.href='news.jsp?nid=<%=rs.getInt("nid")%>';">
 							<div style="display:flex;">
 								<!-- img -->
-								<img src="../../recent3.jpg" class="newsimg">
+								<img src="<%=rs.getString("img")%>" class="newsimg">
 							</div>
 							<div style="width:70%; display:flex;">
 								<div style="padding:10px 0 0 20px;">
@@ -163,16 +188,18 @@
 										Date Created: <time datetime="2018-05-21"><%=rs.getDate("date")%></time>
 									</div>
 									<!-- content -->
-									<p><%=rs.getString("nc")%></p>
+									<p><%=rs.getString("capt")%></p>
 								</div>
 							</div>
 						</button>
 					</div>
+					<%}
+						if(rs.next()){%>
 					<div class="recentcontent">
 						<button type="button" onclick="location.href='news.jsp?nid=<%=rs.getInt("nid")%>';">
 							<div style="display:flex;">
 								<!-- img -->
-								<img src="../../recent4.jpg" class="newsimg">
+								<img src="<%=rs.getString("img")%>" class="newsimg">
 							</div>
 							<div style="width:70%; display:flex;">
 								<div style="padding:10px 0 0 20px;">
@@ -184,11 +211,12 @@
 										Date Created: <time datetime="2018-05-21"><%=rs.getDate("date")%></time>
 									</div>
 									<!-- content -->
-									<p><%=rs.getString("nc")%></p>
+									<p><%=rs.getString("capt")%></p>
 								</div>
 							</div>
 						</button>
 					</div>
+					<%}%>
 					<div class="showmore">
 						<button type="button" onclick="location.href='morenews.jsp';">
 								<b>Show more news</b>

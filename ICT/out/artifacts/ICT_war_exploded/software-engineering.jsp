@@ -28,11 +28,11 @@
     </div>
 
 	<div class = "bg-img">
-        <img src = "images\course-banner.jpg">
+        <img src = "images\course-banner.jpg" alt = "banner">
 	</div>
 
 	<div class = "center">
-		<img class = "course-logo" src = "images\PS - swe.png">
+		<img class = "course-logo" src = "images\PS - swe.png" alt = "software-engineering">
 	</div>
 
 	<!-- body section--> 
@@ -455,13 +455,13 @@
                    <ul style = "list-style-type: none;" class="text-white">
                        <li>
                      <a href = "https://www.facebook.com/SWEstudentunion/?ref=br_rs"> 
-                        <img src = "images\facebook.png">
+                        <img src = "images\facebook.png" alt = "facebook">
                      </a>
-                     <a href = "mailto: SWEstudentunion@outlook.com">
+                     <a href = "mailto: SWEstudentunion@outlook.com" alt = "mail">
                         <img src = "images\mail.png">
                      </a>
                      <a href = "https://xmux.xdea.top/">
-                        <img src = "images\xmux.jpg">
+                        <img src = "images\xmux.jpg" alt = "xmux">
                      </a>
 
                        </li>

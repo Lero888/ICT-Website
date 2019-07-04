@@ -1,3 +1,6 @@
+<%@ page import="java.sql.Statement" %>
+<%@ page import="java.sql.DriverManager" %>
+<%@ page import="java.sql.ResultSet" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,7 +16,7 @@
 	<div class="navbarcont">
 		<div class="navbarcont2">
 			<div><a href="home.jsp">
-				<img src="../../logo.png" class="navbarlogo">
+				<img src="logo.png" class="navbarlogo">
 			</a></div>	
 			<div class="navigationlist">
 				<div id="nav_item"><a href="home.jsp">Home</a></div>
@@ -26,86 +29,93 @@
 	</div>
 
 	<div class="container">
+		<%
+			Class.forName("com.mysql.jdbc.Driver");
+			Statement stm = DriverManager.getConnection("jdbc:mysql://localhost:3306/ICT", "root", "xmuy").createStatement();
+			String sql = "select idnews as nid, title as nt, content as nc, caption as capt, thumbnail as img, datecreated as date\n" +
+					"from news\n";
+			ResultSet rs= stm.executeQuery(sql);
+			if (rs.next()){
+		%>
 		<div class="newscontainer">	
 			<a href="news.jsp">
-				<img src="../../recent1.jpg" class="newsimg" title="Lorem ipsum dolor sit amet image" style="height:200px; width: 300px;">
+				<img src="<%=rs.getString("img")%>" class="newsimg" title="<%=rs.getString("nt")%>" style="height:200px; width: 300px;">
 			</a	>
 			<div style="width:70%;display:flex; padding:10px 50px 0 70px; flex-direction: column;">
 				<!-- title -->
 				<a href="news.jsp" id="t">
-					Lorem ipsum dolor sit amet
+					<%=rs.getString("nt")%>
 				</a>
 				<div class="date">
 					<!-- Date created -->
 					<i class="fas fa-calendar-alt"></i>
-					Date Created: <time datetime="2018-05-21">2019-05-21</time>
+					Date Created: <time datetime="2018-05-21"><%=rs.getString("date")%></time>
 				</div>
 				<!-- content -->
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-				tempor incididunt ut labore et dolore magna aliqua.</p>
+				<p><%=rs.getString("capt")%></p>
 			</div>
 		</div>
-
+		<%}
+			if(rs.next()){%>
 		<div class="newscontainer">	
 			<a href="news.jsp">
-				<img src="../../recent2.jpg" class="newsimg" title="Lorem ipsum dolor sit amet image" style="height:200px; width: 300px;">
+				<img src="<%=rs.getString("img")%>" class="newsimg" title="<%=rs.getString("nt")%>" style="height:200px; width: 300px;">
 			</a	>
 			<div style="width:70%;display:flex; padding:10px 50px 0 70px; flex-direction: column;">
 				<!-- title -->
 				<a href="news.jsp" id="t">
-					Lorem ipsum dolor sit amet
+					<%=rs.getString("nt")%>
 				</a>
 				<div class="date">
 					<!-- Date created -->
 					<i class="fas fa-calendar-alt"></i>
-					Date Created: <time datetime="2018-05-21">2019-05-21</time>
+					Date Created: <time datetime="2018-05-21"><%=rs.getString("date")%></time>
 				</div>
 				<!-- content -->
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-				tempor incididunt ut labore et dolore magna aliqua.</p>
+				<p><%=rs.getString("capt")%></p>
 			</div>
 		</div>
-
+		<%}
+			if(rs.next()){%>
 		<div class="newscontainer">	
 			<a href="news.jsp">
-				<img src="../../recent3.jpg" class="newsimg" title="Lorem ipsum dolor sit amet image" style="height:200px; width: 300px;">
+				<img src="<%=rs.getString("img")%>" class="newsimg" title="<%=rs.getString("nt")%>" style="height:200px; width: 300px;">
 			</a	>
 			<div style="width:70%;display:flex; padding:10px 50px 0 70px; flex-direction: column;">
 				<!-- title -->
 				<a href="news.jsp" id="t">
-					Lorem ipsum dolor sit amet
+					<%=rs.getString("nt")%>
 				</a>
 				<div class="date">
 					<!-- Date created -->
 					<i class="fas fa-calendar-alt"></i>
-					Date Created: <time datetime="2018-05-21">2019-05-21</time>
+					Date Created: <time datetime="2018-05-21"><%=rs.getString("date")%></time>
 				</div>
 				<!-- content -->
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-				tempor incididunt ut labore et dolore magna aliqua.</p>
+				<p><%=rs.getString("capt")%></p>
 			</div>
 		</div>
-
+		<%}
+			if(rs.next()){%>
 		<div class="newscontainer">	
 			<a href="news.jsp">
-				<img src="../../recent4.jpg" class="newsimg" title="Lorem ipsum dolor sit amet image" style="height:200px; width: 300px;">
+				<img src="<%=rs.getString("img")%>" class="newsimg" title="<%=rs.getString("nt")%>" style="height:200px; width: 300px;">
 			</a	>
 			<div style="width:70%;display:flex; padding:10px 50px 0 70px; flex-direction: column;">
 				<!-- title -->
 				<a href="news.jsp" id="t">
-					Lorem ipsum dolor sit amet
+					<%=rs.getString("nt")%>
 				</a>
 				<div class="date">
 					<!-- Date created -->
 					<i class="fas fa-calendar-alt"></i>
-					Date Created: <time datetime="2018-05-21">2019-05-21</time>
+					Date Created: <time datetime="2018-05-21"><%=rs.getString("date")%></time>
 				</div>
 				<!-- content -->
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-				tempor incididunt ut labore et dolore magna aliqua.</p>
+				<p><%=rs.getString("capt")%></p>
 			</div>
 		</div>
-
+		<%}%>
 	</div>
 
 
