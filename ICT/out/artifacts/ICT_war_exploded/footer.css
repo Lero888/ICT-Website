@@ -14,8 +14,22 @@
 }
 
 .footer img {
-	max-width: 30px;
-  max-height: 30px;
+	max-width: 35px;
+  max-height: 35px;
+  border-radius: 6px;
+}
+
+.footer a {
+  color: #FFFFFF;
+  text-decoration: none;
+}
+
+.footer a:link, .footer a:visited{
+  color: #FFFFFF;
+}
+
+.footer a:hover {
+  color: #F1F1F1;
 }
 
 .text-white {

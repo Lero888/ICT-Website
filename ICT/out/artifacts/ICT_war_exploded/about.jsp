@@ -10,7 +10,7 @@
 	<div class="navbarcont">
 		<div class="navbarcont2">
 			<div><a href="home.jsp">
-				<img src="images\logo.png" class="navbarlogo">
+				<img src="images/logo.png" class="navbarlogo">
 			</a></div>	
 			<div class="navigationlist">
 				<div id="nav_item"><a href="home.jsp">Home</a></div>
@@ -23,7 +23,7 @@
 	</div>
 
 	<div class="session1">
-		<img src="images\aboutus.jpg">
+		<img src="images/aboutus.jpg">
 
 		<div class="title">About Us</div>
 	</div>
@@ -48,7 +48,7 @@
 			<div class = "column">
 				<a href="Computer Science.html">
 					<div class="course_container">
-	 					 <img src="images\PS - cst.png" alt="Computer Science Technology" class="image">
+	 					 <img src="images/PS - cst.png" alt="Computer Science Technology" class="image">
 	  						<div class="overlay">
 	    						<div class="text">Computer Science Technology</div>
 	  						</div>
@@ -71,7 +71,7 @@
 			<div class = "column">
 				<a href="Software Engineering.html">
 					<div class="course_container">
-	 					 <img src="images\PS - swe.png" alt="Software Engineering" class="image">
+	 					 <img src="images/PS - swe.png" alt="Software Engineering" class="image">
 	  						<div class="overlay">
 	    						<div class="text">Software Engineering</div>
 	  						</div>
@@ -84,7 +84,7 @@
 			<div class = "column">
 				<a href="Digital Media.html">
 					<div class="course_container">
-	 					 <img src="images\PS - dmt.png" alt="Digital Media Technology" class="image">
+	 					 <img src="images/PS - dmt.png" alt="Digital Media Technology" class="image">
 	  						<div class="overlay">
 	    						<div class="text">Digital Media Technology</div>
 	  						</div>
@@ -100,7 +100,7 @@
 
 	<div class="session4">
 		<h2>Our Team</h2>
-		<img src="images\Union-Logo.png">
+		<img src="images/Union-Logo.png">
 		<p>Software Engineering Student Union</p>
 	</div>
 
@@ -109,9 +109,9 @@
 
 			<div class="slide_container">
 				<div class="slide_content">
-				  <img class="slide" src="images\recent4.jpg">
-				  <img class="slide" src="images\small1.jpg" >
-				  <img class="slide" src="images\small2.jpg">
+				  <img class="slide" src="images/recent4.jpg">
+				  <img class="slide" src="images/small1.jpg" >
+				  <img class="slide" src="images/small2.jpg">
 				</div>
 				
 				<div class="slide_content2">
@@ -166,13 +166,13 @@
 					<ul style = "list-style-type: none;" class="text-white">
 						<li>
 							<a href = "https://www.facebook.com/SWEstudentunion/?ref=br_rs">
-								<img src = "images\facebook.png">
+								<img src = "images/facebook.png">
 							</a>
 							<a href = "mailto: SWEstudentunion@outlook.com">
-								<img src = "images\mail.png">
+								<img src = "images/mail.png">
 							</a>
 							<a href = "https://xmux.xdea.top/">
-								<img src = "images\xmux.jpg">
+								<img src = "images/xmux.jpg">
 							</a>
 
 						</li>

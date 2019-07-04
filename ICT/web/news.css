@@ -1,0 +1,170 @@
+html, body{
+	font-family:Helmet,Freesans,Helvetica,Arial,sans-serif;
+}
+
+.container{
+	display:inline-flex;
+}
+
+.titlecontainer{
+	display:flex;
+	justify-content: flex-start;
+	width:100%;
+	padding-top: 10px;
+	flex-flow:column;
+}
+
+.details{
+	color:#969696;
+	padding-bottom: 2px;
+	border-bottom: 1px solid #969696;
+}
+
+.contentcontainer{
+	width:70%;
+	height:auto;
+	display:flex;
+	padding-left: 100px;
+	flex-direction: column;
+}
+
+.imgcontainer{
+	padding: 30px 0 0 0;
+}
+
+.content{
+	height:100%;
+	text-align:left;
+	line-height: 2em;
+}
+
+.datecreated{
+	display:flex;
+	align-items: center;
+}
+
+.icon{
+	display:inline-flex;
+
+}
+
+#fb{
+	color:rgba(20,46,103,1);
+	margin-right:5px;
+	width:44px;
+	height:44px;
+	display:flex;
+	align-items: center;
+	justify-content: center;
+}
+
+#fb:hover{
+	color:white;
+	background-color: rgba(20,46,103,1);
+}
+
+#wc{
+	color:#7bb32e;
+	margin-right:5px;
+	width:44px;
+	height:44px;
+	display:flex;
+	align-items: center;
+	justify-content: center;
+}
+
+#wc:hover{
+	color:white;
+	background-color:#7bb32e;
+}
+
+#share{
+	margin-right:5px;
+	width:44px;
+	height:44px;
+	display:flex;
+	align-items: center;
+	justify-content: center;
+}
+
+#share:hover{
+	color:white;
+	background-color:#969696;
+}
+
+.sidecontainer{
+	background-color:#ededed;
+	margin: 45px 0 0 10px;
+	width:100%;
+	padding-left: 15px;
+	height:auto;
+}
+
+.sidetitle{
+	font-size:1em;
+	margin-bottom: 20px;
+	padding-top: 20px;
+}
+
+.sidecontent{
+	width: 80%;
+}
+
+.sidect{
+	font-size: 0.8em;
+}
+
+.sidect > a:visited{
+	color: black;
+}
+
+.sidect > a:hover{
+	color:#2052f7;
+}
+
+.sidecc{
+	font-size: 0.8em;
+	margin-top:10px;
+	margin-bottom: 10px;
+}
+
+#sidedate{
+	font-size:0.8em;
+	color:#898888;
+}
+
+.story{
+	margin-bottom: 30px;
+}
+
+.mostreadtitle{
+	background-color:#ededed;
+	margin: 45px 0 0 10px;
+	width:100%;
+	padding-left: 15px;
+	height: 50px;
+	display:flex;
+	align-items: center;
+}
+
+.mostreadcontent{
+	padding:10px 10px 10px 0;
+	margin-left: 25px;
+	border-bottom: 1px solid #ededed;
+	display:inline-flex;
+	width:100%;
+}
+
+.mostreadcontent > a:visited{
+	color: black;
+}
+
+.mostreadcontent > a:hover{
+	color:#2052f7;
+}
+
+.ranking{
+	margin-left: 20px;
+	font-size: 30px;
+	color:#721a21;
+}
