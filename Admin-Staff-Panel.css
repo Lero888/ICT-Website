@@ -1,10 +1,18 @@
 h1{
 
-	margin:0 auto;
-	margin-top: 5%;
 	width: fit-content;
 	padding: 5px;
 	border-bottom: 1px solid black;
+}
+
+.header1 {
+	width: 100%;
+	margin:0 auto;
+	margin-top: 5%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
 }
 
 .new {
@@ -74,4 +82,9 @@ h1{
 .delete {
 	flex-direction: row;	
 	padding: 20px;
+}
+
+.navigation_arrow {
+	font-size: 2em;
+	padding: 30px;
 }

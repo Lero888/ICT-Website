@@ -7,9 +7,9 @@
 <html>
 <head>
 	<title>Admin-News-Panel</title>
-	<link rel="stylesheet" type="text/css" href="panel.css">
 	<link rel="stylesheet" type="text/css" href="footer.css">
 	<link rel="stylesheet" type="text/css" href="header.css">
+	<link rel="stylesheet" type="text/css" href="panel.css">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
 </head>
 <body>
@@ -29,7 +29,11 @@
 		</div>
 	</div>
 
-	<div class="header1"><h1>Staff News Panel</h1><div>
+	<div class="header1">
+		<div class="navigation_arrow"><b>&#10094;</b></div>
+		<div><h1>News Management Panel</h1></div>
+		<div class="navigation_arrow"><b>&#10095;</b></div>
+	</div>
 
 	<div class="container">
 
