@@ -1,3 +1,6 @@
+<%@ page import="java.sql.ResultSet" %>
+<%@ page import="java.sql.DriverManager" %>
+<%@ page import="java.sql.Statement" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -109,17 +112,39 @@
 
 			<div class="slide_container">
 				<div class="slide_content">
-				  <img class="slide" src="images/recent4.jpg">
-				  <img class="slide" src="images/small1.jpg" >
-				  <img class="slide" src="images/small2.jpg">
+					<%
+						Class.forName("com.mysql.jdbc.Driver");
+						Statement stm = DriverManager.getConnection("jdbc:mysql://localhost:3306/ICT", "root", "xmuy").createStatement();
+						String sql = "select idnews as nid, title as nt, content as nc, caption as capt, thumbnail as img, datecreated as date\n" +
+								"from news\n" +
+								"where category='highlight'\n" +
+								"order by datecreated DESC";
+						ResultSet rs= stm.executeQuery(sql);
+						int cnt = 0;
+						while(rs.next())
+						{
+					%>
+
+				  <img class="slide" src="<%=rs.getString("img")%>">
+
+					<%
+							cnt++;
+						}
+					%>
 				</div>
 				
 				<div class="slide_content2">
 				    <div class="navigation_arrow" onclick="plusDivs(-1)">&#10094;</div>
 				    <div>
-				    	<div class="dot demo" onclick="currentDiv(1)"></div>
-				    	<div class="dot demo" onclick="currentDiv(2)"></div>
-				    	<div class="dot demo" onclick="currentDiv(3)"></div>
+						<%
+							int i = 0;
+							for(i=0; i < cnt; i++)
+							{
+						%>
+				    	<div class="dot demo" onclick="currentDiv(<%=i%>)"></div>
+						<%
+							}
+						%>
 				    </div>
 				    <div class="navigation_arrow" onclick="plusDivs(1)">&#10095;</div>
 				</div>
