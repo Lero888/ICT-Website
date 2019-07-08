@@ -28,7 +28,7 @@ public class AdminLoginServlet extends HttpServlet {
             if (rs.next()) {
                 session.setAttribute("admin_id", rs.getString("admin_id"));
                 session.setAttribute("username", username);
-                response.sendRedirect("Admin-Staff-Panel.jsp");
+                response.sendRedirect("admin-staff-panel.jsp");
                 return;
             }
         }
