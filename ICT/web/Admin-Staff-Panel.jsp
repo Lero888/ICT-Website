@@ -30,9 +30,9 @@
 
 
 	<div class="header1">
-		<div class="navigation_arrow"> <a href="admin-news-panel.jsp"> <b>&#10094;</b> </a> </div>
+		<div class="navigation_arrow"> <a href="admin-news-panel.jsp"> <b>&#10094;</b> </a></div>
 		<div><h1>Staff Management Panel</h1></div>
-		<div class="navigation_arrow"> <a href="admin-news-panel.jsp"> <b>&#10095;</b> </a> </div>
+		<div class="navigation_arrow"> <a href="admin-news-panel.jsp"> <b>&#10095;</b> </a></div>
 	</div>
 
 	<div class="container">

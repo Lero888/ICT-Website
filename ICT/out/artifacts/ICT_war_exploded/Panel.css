@@ -13,6 +13,13 @@ h1{
 	align-items: center;
 }
 
+.header1 a{
+	color:black;
+}
+
+.header1 a:hover{
+	color: gray;
+}
 .navigation_arrow{
 	font-size: 2em;
 	padding: 30px;
@@ -23,12 +30,12 @@ h1{
 	color: gray;
 }
 
-.item a, .navigation_arrow a{
+.item a{
 	text-decoration: none;
 	color:black;
 }
 
-.item a:visited, .navigation_arrow a:visited {
+.item a:visited{
 	color: black;
 	text-decoration: none;
 }

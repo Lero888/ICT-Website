@@ -45,7 +45,7 @@
 			<div style="width:70%;display:flex; padding:10px 50px 0 70px; flex-direction: column;">
 				<!-- title -->
 				<a href="news.jsp" id="t">
-					<b><%=rs.getString("nt")%></b>
+					<%=rs.getString("nt")%>
 				</a>
 				<div class="date">
 					<!-- Date created -->
@@ -53,9 +53,7 @@
 					Date Created: <time datetime="2018-05-21"><%=rs.getString("date")%></time>
 				</div>
 				<!-- content -->
-				<a href="news.jsp" id="t">
-					<p><%=rs.getString("capt")%></p>
-				</a>
+				<p><%=rs.getString("capt")%></p>
 			</div>
 		</div>
 		<%}
@@ -67,7 +65,7 @@
 			<div style="width:70%;display:flex; padding:10px 50px 0 70px; flex-direction: column;">
 				<!-- title -->
 				<a href="news.jsp" id="t">
-					<b><%=rs.getString("nt")%></b>
+					<%=rs.getString("nt")%>
 				</a>
 				<div class="date">
 					<!-- Date created -->
@@ -75,9 +73,7 @@
 					Date Created: <time datetime="2018-05-21"><%=rs.getString("date")%></time>
 				</div>
 				<!-- content -->
-				<a href="news.jsp" id="t">
-					<p><%=rs.getString("capt")%></p>
-				</a>
+				<p><%=rs.getString("capt")%></p>
 			</div>
 		</div>
 		<%}
@@ -89,7 +85,7 @@
 			<div style="width:70%;display:flex; padding:10px 50px 0 70px; flex-direction: column;">
 				<!-- title -->
 				<a href="news.jsp" id="t">
-					<b><%=rs.getString("nt")%></b>
+					<%=rs.getString("nt")%>
 				</a>
 				<div class="date">
 					<!-- Date created -->
@@ -97,9 +93,7 @@
 					Date Created: <time datetime="2018-05-21"><%=rs.getString("date")%></time>
 				</div>
 				<!-- content -->
-				<a href="news.jsp" id="t">
-					<p><%=rs.getString("capt")%></p>
-				</a>
+				<p><%=rs.getString("capt")%></p>
 			</div>
 		</div>
 		<%}
@@ -111,7 +105,7 @@
 			<div style="width:70%;display:flex; padding:10px 50px 0 70px; flex-direction: column;">
 				<!-- title -->
 				<a href="news.jsp" id="t">
-					<b><%=rs.getString("nt")%></b>
+					<%=rs.getString("nt")%>
 				</a>
 				<div class="date">
 					<!-- Date created -->
@@ -119,9 +113,7 @@
 					Date Created: <time datetime="2018-05-21"><%=rs.getString("date")%></time>
 				</div>
 				<!-- content -->
-				<a href="news.jsp" id="t">
-					<p><%=rs.getString("capt")%></p>
-				</a>
+				<p><%=rs.getString("capt")%></p>
 			</div>
 		</div>
 		<%}%>
