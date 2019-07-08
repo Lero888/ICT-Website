@@ -6,9 +6,9 @@
 <html>
 <head>
 	<title>Admin-Staff-Panel</title>
-	<link rel="stylesheet" type="text/css" href="panel.css">
 	<link rel="stylesheet" type="text/css" href="footer.css">
 	<link rel="stylesheet" type="text/css" href="header.css">
+	<link rel="stylesheet" type="text/css" href="panel.css">
 </head>
 <body>
 
@@ -29,7 +29,11 @@
 
 
 
-	<div class="header1"><h1>Staff Management Panel</h1><div>
+	<div class="header1">
+		<div class="navigation_arrow"> <a href="admin-news-panel.jsp"> <b>&#10094;</b> </a> </div>
+		<div><h1>Staff Management Panel</h1></div>
+		<div class="navigation_arrow"> <a href="admin-news-panel.jsp"> <b>&#10095;</b> </a> </div>
+	</div>
 
 	<div class="container">
 
@@ -45,17 +49,19 @@
 		%>
 
 		<div class="item">
-			
-			<div class="left">
-				<div class="image-container"><img src="images\<%=rs.getString("image")%>"></div>
 
-				<div class="info">
-					<h3><%=rs.getString("name")%></h3>
-					<p>Contact: <%=rs.getString("tel")%>	</p>
-					<p>Email  : <%=rs.getString("email")%>	</p>
+			<a href = "admin-personalinfo.jsp?sid=<%=rs.getString("sid")%>">
+				<div class="left">
+					<div class="image-container"><img src="images/<%=rs.getString("image")%>"></div>
+
+					<div class="info">
+						<h3><%=rs.getString("name")%></h3>
+						<p>Contact: <%=rs.getString("tel")%>	</p>
+						<p>Email  : <%=rs.getString("email")%>	</p>
+					</div>
+
 				</div>
-				
-			</div>
+			</a>
 
 			<div class="delete"><a href="./DeleteStaffServlet?sid=<%=rs.getString("sid")%>"><img src="images/delete.png"></a></div>
 			
@@ -66,10 +72,9 @@
 			}
 		%>
 
-		
-		<div class="new"><img src="images/add.png"> Add Staff</div>
-
 	</div>
+
+	<div class="new"><img src="images/add.png"> Add Staff</div>
 
 
 		<!-- Footer section -->

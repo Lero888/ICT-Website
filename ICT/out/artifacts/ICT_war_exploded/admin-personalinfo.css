@@ -88,8 +88,9 @@ html, body {
 .flexcontainer img {
   border-radius: 50%;
   border: 1px solid black;
-  max-width: 150px;
-  max-height: 180px;
+  width: 150px;
+  height: 150px;
+
 }
 
 /*Smaller box at right column of large box*/
@@ -145,6 +146,6 @@ html, body {
 .infobox .column:nth-child(3) {
   order: 2;
   flex: 2;
-  color: rgb(0, 0, 255)
+  color: rgb(0, 0, 255);
   text-align: right;
 }
