@@ -1,0 +1,81 @@
+body, html, .container{
+	width:100%;
+	height:100%;
+	background-color: #ebebeb;
+	padding:0;
+	display:inline-flex;
+	margin:0;
+}
+
+.left-container{
+	width:50%;
+	height:100%;
+	display:flex;
+	align-items:  center;
+	justify-content: flex-end;
+}
+
+.right-container{
+	width:50%;
+	height:100%;
+	display:flex;
+	justify-content: flex-start;
+	align-items: center;
+}
+
+.imgcontainer{
+	height:60%;
+	width:70%;
+	background-color:#00296b;
+	display:flex;
+	align-items:center;
+	justify-content: center;
+}
+
+.logincontainer{
+	height:60%;
+	width:70%;
+	background-color: white;
+	display:flex;
+	align-items: center;
+}
+
+.logincontent{
+	width:100%;
+	padding: 0 50px 0 50px;
+}
+
+.title{
+	color:#8c8c8c;
+	text-align:center;
+	width:100%;
+	margin-bottom: 10px;
+}
+
+.inputbox{
+	display:flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+form{
+	display:flex;
+}
+
+.btn{
+	background-color:#5CB85C;
+	border:none;
+	width: 257px;
+	height: 40px;
+	color:white;
+}
+
+.btn:hover{
+	background-color:#009e4c;
+	cursor:pointer;
+}
+
+.imgtitle{
+	color:white;
+	font-size:30px;
+}

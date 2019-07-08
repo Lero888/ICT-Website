@@ -5,6 +5,16 @@
          version="4.0">
 
     <servlet>
+        <servlet-name>AdminLoginServlet</servlet-name>
+        <servlet-class>AdminLoginServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>AdminLoginServlet</servlet-name>
+        <url-pattern>/AdminLoginServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
         <servlet-name>DeleteStaffServlet</servlet-name>
         <servlet-class>DeleteStaffServlet</servlet-class>
     </servlet>
