@@ -1,6 +1,9 @@
 <%@ page import="java.sql.DriverManager" %>
 <%@ page import="java.sql.Statement" %>
 <%@ page import="java.sql.ResultSet" %>
+<%@ page import="net.model.StaffBean" %>
+<%@ page import="java.util.List" %>
+<jsp:useBean id="model_staff" class="net.model.StaffAccess" />
 
 <!DOCTYPE html>
 <html>
@@ -37,34 +40,41 @@
 
 	<div class="container">
 
-		<%
-			Class.forName("com.mysql.jdbc.Driver");
-			Statement stm = DriverManager.getConnection("jdbc:mysql://localhost:3306/ICT", "root", "xmuy").createStatement();
-			String sql = "select staff_id as sid, staff_name as name, image as image, email as email, tel as tel\n" +
-					"from staff";
-			ResultSet rs= stm.executeQuery(sql);
+<%--		<%--%>
+<%--			Class.forName("com.mysql.jdbc.Driver");--%>
+<%--			Statement stm = DriverManager.getConnection("jdbc:mysql://localhost:3306/ICT", "root", "xmuy").createStatement();--%>
+<%--			String sql = "select staff_id as sid, staff_name as name, image as image, email as email, tel as tel\n" +--%>
+<%--					"from staff";--%>
+<%--			ResultSet rs= stm.executeQuery(sql);--%>
 
-			while(rs.next())
+<%--			while(rs.next())--%>
+<%--			{--%>
+<%--		%>--%>
+
+		<%
+			List<StaffBean> model = model_staff.get();
+
+			for(StaffBean bean: model)
 			{
 		%>
 
 		<div class="item">
 
-			<a href = "admin-personalinfo.jsp?sid=<%=rs.getString("sid")%>">
+			<a href = "admin-personalinfo.jsp?sid=<%=bean.getStaff_id()%>">
 				<div class="left">
-					<div class="image-container"><img src="images/<%=rs.getString("image")%>"></div>
+					<div class="image-container"><img src="images/<%=bean.getImage()%>"></div>
 
 					<div class="info">
-						<h3><%=rs.getString("name")%></h3>
-						<p>Contact: <%=rs.getString("tel")%>	</p>
-						<p>Email  : <%=rs.getString("email")%>	</p>
+						<h3><%=bean.getStaff_name()%></h3>
+						<p>Contact: <%=bean.getTel()%>	</p>
+						<p>Email  : <%=bean.getEmail()%>	</p>
 					</div>
 
 				</div>
 			</a>
 
-			<div class="delete"><a href="./DeleteStaffServlet?sid=<%=rs.getString("sid")%>"><img src="images/delete.png"></a></div>
-			
+			<div class="delete"><a href="./DeleteStaffServlet?sid=<%=bean.getStaff_id()%>"><img src="images/delete.png"></a></div>
+
 
 		</div>
 

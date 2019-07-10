@@ -1,6 +1,10 @@
 <%@ page import="java.sql.DriverManager" %>
 <%@ page import="java.sql.Statement" %>
 <%@ page import="java.sql.ResultSet" %>
+<%@ page import="net.model.StaffBean" %>
+<%@ page import="java.util.List" %>
+<jsp:useBean id="model_staff" class="net.model.StaffAccess" />
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -35,22 +39,18 @@
 
 			<div class="staff_dir">
 
-
 				<%
-					Class.forName("com.mysql.jdbc.Driver");
-					Statement stm = DriverManager.getConnection("jdbc:mysql://localhost:3306/ICT", "root", "xmuy").createStatement();
-					String sql = "select staff_id as sid, staff_name as name, image as image\n" +
-							"from staff";
-					ResultSet rs= stm.executeQuery(sql);
-					while(rs.next())
+					List<StaffBean> model = model_staff.get();
+
+					for(StaffBean bean: model)
 					{
 				%>
 
 				<div class="card_container">
-					<a href="staff_info.jsp?sid=<%=rs.getInt("sid")%>">
+					<a href="staff_info.jsp?sid=<%=bean.getStaff_id()%>">;
 						<div class="card">
-							<img src="images/<%=rs.getString("image")%>">
-							<h4><strong><%=rs.getString("name")%></strong></h4>
+							<img src="images/<%=bean.getImage()%>">
+							<h4><strong><%=bean.getStaff_name()%></strong></h4>
 						</div>
 					</a>
 				</div>
