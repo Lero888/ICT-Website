@@ -127,38 +127,50 @@
 			</div>
 
 			<div class="mostreadtitle">
-					Most Read
-				</div>
+				Most Read
+			</div>
+			<%
+				Class.forName("com.mysql.jdbc.Driver");
+				stm = DriverManager.getConnection("jdbc:mysql://localhost:3306/ICT", "root", "xmuy").createStatement();
+				sql = "select idnews as nid, title as nt, content as nc, thumbnail as img, datecreated as date\n" +
+						"from news\n" +
+						"where category = 'mostread'";
+				rs= stm.executeQuery(sql);
+				if (rs.next()){
+			%>
 				<div class="mostreadcontent">
-					<a href="#">Lorem ipsum dolor sit amet, consectetur adipisicing</a>
+					<a href="news.jsp?nid=<%=rs.getInt("nid")%>"><%=rs.getString("nt")%></a>
 					<div class="ranking">
 						1
 					</div>
 				</div>
 				<div class="mostreadcontent">
-					<a href="#">Lorem ipsum dolor sit amet, consectetur adipisicing</a>
+					<a href="news.jsp?nid=<%=rs.getInt("nid")%>"><%=rs.getString("nt")%></a>
 					<div class="ranking">
 						2
 					</div>
 				</div>
 				<div class="mostreadcontent">
-					<a href="#">Lorem ipsum dolor sit amet, consectetur adipisicing</a>
+					<a href="news.jsp?nid=<%=rs.getInt("nid")%>"><%=rs.getString("nt")%></a>
 					<div class="ranking">
 						3
 					</div>
 				</div>
 				<div class="mostreadcontent">
-					<a href="#">Lorem ipsum dolor sit amet, consectetur adipisicing</a>
+					<a href="news.jsp?nid=<%=rs.getInt("nid")%>"><%=rs.getString("nt")%></a>
 					<div class="ranking">
 						4
 					</div>
 				</div>
 				<div class="mostreadcontent">
-					<a href="#">Lorem ipsum dolor sit amet, consectetur adipisicing</a>
+					<a href="news.jsp?nid=<%=rs.getInt("nid")%>"><%=rs.getString("nt")%></a>
 					<div class="ranking">
 						5
 					</div>
 				</div>
+			<%
+				}
+			%>
 		</div>
 		
 	</div>

@@ -39,12 +39,12 @@
 			if (rs.next()){
 		%>
 		<div class="newscontainer">	
-			<a href="news.jsp">
+			<a href="news.jsp?nid=<%=rs.getInt("nid")%>">
 				<img src="<%=rs.getString("img")%>" class="newsimg" title="<%=rs.getString("nt")%>" style="height:200px; width: 300px;">
 			</a	>
 			<div style="width:70%;display:flex; padding:10px 50px 0 70px; flex-direction: column;">
 				<!-- title -->
-				<a href="news.jsp" id="t">
+				<a href="news.jsp?nid=<%=rs.getInt("nid")%>" id="t">
 					<%=rs.getString("nt")%>
 				</a>
 				<div class="date">
@@ -59,12 +59,12 @@
 		<%}
 			if(rs.next()){%>
 		<div class="newscontainer">	
-			<a href="news.jsp">
+			<a href="news.jsp?nid=<%=rs.getInt("nid")%>">
 				<img src="<%=rs.getString("img")%>" class="newsimg" title="<%=rs.getString("nt")%>" style="height:200px; width: 300px;">
 			</a	>
 			<div style="width:70%;display:flex; padding:10px 50px 0 70px; flex-direction: column;">
 				<!-- title -->
-				<a href="news.jsp" id="t">
+				<a href="news.jsp?nid=<%=rs.getInt("nid")%>" id="t">
 					<%=rs.getString("nt")%>
 				</a>
 				<div class="date">
@@ -79,12 +79,12 @@
 		<%}
 			if(rs.next()){%>
 		<div class="newscontainer">	
-			<a href="news.jsp">
+			<a href="news.jsp?nid=<%=rs.getInt("nid")%>">
 				<img src="<%=rs.getString("img")%>" class="newsimg" title="<%=rs.getString("nt")%>" style="height:200px; width: 300px;">
 			</a	>
 			<div style="width:70%;display:flex; padding:10px 50px 0 70px; flex-direction: column;">
 				<!-- title -->
-				<a href="news.jsp" id="t">
+				<a href="news.jsp?nid=<%=rs.getInt("nid")%>" id="t">
 					<%=rs.getString("nt")%>
 				</a>
 				<div class="date">
@@ -99,12 +99,12 @@
 		<%}
 			if(rs.next()){%>
 		<div class="newscontainer">	
-			<a href="news.jsp">
+			<a href="news.jsp?nid=<%=rs.getInt("nid")%>">
 				<img src="<%=rs.getString("img")%>" class="newsimg" title="<%=rs.getString("nt")%>" style="height:200px; width: 300px;">
 			</a	>
 			<div style="width:70%;display:flex; padding:10px 50px 0 70px; flex-direction: column;">
 				<!-- title -->
-				<a href="news.jsp" id="t">
+				<a href="news.jsp?nid=<%=rs.getInt("nid")%>" id="t">
 					<%=rs.getString("nt")%>
 				</a>
 				<div class="date">
