@@ -1,6 +1,18 @@
 <%@ page import="java.sql.DriverManager" %>
 <%@ page import="java.sql.Statement" %>
 <%@ page import="java.sql.ResultSet" %>
+<%@ page import="java.util.List" %>
+<%@ page import="net.model.StaffBean" %>
+<jsp:useBean id="model_staff" class="net.model.StaffAccess" />
+<%@ page import="net.model.AcadExpBean" %>
+<jsp:useBean id="model_AcadExp" class="net.model.AcadExpAccess" />
+<%@ page import="net.model.EduBgBean" %>
+<jsp:useBean id="model_EduBg" class="net.model.EduBgAccess" />
+<%@ page import="net.model.ResIntBean" %>
+<jsp:useBean id="model_ResInt" class="net.model.ResIntAccess" />
+<%@ page import="net.model.RepPubBean" %>
+<jsp:useBean id="model_RepPub" class="net.model.RepPubAccess" />
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -27,15 +39,14 @@
 	</div>
 
 	<%
-	String sid = request.getParameter("sid");
-	Class.forName("com.mysql.jdbc.Driver");
-	Statement stm = DriverManager.getConnection("jdbc:mysql://localhost:3306/ICT", "root", "xmuy").createStatement();
-	String sql = "select staff.staff_name as name, staff.image as image, staff.position as pos, staff.school as sch, staff.tel as tel, staff.email as email\n" +
-			"from staff\n" +
-			"where staff_id = '"+ sid +"'";
-	System.out.println(sql);
-	ResultSet rs = stm.executeQuery(sql);
-	rs.next();
+		String sid = request.getParameter("sid");
+		List<StaffBean> model = model_staff.get();
+
+		for(StaffBean bean: model)
+		{
+
+			if(bean.getStaff_id().equals(sid))
+			{
 
 	%>
 
@@ -45,112 +56,126 @@
 		<div class="content">
 			<div class="top_logo_info_container">
 				<div class="logo_container">
-					<img src="images/<%=rs.getString("image")%>">
+					<img src="images/<%=bean.getImage()%>">
 				</div>
 
 				<div>
-					<div class="staff_name"><%=rs.getString("name")%></div>
+					<div class="staff_name"><%=bean.getStaff_name()%></div>
 
 					<div class="info_container">
 						<table>	
 							<tr>
 								<td>Position: </td>
-								<td class="c2"><%=rs.getString("pos")%></td>
+								<td class="c2"><%=bean.getPosition()%></td>
 							</tr>
 							<tr>
-								<td>Programme: </td>
-								<td class="c2"><%=rs.getString("sch")%></td>
+								<td>School: </td>
+								<td class="c2"><%=bean.getSchool()%></td>
 							</tr>
 							<tr>
 								<td>Tel: </td>
-								<td class="c2"><%=rs.getString("tel")%></td>
+								<td class="c2"><%=bean.getTel()%></td>
 							</tr>
 							<tr>
 								<td>Email: </td>
-								<td class="c2"><%=rs.getString("email")%></td>
+								<td class="c2"><%=bean.getEmail()%></td>
 							</tr>
 						</table>
 					</div>
 				</div>
 			</div>
 
+	<%
+				break;
+			}
+		}
+	%>
+
 			<div>
 				<h2>educational background</h2>
 				<ul>
+
 					<%
-						Statement stm2 = DriverManager.getConnection("jdbc:mysql://localhost:3306/ICT", "root", "xmuy").createStatement();
-						String sql2 = "select edu_bg.description as description\n" +
-								"from staff, edu_bg\n" +
-								"where staff.staff_id = edu_bg.staff_id and staff.staff_id = '"+ sid +"' ";
-						System.out.println(sql2);
-						ResultSet rs2 = stm.executeQuery(sql2);
-						while(rs2.next())
+						List<EduBgBean> model2 = model_EduBg.get();
+
+						for(EduBgBean bean2: model2)
 						{
+							if(bean2.getStaff_id().equals(sid))
+							{
+
 					%>
 
-					<li><%=rs2.getString("description")%></li>
+					<li><%=bean2.getDescription()%></li>
 
 					<%
+							}
 						}
 					%>
 				</ul>
 
 				<h2>RESEARCH INTERESTS</h2>
 				<ul>
+
 					<%
-						Statement stm3 = DriverManager.getConnection("jdbc:mysql://localhost:3306/ICT", "root", "xmuy").createStatement();
-						String sql3 = "select r_interest.description as description\n" +
-								"from staff, r_interest\n" +
-								"where staff.staff_id = r_interest.staff_id and staff.staff_id = '"+ sid +"'";
-						System.out.println(sql3);
-						ResultSet rs3 = stm.executeQuery(sql3);
-						while(rs3.next())
+						List<EduBgBean> model3 = model_EduBg.get();
+
+						for(EduBgBean bean3: model3)
 						{
+							if(bean3.getStaff_id().equals(sid))
+							{
+
 					%>
 
-					<li><%=rs3.getString("description")%></li>
+
+					<li><%=bean3.getDescription()%></li>
 
 					<%
+
+							}
 						}
 					%>
 				</ul>
 
 				<h2>ACADEMIC EXPERIENCE</h2>
 				<ul>
+
 					<%
-						Statement stm4 = DriverManager.getConnection("jdbc:mysql://localhost:3306/ICT", "root", "xmuy").createStatement();
-						String sql4 = "select acad_exp.description as description\n" +
-								"from staff, acad_exp\n" +
-								"where staff.staff_id = acad_exp.staff_id and staff.staff_id = '"+ sid +"'";
-						System.out.println(sql4);
-						ResultSet rs4 = stm.executeQuery(sql4);
-						while(rs4.next())
+						List<AcadExpBean> model4 = model_AcadExp.get();
+
+
+						for(AcadExpBean bean4: model4)
 						{
+							if(bean4.getStaff_id().equals(sid))
+							{
+
 					%>
 
-					<li><%=rs4.getString("description")%></li>
+					<li><%=bean4.getDescription()%></li>
 
 					<%
+							}
 						}
 					%>
 				</ul>
 
 				<h2>REPRESENTATIVE PUBLICATIONS</h2>
 				<ul>
+
 					<%
-						Statement stm5 = DriverManager.getConnection("jdbc:mysql://localhost:3306/ICT", "root", "xmuy").createStatement();
-						String sql5 = "select rep_pub.description as description\n" +
-								"from staff, rep_pub\n" +
-								"where staff.staff_id = rep_pub.staff_id and staff.staff_id = '"+ sid +"'";
-						System.out.println(sql5);
-						ResultSet rs5 = stm.executeQuery(sql5);
-						while(rs5.next())
+						List<RepPubBean> model5 = model_RepPub.get();
+
+
+						for(RepPubBean bean5: model5)
 						{
+							if(bean5.getStaff_id().equals(sid))
+							{
+
 					%>
 
-					<li><%=rs5.getString("description")%></li>
+					<li><%=bean5.getDescription()%></li>
 
 					<%
+							}
 						}
 					%>
 				</ul>
