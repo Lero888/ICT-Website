@@ -60,6 +60,7 @@ body, html, .container{
 
 form{
 	display:flex;
+	justify-content: center;
 }
 
 .btn{

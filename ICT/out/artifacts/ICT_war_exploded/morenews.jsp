@@ -1,6 +1,9 @@
 <%@ page import="java.sql.Statement" %>
 <%@ page import="java.sql.DriverManager" %>
 <%@ page import="java.sql.ResultSet" %>
+<%@ page import="java.util.*"%>
+<%@ page import="net.model.NewsBean" %>
+<jsp:useBean id="model_news" class="net.model.NewsAccess" />
 <!DOCTYPE html>
 <html>
 <head>
@@ -30,90 +33,27 @@
 
 	<div class="container">
 		<%
-			Class.forName("com.mysql.jdbc.Driver");
-			Statement stm = DriverManager.getConnection("jdbc:mysql://localhost:3306/ICT", "root", "xmuy").createStatement();
-			String sql = "select idnews as nid, title as nt, content as nc, caption as capt, thumbnail as img, datecreated as date\n" +
-					"from news\n" +
-					"order by datecreated DESC";
-			ResultSet rs= stm.executeQuery(sql);
-			if (rs.next()){
+			List<NewsBean> model = model_news.get();
+			for(int i= model.size();i-->0;)
+			{
+				NewsBean bean = model.get(i);
 		%>
 		<div class="newscontainer">	
-			<a href="news.jsp?nid=<%=rs.getInt("nid")%>">
-				<img src="<%=rs.getString("img")%>" class="newsimg" title="<%=rs.getString("nt")%>" style="height:200px; width: 300px;">
+			<a href="news.jsp?nid=<%=bean.getIdnews()%>">
+				<img src="<%=bean.getThumbnail()%>" class="newsimg" title="<%=bean.getTitle()%>" style="height:200px; width: 300px;">
 			</a	>
 			<div style="width:70%;display:flex; padding:10px 50px 0 70px; flex-direction: column;">
 				<!-- title -->
-				<a href="news.jsp?nid=<%=rs.getInt("nid")%>" id="t">
-					<%=rs.getString("nt")%>
+				<a href="news.jsp?nid=<%=bean.getIdnews()%>" id="t">
+					<%=bean.getTitle()%>
 				</a>
 				<div class="date">
 					<!-- Date created -->
 					<i class="fas fa-calendar-alt"></i>
-					Date Created: <time datetime="2018-05-21"><%=rs.getString("date")%></time>
+					Date Created: <time datetime="2018-05-21"><%=bean.getDatecreated()%></time>
 				</div>
 				<!-- content -->
-				<p><%=rs.getString("capt")%></p>
-			</div>
-		</div>
-		<%}
-			if(rs.next()){%>
-		<div class="newscontainer">	
-			<a href="news.jsp?nid=<%=rs.getInt("nid")%>">
-				<img src="<%=rs.getString("img")%>" class="newsimg" title="<%=rs.getString("nt")%>" style="height:200px; width: 300px;">
-			</a	>
-			<div style="width:70%;display:flex; padding:10px 50px 0 70px; flex-direction: column;">
-				<!-- title -->
-				<a href="news.jsp?nid=<%=rs.getInt("nid")%>" id="t">
-					<%=rs.getString("nt")%>
-				</a>
-				<div class="date">
-					<!-- Date created -->
-					<i class="fas fa-calendar-alt"></i>
-					Date Created: <time datetime="2018-05-21"><%=rs.getString("date")%></time>
-				</div>
-				<!-- content -->
-				<p><%=rs.getString("capt")%></p>
-			</div>
-		</div>
-		<%}
-			if(rs.next()){%>
-		<div class="newscontainer">	
-			<a href="news.jsp?nid=<%=rs.getInt("nid")%>">
-				<img src="<%=rs.getString("img")%>" class="newsimg" title="<%=rs.getString("nt")%>" style="height:200px; width: 300px;">
-			</a	>
-			<div style="width:70%;display:flex; padding:10px 50px 0 70px; flex-direction: column;">
-				<!-- title -->
-				<a href="news.jsp?nid=<%=rs.getInt("nid")%>" id="t">
-					<%=rs.getString("nt")%>
-				</a>
-				<div class="date">
-					<!-- Date created -->
-					<i class="fas fa-calendar-alt"></i>
-					Date Created: <time datetime="2018-05-21"><%=rs.getString("date")%></time>
-				</div>
-				<!-- content -->
-				<p><%=rs.getString("capt")%></p>
-			</div>
-		</div>
-		<%}
-			if(rs.next()){%>
-		<div class="newscontainer">	
-			<a href="news.jsp?nid=<%=rs.getInt("nid")%>">
-				<img src="<%=rs.getString("img")%>" class="newsimg" title="<%=rs.getString("nt")%>" style="height:200px; width: 300px;">
-			</a	>
-			<div style="width:70%;display:flex; padding:10px 50px 0 70px; flex-direction: column;">
-				<!-- title -->
-				<a href="news.jsp?nid=<%=rs.getInt("nid")%>" id="t">
-					<%=rs.getString("nt")%>
-				</a>
-				<div class="date">
-					<!-- Date created -->
-					<i class="fas fa-calendar-alt"></i>
-					Date Created: <time datetime="2018-05-21"><%=rs.getString("date")%></time>
-				</div>
-				<!-- content -->
-				<p><%=rs.getString("capt")%></p>
+				<p><%=bean.getCaption()%></p>
 			</div>
 		</div>
 		<%}%>
