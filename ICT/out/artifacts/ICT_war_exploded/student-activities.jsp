@@ -1,6 +1,9 @@
 <%@ page import="java.sql.Statement" %>
 <%@ page import="java.sql.DriverManager" %>
 <%@ page import="java.sql.ResultSet" %>
+<%@ page import="net.model.NewsBean" %>
+<%@ page import="java.util.List" %>
+<jsp:useBean id="model_news" class="net.model.NewsAccess" />
 <!DOCTYPE html>
 <html>
 <head>
@@ -35,52 +38,48 @@
 				</div>
 			</div>
 			<%
-				Class.forName("com.mysql.jdbc.Driver");
-				Statement stm = DriverManager.getConnection("jdbc:mysql://localhost:3306/ICT", "root", "xmuy").createStatement();
-				String sql = "select idnews as nid, title as nt, content as nc, caption as capt, thumbnail as img, datecreated as date\n" +
-						"from news\n" +
-						"where category='highlight'\n" +
-						"order by datecreated DESC";
-				ResultSet rs= stm.executeQuery(sql);
-				if(rs.next())
+				String category = "highlight";
+				List<NewsBean> model = model_news.get();
+
+				for(NewsBean bean: model)
 				{
+					if(bean.getCategory().equals(category))
+					{
+
 			%>
 			<figure class="bignews" style="margin-bottom:3.33px">
 				<!-- bignews -->
-				<a href="news.jsp?nid=<%=rs.getInt("nid")%>"><img src="<%=rs.getString("img")%>" class="image" style="width:500px; height:100%;"></a>
-				<figcaption class="absolutecapt"><%=rs.getString("capt")%></figcaption>
+				<a href="news.jsp?nid=<%=bean.getIdnews()%>"><img src="<%=bean.getThumbnail()%>" class="image" style="width:500px; height:100%;"></a>
+				<figcaption class="absolutecapt"><%=bean.getCaption()%></figcaption>
 			</figure>
-			<% }if(rs.next()){ %>
+
 			<div>
 				<!-- smallnews -->
 				<div style="display:inline-block;">
 					<figure class="relativeimg">
 						<!-- topleft -->
-						<a href="news.jsp?nid=<%=rs.getInt("nid")%>"><img src="<%=rs.getString("img")%>" class="image" style="width:300px; height:200px; margin-bottom:10px;"></a>
-						<figcaption class="absolutecapt"><%=rs.getString("capt")%></figcaption>
+						<a href="news.jsp?nid=<%=bean.getIdnews()%>"><img src="<%=bean.getThumbnail()%>" class="image" style="width:500px; height:100%;"></a>
+						<figcaption class="absolutecapt"><%=bean.getCaption()%></figcaption>
 					</figure>
-					<%}
-					if(rs.next()){%>
+
 					<figure class="relativeimg">
 						<!-- bottomleft -->
-						<a href="news.jsp?nid=<%=rs.getInt("nid")%>"><img src="<%=rs.getString("img")%>" class="image" style="width:300px; height:200px;"></a>
-						<figcaption class="absolutecapt"><%=rs.getString("capt")%></figcaption>
+						<a href="news.jsp?nid=<%=bean.getIdnews()%>"><img src="<%=bean.getThumbnail()%>" class="image" style="width:500px; height:100%;"></a>
+						<figcaption class="absolutecapt"><%=bean.getCaption()%></figcaption>
 					</figure>
-					<%}
-						if(rs.next()){%>
+
 				</div>
 				<div style="display:inline-block;">
 					<figure class="relativeimg">
 						<!-- topright -->
-						<a href="news.jsp?nid=<%=rs.getInt("nid")%>"><img src="<%=rs.getString("img")%>" class="image" style="width:300px; height:200px; margin-bottom: 10px"></a>
-						<figcaption class="absolutecapt"><%=rs.getString("capt")%></figcaption>
+						<a href="news.jsp?nid=<%=bean.getIdnews()%>"><img src="<%=bean.getThumbnail()%>" class="image" style="width:500px; height:100%;"></a>
+						<figcaption class="absolutecapt"><%=bean.getCaption()%></figcaption>
 					</figure>
-					<%}
-						if(rs.next()){%>
+
 					<figure class="relativeimg">
 						<!-- bottomright -->
-						<a href="news.jsp?nid=<%=rs.getInt("nid")%>"><img src="<%=rs.getString("img")%>" class="image" style="width:300px; height:200px;"></a>
-						<figcaption class="absolutecapt"><%=rs.getString("capt")%></figcaption>
+						<a href="news.jsp?nid=<%=bean.getIdnews()%>"><img src="<%=bean.getThumbnail()%>" class="image" style="width:500px; height:100%;"></a>
+						<figcaption class="absolutecapt"><%=bean.getCaption()%></figcaption>
 					</figure>
 					<%
 						}
@@ -102,112 +101,41 @@
 				</div>
 				<div>
 					<%
-						Class.forName("com.mysql.jdbc.Driver");
-						stm = DriverManager.getConnection("jdbc:mysql://localhost:3306/ICT", "root", "xmuy").createStatement();
-						sql = "select idnews as nid, title as nt, content as nc, caption as capt, thumbnail as img, datecreated as date\n" +
-								"from news\n" +
-								"order by datecreated DESC";
-						rs= stm.executeQuery(sql);
-						if(rs.next())
+						List<NewsBean> model1 = model_news.get();
+
+						for(NewsBean bean1: model1)
 						{
 					%>
+
 					<div class="recentcontent">
-						<button type="button" onclick="location.href='news.jsp?nid=<%=rs.getInt("nid")%>';">
+						<button type="button" onclick="location.href='news.jsp?nid=<%=bean1.getIdnews()%>';">
 							<div style="display:flex;">
 								<!-- img -->
-								<img src="<%=rs.getString("img")%>" class="newsimg">
+								<img src="<%=bean1.getThumbnail()%>" class="newsimg">
 							</div>
 							<div style="width:70%; display:flex;">
 								<div style="padding:10px 0 0 20px;">
 									<!-- title -->
-									<b><%=rs.getString("nt")%></b>
+									<b><%=bean1.getTitle()%></b>
 									<div class="date">
 										<!-- Date created -->
 										<i class="fas fa-calendar-alt"></i>
-										Date Created: <time datetime="2018-05-21"><%=rs.getDate("date")%></time>
+										Date Created: <time datetime="2018-05-21"><%=bean1.getDatecreated()%></time>
 									</div>
 									<!-- content -->
-									<p><%=rs.getString("capt")%></p>
+									<p><%=bean1.getCaption()%></p>
 								</div>
 							</div>
 						</button>
 					</div>
-					<%}
-						if(rs.next()){%>
-					<div class="recentcontent">
-						<button type="button" onclick="location.href='news.jsp?nid=<%=rs.getInt("nid")%>';">
-							<div style="display:flex;">
-								<!-- img -->
-								<img src="<%=rs.getString("img")%>" class="newsimg">
-							</div>
-							<div style="width:70%; display:flex;">
-								<div style="padding:10px 0 0 20px;">
-									<!-- title -->
-									<b><%=rs.getString("nt")%></b>
-									<div class="date">
-										<!-- Date created -->
-										<i class="fas fa-calendar-alt"></i>
-										Date Created: <time datetime="2018-05-21"><%=rs.getDate("date")%></time>
-									</div>
-									<!-- content -->
-									<p><%=rs.getString("capt")%></p>
-								</div>
-							</div>
-						</button>
-					</div>
-					<%}
-						if(rs.next()){%>
-					<div class="recentcontent">
-						<button type="button" onclick="location.href='news.jsp?nid=<%=rs.getInt("nid")%>';">
-							<div style="display:flex;">
-								<!-- img -->
-								<img src="<%=rs.getString("img")%>" class="newsimg">
-							</div>
-							<div style="width:70%; display:flex;">
-								<div style="padding:10px 0 0 20px;">
-									<!-- title -->
-									<b><%=rs.getString("nt")%></b>
-									<div class="date">
-										<!-- Date created -->
-										<i class="fas fa-calendar-alt"></i>
-										Date Created: <time datetime="2018-05-21"><%=rs.getDate("date")%></time>
-									</div>
-									<!-- content -->
-									<p><%=rs.getString("capt")%></p>
-								</div>
-							</div>
-						</button>
-					</div>
-					<%}
-						if(rs.next()){%>
-					<div class="recentcontent">
-						<button type="button" onclick="location.href='news.jsp?nid=<%=rs.getInt("nid")%>';">
-							<div style="display:flex;">
-								<!-- img -->
-								<img src="<%=rs.getString("img")%>" class="newsimg">
-							</div>
-							<div style="width:70%; display:flex;">
-								<div style="padding:10px 0 0 20px;">
-									<!-- title -->
-									<b><%=rs.getString("nt")%></b>
-									<div class="date">
-										<!-- Date created -->
-										<i class="fas fa-calendar-alt"></i>
-										Date Created: <time datetime="2018-05-21"><%=rs.getDate("date")%></time>
-									</div>
-									<!-- content -->
-									<p><%=rs.getString("capt")%></p>
-								</div>
-							</div>
-						</button>
-					</div>
+
 					<%}%>
 					<div class="showmore">
 						<button type="button" onclick="location.href='morenews.jsp';">
 								<b>Show more news</b>
 						</button>
 					</div>
-					
+
 				</div>
 			</div>
 		</div>

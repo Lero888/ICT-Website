@@ -2,6 +2,9 @@
 <%@ page import="java.sql.ResultSet" %>
 <%@ page import="java.sql.Statement" %>
 <%@ page import="java.lang.String" %>
+<%@ page import="net.model.NewsBean" %>
+<%@ page import="java.util.List" %>
+<jsp:useBean id="model_news" class="net.model.NewsAccess" />
 <!DOCTYPE html>
 <html>
 <head>
@@ -30,21 +33,22 @@
 	<div class="container">
 		<div class="contentcontainer">
 			<%
-				Class.forName("com.mysql.jdbc.Driver");
-				Statement stm = DriverManager.getConnection("jdbc:mysql://localhost:3306/ICT", "root", "xmuy").createStatement();
-				String sql = "select idnews as nid, title as nt, content as nc, thumbnail as img, datecreated as date\n" +
-						"from news\n" +
-						"where idnews = " + request.getParameter("nid");
-				ResultSet rs= stm.executeQuery(sql);
-				if (rs.next()){
+				String nid = request.getParameter("nid");
+				List<NewsBean> model = model_news.get();
+
+				for(NewsBean bean: model)
+				{
+					if(bean.getIdnews().equals(nid))
+					{
+
 			%>
 			<div class="titlecontainer">
-				<h1><%=rs.getString("nt")%></h1>
+				<h1><%=bean.getTitle()%></h1>
 				<div class="details">
 					<div style="display:inline-flex; justify-content: space-between; width:100%;">
 						<div class="datecreated">
 							<i class="fas fa-clock" style="font-size: 15px; margin-right:5px;"></i>
-							<time datetime="2018-05-21"><%=rs.getDate("date")%></time>
+							<time datetime="2018-05-21"><%=bean.getDatecreated()%></time>
 						</div>
 						<div class="icon">
 							<div id="fb">
@@ -61,12 +65,15 @@
 				</div>
 			</div>
 			<div class="imgcontainer">
-				<img src="<%=rs.getString("img")%>" style="min-width:100%; min-height:300px; max-height: 500px;">
+				<img src="<%=bean.getThumbnail()%>" style="min-width:100%; min-height:300px; max-height: 500px;">
 			</div>
 			<div class="content">
-				<p><%=rs.getString("nc")%></p>
+				<p><%=bean.getContent()%></p>
 			</div>
-			<% } %>
+			<%
+					}
+				}
+			%>
 		</div>
 		<div style="display:flex; flex-direction: column; width:20%; margin-left: 20px">
 			<div class="sidecontainer">
@@ -75,52 +82,29 @@
 				</div>
 				<div class="sidecontent">
 					<%
-						Class.forName("com.mysql.jdbc.Driver");
-						stm = DriverManager.getConnection("jdbc:mysql://localhost:3306/ICT", "root", "xmuy").createStatement();
-						sql = "select idnews as nid, title as nt, content as nc, thumbnail as img, datecreated as date\n" +
-								"from news\n" +
-								"where category='highlight'" +
-								"order by datecreated DESC";
-						rs= stm.executeQuery(sql);
-						if(rs.next())
+						String category = "highlight";
+						List <NewsBean> model1 = model_news.get();
+
+						for(NewsBean bean1: model1)
 						{
+							if (bean1.getCategory().equals(category))
+							{
 					%>
 					<div class="story">
 						<div class="sidect">
-							<a href="news.jsp?nid=<%=rs.getInt("nid")%>"><b><%=rs.getString("nt")%></b></a>
+							<a href="news.jsp?nid=<%=bean1.getIdnews()%>"><b><%=bean1.getTitle()%></b></a>
 						</div>
 						<div class="sidecc">
 							<div class="datecreated" id="sidedate">
 								<i class="fas fa-clock" style="margin-right:5px;"></i>
-								<time datetime="2018-05-21"><%=rs.getString("date")%></time>
+								<time datetime="2018-05-21"><%=bean1.getDatecreated()%></time>
 							</div>
 						</div>
 					</div>
-					<% }if(rs.next()){ %>
-					<div class="story">
-						<div class="sidect">
-							<a href="news.jsp?nid=<%=rs.getInt("nid")%>"><b><%=rs.getString("nt")%></b></a>
-						</div>
-						<div class="sidecc">
-							<div class="datecreated" id="sidedate">
-								<i class="fas fa-clock" style="margin-right:5px;"></i>
-								<time datetime="2018-05-21"><%=rs.getString("date")%></time>
-							</div>
-						</div>
-					</div>
-					<% }if(rs.next()){ %>
-					<div class="story">
-						<div class="sidect">
-							<a href="news.jsp?nid=<%=rs.getInt("nid")%>"><b><%=rs.getString("nt")%></b></a>
-						</div>
-						<div class="sidecc">
-							<div class="datecreated" id="sidedate">
-								<i class="fas fa-clock" style="margin-right:5px;"></i>
-								<time datetime="2018-05-21"><%=rs.getString("date")%></time>
-							</div>
-						</div>
-					</div>
+
+
 					<%
+							}
 						}
 					%>
 				</div>
@@ -130,52 +114,50 @@
 				Most Read
 			</div>
 			<%
-				Class.forName("com.mysql.jdbc.Driver");
-				stm = DriverManager.getConnection("jdbc:mysql://localhost:3306/ICT", "root", "xmuy").createStatement();
-				sql = "select idnews as nid, title as nt, content as nc, thumbnail as img, datecreated as date\n" +
-						"from news\n" +
-						"where category = 'mostread'";
-				rs= stm.executeQuery(sql);
-				if (rs.next()){
+				category = "mostread";
+				List <NewsBean> model2 = model_news.get();
+				for (NewsBean bean2:model2){
+					if (bean2.getCategory().equals(category)){
 			%>
 				<div class="mostreadcontent">
-					<a href="news.jsp?nid=<%=rs.getInt("nid")%>"><%=rs.getString("nt")%></a>
+					<a href="news.jsp?nid=<%=bean2.getIdnews()%>"><%=bean2.getTitle()%></a>
 					<div class="ranking">
 						1
 					</div>
 				</div>
 				<div class="mostreadcontent">
-					<a href="news.jsp?nid=<%=rs.getInt("nid")%>"><%=rs.getString("nt")%></a>
+					<a href="news.jsp?nid=<%=bean2.getIdnews()%>"><%=bean2.getTitle()%></a>
 					<div class="ranking">
 						2
 					</div>
 				</div>
 				<div class="mostreadcontent">
-					<a href="news.jsp?nid=<%=rs.getInt("nid")%>"><%=rs.getString("nt")%></a>
+					<a href="news.jsp?nid=<%=bean2.getIdnews()%>"><%=bean2.getTitle()%></a>
 					<div class="ranking">
 						3
 					</div>
 				</div>
 				<div class="mostreadcontent">
-					<a href="news.jsp?nid=<%=rs.getInt("nid")%>"><%=rs.getString("nt")%></a>
+					<a href="news.jsp?nid=<%=bean2.getIdnews()%>"><%=bean2.getTitle()%></a>
 					<div class="ranking">
 						4
 					</div>
 				</div>
 				<div class="mostreadcontent">
-					<a href="news.jsp?nid=<%=rs.getInt("nid")%>"><%=rs.getString("nt")%></a>
+					<a href="news.jsp?nid=<%=bean2.getIdnews()%>"><%=bean2.getTitle()%></a>
 					<div class="ranking">
 						5
 					</div>
 				</div>
 			<%
+					}
 				}
 			%>
 		</div>
-		
+
 	</div>
 
-	
+
 
 	<!-- Footer section -->
 	<footer>
