@@ -117,9 +117,9 @@
 				<ul>
 
 					<%
-						List<EduBgBean> model3 = model_EduBg.get();
+						List<ResIntBean> model3 = model_ResInt.get();
 
-						for(EduBgBean bean3: model3)
+						for(ResIntBean bean3: model3)
 						{
 							if(bean3.getStaff_id().equals(sid))
 							{
