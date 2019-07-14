@@ -30,7 +30,6 @@ public class NewsAccess {
                 bean.idnews = rs.getString("idnews");
                 bean.title = rs.getString("title");
                 bean.caption = rs.getString("caption");
-                bean.content = rs.getString("content");
                 bean.thumbnail = rs.getString("thumbnail");
                 bean.datecreated = rs.getDate("datecreated");
                 bean.category = rs.getString("category");

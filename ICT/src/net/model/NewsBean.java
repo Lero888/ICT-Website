@@ -6,7 +6,6 @@ public class NewsBean {
     protected String idnews;
     protected String title;
     protected String caption;
-    protected String content;
     protected String thumbnail;
     protected Date datecreated;
     protected String category;
@@ -33,14 +32,6 @@ public class NewsBean {
 
     public String getCaption() {
         return caption;
-    }
-
-    public void setContent(String content) {
-        this.content = content;
-    }
-
-    public String getContent() {
-        return content;
     }
 
     public void setThumbnail(String thumbnail) {

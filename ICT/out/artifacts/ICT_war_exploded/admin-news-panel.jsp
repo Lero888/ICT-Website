@@ -72,7 +72,7 @@
 			}
 		%>
 
-		<div class="new"><img src="images/add.png"> Add News</div>
+		<a href="admin-add-news.jsp"><div class="new"><img src="images/add.png"> <p style="color:black;">Add News</p></div></a>
 
 	</div>
 
