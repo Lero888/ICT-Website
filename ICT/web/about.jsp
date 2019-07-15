@@ -153,8 +153,8 @@
 				    <div class="navigation_arrow" onclick="plusDivs(-1)">&#10094;</div>
 				    <div>
 						<%
-							int i = 0;
-							for(i=0; i < cnt; i++)
+							int i = 1;
+							for(i=1; i <= cnt; i++)
 							{
 						%>
 				    	<div class="dot demo" onclick="currentDiv(<%=i%>)"></div>
@@ -252,7 +252,7 @@ function showDivs(n) {
   for (i = 0; i < dots.length; i++) {
     dots[i].className = dots[i].className.replace(" dot2", " dot");
   }
-  x[slideIndex-1].style.display = "block";  
+  x[slideIndex-1].style.display = "block";
   dots[slideIndex-1].className += " dot2";
 }
 </script>
