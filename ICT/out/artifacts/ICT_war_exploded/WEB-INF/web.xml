@@ -34,5 +34,36 @@
         <url-pattern>/DeleteNewsServlet</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>AddStaffServlet</servlet-name>
+        <servlet-class>AddStaffServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>AddStaffServlet</servlet-name>
+        <url-pattern>/AddStaffServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ModifyNameServlet</servlet-name>
+        <servlet-class>ModifyNameServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>ModifyNameServlet</servlet-name>
+        <url-pattern>/ModifyNameServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>StaffImageServlet</servlet-name>
+        <servlet-class>StaffImageServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>StaffImageServlet</servlet-name>
+        <url-pattern>/StaffImageServlet</url-pattern>
+    </servlet-mapping>
+
+
 
 </web-app>

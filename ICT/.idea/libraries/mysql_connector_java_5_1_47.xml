@@ -2,8 +2,10 @@
   <library name="mysql-connector-java-5.1.47">
     <CLASSES>
       <root url="jar://$PROJECT_DIR$/web/WEB-INF/mysql-connector-java-5.1.47.jar!/" />
+      <root url="file://C:/Program Files/Java/jdk-11.0.3" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />
+    <jarDirectory url="file://C:/Program Files/Java/jdk-11.0.3" recursive="false" />
   </library>
 </component>

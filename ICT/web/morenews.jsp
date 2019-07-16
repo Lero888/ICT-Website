@@ -53,7 +53,7 @@
 					Date Created: <time datetime="2018-05-21"><%=bean.getDatecreated()%></time>
 				</div>
 				<!-- content -->
-				<p><%=bean.getCaption()%></p>
+				<p style="text-align:justify;"><%=bean.getCaption()%></p>
 			</div>
 		</div>
 		<%}%>
@@ -64,42 +64,42 @@
 	<!-- Footer section -->
 	<footer>
 		<section class="footer">
-			
-	        <div class="footer-container">
-	            <div class="footer-column">
-	                <h3>EXPLORE</h3>
-	                <ul style = "list-style-type: none;" class="text-white">
-	                    <li><a href="home.jsp">Home</a></li>
-	                    <li><a href="staff.jsp">Staff</a></li>
-	                    <li><a href="program-structure.jsp">Program Structure</a></li>
-	                    <li><a href="student-activities.jsp">Student Activities</a></li>
-	                    <li><a href ="about.jsp">About</a></li>
-	                </ul>
-	            </div>
 
-	            <div class="footer-column">
-	                <h3>QUICK LINK</h3>
-	                <ul style = "list-style-type: none;" class="text-white">
-	                    <li><a href="http://www.xmu.edu.my/">Xiamen University Malaysia</a></li>
-	                    <li><a href="https://linc.xmu.edu.my/">Library</a></li>
-	                </ul>
-	            </div>
+			<div class="footer-container">
+				<div class="footer-column">
+					<h3>EXPLORE</h3>
+					<ul style = "list-style-type: none;" class="text-white">
+						<li><a href="home.jsp">Home</a></li>
+						<li><a href="staff.jsp">Staff</a></li>
+						<li><a href="program-structure.jsp">Program Structure</a></li>
+						<li><a href="student-activities.jsp">Student Activities</a></li>
+						<li><a href ="about.jsp">About</a></li>
+					</ul>
+				</div>
 
-	            <div class="footer-column">
-	                <h3>OFFICE ADDRESS</h3>
-	                <ul style = "list-style-type: none;" class="text-white">
-	                	<li>Xiamen University Malaysia</li>
-	                    <li>10, Jalan Sunsuria,</li>
-	                    <li>Bandar Sunsuria,</li>
-	                    <li>43900 Sepang,</li>
-	                    <li>Selangor Darul Ehsan, Malaysia.</li>
-	                </ul>
-	            </div>
+				<div class="footer-column">
+					<h3>QUICK LINK</h3>
+					<ul style = "list-style-type: none;" class="text-white">
+						<li><a href="http://www.xmu.edu.my/">Xiamen University Malaysia</a></li>
+						<li><a href="https://linc.xmu.edu.my/">Library</a></li>
+					</ul>
+				</div>
 
-	            <div class="footer-column">
-	                <h3>CONTACT US</h3>
-	                <ul style = "list-style-type: none;" class="text-white">
-	                    <li>
+				<div class="footer-column">
+					<h3>OFFICE ADDRESS</h3>
+					<ul style = "list-style-type: none;" class="text-white">
+						<li>Xiamen University Malaysia</li>
+						<li>10, Jalan Sunsuria,</li>
+						<li>Bandar Sunsuria,</li>
+						<li>43900 Sepang,</li>
+						<li>Selangor Darul Ehsan, Malaysia.</li>
+					</ul>
+				</div>
+
+				<div class="footer-column">
+					<h3>CONTACT US</h3>
+					<ul style = "list-style-type: none;" class="text-white">
+						<li>
 							<a href = "https://www.facebook.com/SWEstudentunion/?ref=br_rs">
 								<img src = "images/facebook.png">
 							</a>
@@ -110,15 +110,15 @@
 								<img src = "images/xmux.jpg">
 							</a>
 
-	                    </li>
-	                </ul>
-	            </div>
-	        </div>
+						</li>
+					</ul>
+				</div>
+			</div>
 
-	    </section>
+		</section>
 
 		<div class = "footer2">
-			Copyright © 2019 Information Technology Xiamen University Malaysia. All rights reserved.
+			Copyright &#0169 2019 Information Technology Xiamen University Malaysia. All rights reserved.
 		</div>
 	</footer>
 

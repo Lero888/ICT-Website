@@ -1,6 +1,17 @@
 <%@ page import="java.sql.DriverManager" %>
 <%@ page import="java.sql.Statement" %>
 <%@ page import="java.sql.ResultSet" %>
+<%@ page import="java.util.List" %>
+<%@ page import="net.model.StaffBean" %>
+<jsp:useBean id="model_staff" class="net.model.StaffAccess" />
+<%@ page import="net.model.AcadExpBean" %>
+<jsp:useBean id="model_AcadExp" class="net.model.AcadExpAccess" />
+<%@ page import="net.model.EduBgBean" %>
+<jsp:useBean id="model_EduBg" class="net.model.EduBgAccess" />
+<%@ page import="net.model.ResIntBean" %>
+<jsp:useBean id="model_ResInt" class="net.model.ResIntAccess" />
+<%@ page import="net.model.RepPubBean" %>
+<jsp:useBean id="model_RepPub" class="net.model.RepPubAccess" />
 
 <!DOCTYPE html>
 <html>
@@ -20,7 +31,7 @@
 	<div class="navbarcont">
 		<div class="navbarcont2">
 			<div><a href="home.jsp">
-				<img src="images/logo.png" class="navbarlogo">
+				<img src="images\logo.png" class="navbarlogo">
 			</a></div>
 			<div class="navigationlist">
 				<div id="nav_item"><a href="home.jsp">Home</a></div>
@@ -34,14 +45,13 @@
 
 	<%
 		String sid = request.getParameter("sid");
-		Class.forName("com.mysql.jdbc.Driver");
-		Statement stm = DriverManager.getConnection("jdbc:mysql://localhost:3306/ICT", "root", "xmuy").createStatement();
-		String sql = "select staff.staff_name as name, staff.image as image, staff.position as pos, staff.school as sch, staff.tel as tel, staff.email as email\n" +
-				"from staff\n" +
-				"where staff_id = '"+ sid +"'";
-		System.out.println(sql);
-		ResultSet rs = stm.executeQuery(sql);
-		rs.next();
+		List<StaffBean> model = model_staff.get();
+
+		for(StaffBean bean: model)
+		{
+
+			if(bean.getStaff_id().equals(sid))
+			{
 
 	%>
 
@@ -57,8 +67,8 @@
 
 	  			<div class = "infocontainer">
 	  				<div class = "infobox">
-	  					<div class = "column">
-							<%=rs.getString("name")%>
+	  					<div class = "column" style = "margin-bottom: 0px;">
+							<%=bean.getStaff_name()%>
 	  					</div>
 
 	  					<div class = "column">
@@ -66,13 +76,13 @@
 	  					</div>
 
 	  					<div class = "column">
-	  						<p><a href = "name-modify.jsp">Edit</a></p>
+	  						<p><a href = "admin-modify-name.jsp?sid=<%=sid%>">Edit</a></p>
 	  					</div>
 	  				</div>
 
-	  				<div class = "infobox" style = "padding-top: 0px;">
+	  				<div class = "infobox" style = "padding-top: 0px; margin-top: 10px; margin-bottom: 20px">
 	  					<div class = "column">
-							<%=rs.getString("pos")%>
+							<%=bean.getPosition()%>
 	  					</div>
 
 	  					<div class = "column">
@@ -80,13 +90,13 @@
 	  					</div>
 
 	  					<div class = "column">
-	  						<p><a href = "position-modify.jsp">Edit</a></p>
+	  						<p><a href = "admin-modify-position.jsp?sid=<%=sid%>">Edit</a></p>
 	  					</div>
 	  				</div>
 
-	  				<div class = "infobox" style = "padding-top: 0px;">
-	  					<div class = "column">
-							<%=rs.getString("sch")%>
+					<div class = "infobox" style = "padding-top: 0px; margin-top: 10px; margin-bottom: 20px">
+						<div class = "column">
+							<%=bean.getSchool()%>
 	  					</div>
 
 	  					<div class = "column">
@@ -94,13 +104,13 @@
 	  					</div>
 
 	  					<div class = "column">
-	  						<p><a href = "school-modify.jsp">Edit</a></p>
+	  						<p><a href = "admin-modify-school.jsp?sid=<%=sid%>">Edit</a></p>
 	  					</div>
 	  				</div>
 
-	  				<div class = "infobox" style = "padding-top: 0px;">
-	  					<div class = "column">
-							<%=rs.getString("tel")%>
+					<div class = "infobox" style = "padding-top: 0px; margin-top: 10px; margin-bottom: 20px">
+						<div class = "column">
+							<%=bean.getTel()%>
 	  					</div>
 
 	  					<div class = "column">
@@ -108,13 +118,13 @@
 	  					</div>
 
 	  					<div class = "column">
-	  						<p><a href = "tel=modify.jsp">Edit</a></p>
+	  						<p><a href = "admin-modify-tel.jsp?sid=<%=sid%>">Edit</a></p>
 	  					</div>
 	  				</div>
 
-	  				<div class = "infobox" style = "padding-top: 0px; border-bottom: none;">
-	  					<div class = "column">
-							<%=rs.getString("email")%>
+					<div class = "infobox" style = "padding-top: 0px; margin-top: 10px; margin-bottom: 20px; border-bottom: none;">
+						<div class = "column">
+							<%=bean.getEmail()%>
 	  					</div>
 
 	  					<div class = "column">
@@ -122,7 +132,7 @@
 	  					</div>
 
 	  					<div class = "column">
-	  						<p><a href = "email-modify.jsp">Edit</a></p>
+	  						<p><a href = "admin-modify-email.jsp?sid=<%=sid%>">Edit</a></p>
 	  					</div>
 	  				</div>
 	  			</div>
@@ -130,29 +140,36 @@
 	  		</div>
 	  		
 	  		<div class="col">
-				<img src="images/<%=rs.getString("image")%>">
-	  			<p><%=rs.getString("name")%></p>
+				<img src="images/<%=bean.getImage()%>">
+				<h3><%=bean.getStaff_name()%></h3>
 
-	  			<div class = "title-box">
+
+				<div class = "title-box">
 	  				<div class = "hover">
-	  					<h3><a href = "admin-personalinfo.jsp">Personal Info</a></h3>
+	  					<h3><a href = "admin-personalinfo.jsp?sid=<%=sid%>">Personal Info</a></h3>
 	  				</div>
 	  			</div>
 
 	  			<div class = "title-box">
 	  				<div class = "hover">
-	  					<h3><a href = "admin-image.jsp">Image</a></h3>
+	  					<h3><a href = "admin-image.jsp?sid=<%=sid%>">Image</a></h3>
 	  				</div>	
 	  			</div>
 
 	  			<div class = "title-box">
 	  				<div class = "hover">
-	  					<h3><a href = "admin-background.jsp">Background and Expertise</a></h3>
+	  					<h3><a href = "admin-background.jsp?sid=<%=sid%>">Background and Expertise</a></h3>
 	  				</div>
 	  			</div>
 	  		</div>
 		</div>
 	</div>
+
+    <%
+                break;
+            }
+        }
+    %>
 
 
 	<!-- Footer section -->
@@ -194,14 +211,14 @@
 	                <h3>CONTACT US</h3>
 	                <ul style = "list-style-type: none;" class="text-white">
 	                    <li>
-							<a href = "https://www.facebook.com/SWEstudentunion/?ref=br_rs">
-								<img src = "images/facebook.png">
+							<a href = "https://www.facebook.com/SWEstudentunion/?ref=br_rs"> 
+								<img src = "images\facebook.png" alt = "facebook">
 							</a>
-							<a href = "mailto: SWEstudentunion@outlook.com">
-								<img src = "images/mail.png">
+							<a href = "mailto: SWEstudentcouncil@outlook.com">
+								<img src = "images\mail.png" alt = "mail">
 							</a>
 							<a href = "https://xmux.xdea.top/">
-								<img src = "images/xmux.jpg">
+								<img src = "images\xmux.jpg" alt = "xmux">
 							</a>
 
 	                    </li>

@@ -27,7 +27,8 @@
         </div>
     </div>
 
-	<div class = "bg-img"></div>
+	<div class = "bg-img">
+	</div>
 
 	<div class = "center">
 		<img class = "course-logo" src = "images\PS - swe.png" alt = "software-engineering">
@@ -455,8 +456,8 @@
                      <a href = "https://www.facebook.com/SWEstudentunion/?ref=br_rs"> 
                         <img src = "images\facebook.png" alt = "facebook">
                      </a>
-                     <a href = "mailto: SWEstudentunion@outlook.com" alt = "mail">
-                        <img src = "images\mail.png">
+                     <a href = "mailto: SWEstudentcouncil@outlook.com">
+                        <img src = "images\mail.png" alt = mail>
                      </a>
                      <a href = "https://xmux.xdea.top/">
                         <img src = "images\xmux.jpg" alt = "xmux">

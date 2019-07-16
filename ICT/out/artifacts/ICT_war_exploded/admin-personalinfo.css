@@ -21,6 +21,11 @@ html, body {
 
 }
 
+.flexcontainer img {
+  width: 200px;
+  height: 160px;
+}
+
 .flexbox {
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -88,9 +93,8 @@ html, body {
 .flexcontainer img {
   border-radius: 50%;
   border: 1px solid black;
-  width: 150px;
-  height: 150px;
-
+  width: 200px;
+  height: 200px;
 }
 
 /*Smaller box at right column of large box*/
@@ -132,20 +136,23 @@ html, body {
 
 .infobox .column:nth-child(1) {
   order: 1;
-  flex: 5;
+  flex: 6.5;
   text-align: left;
+  margin-top: 15px;
+  margin-bottom: 15px;
 }
 
 .infobox .column:nth-child(2) {
   order: 0;
-  flex: 3;
+  flex: 1.5;
   text-align: left;
   font-weight: bold;
+
 }
 
 .infobox .column:nth-child(3) {
   order: 2;
   flex: 2;
   color: rgb(0, 0, 255);
-  text-align: right;
+  text-align: center;
 }

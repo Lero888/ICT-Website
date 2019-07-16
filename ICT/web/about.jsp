@@ -1,6 +1,10 @@
 <%@ page import="java.sql.ResultSet" %>
 <%@ page import="java.sql.DriverManager" %>
 <%@ page import="java.sql.Statement" %>
+<%@ page import="net.model.NewsBean" %>
+<%@ page import="java.util.List" %>
+<jsp:useBean id="model_news" class="net.model.NewsAccess" />
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -112,23 +116,35 @@
 
 			<div class="slide_container">
 				<div class="slide_content">
+<%--					<%--%>
+<%--						Class.forName("com.mysql.jdbc.Driver");--%>
+<%--						Statement stm = DriverManager.getConnection("jdbc:mysql://localhost:3306/ICT", "root", "xmuy").createStatement();--%>
+<%--						String sql = "select idnews as nid, title as nt, content as nc, caption as capt, thumbnail as img, datecreated as date\n" +--%>
+<%--								"from news\n" +--%>
+<%--								"where category='highlight'\n" +--%>
+<%--								"order by datecreated DESC";--%>
+<%--						ResultSet rs= stm.executeQuery(sql);--%>
+<%--						int cnt = 0;--%>
+<%--						while(rs.next())--%>
+<%--						{--%>
+<%--					%>--%>
+
 					<%
-						Class.forName("com.mysql.jdbc.Driver");
-						Statement stm = DriverManager.getConnection("jdbc:mysql://localhost:3306/ICT", "root", "xmuy").createStatement();
-						String sql = "select idnews as nid, title as nt, content as nc, caption as capt, thumbnail as img, datecreated as date\n" +
-								"from news\n" +
-								"where category='highlight'\n" +
-								"order by datecreated DESC";
-						ResultSet rs= stm.executeQuery(sql);
+						String category = "highlight";
+						List<NewsBean> model = model_news.get();
 						int cnt = 0;
-						while(rs.next())
+						for(NewsBean bean: model)
 						{
+							if(bean.getCategory().equals(category))
+							{
+
 					%>
 
-				  <img class="slide" src="<%=rs.getString("img")%>">
+				  <img class="slide" src="<%=bean.getThumbnail()%>">
 
 					<%
-							cnt++;
+								cnt++;
+							}
 						}
 					%>
 				</div>
@@ -137,8 +153,8 @@
 				    <div class="navigation_arrow" onclick="plusDivs(-1)">&#10094;</div>
 				    <div>
 						<%
-							int i = 0;
-							for(i=0; i < cnt; i++)
+							int i = 1;
+							for(i=1; i <= cnt; i++)
 							{
 						%>
 				    	<div class="dot demo" onclick="currentDiv(<%=i%>)"></div>
@@ -236,7 +252,7 @@ function showDivs(n) {
   for (i = 0; i < dots.length; i++) {
     dots[i].className = dots[i].className.replace(" dot2", " dot");
   }
-  x[slideIndex-1].style.display = "block";  
+  x[slideIndex-1].style.display = "block";
   dots[slideIndex-1].className += " dot2";
 }
 </script>

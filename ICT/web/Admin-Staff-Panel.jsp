@@ -84,7 +84,7 @@
 
 	</div>
 
-	<div class="new"><img src="images/add.png"> Add Staff</div>
+	<a href="admin-add-new-staff.jsp"><div class="new"><img src="images/add.png"><p style="color:black;">Add Staff</p></div></a>
 
 
 		<!-- Footer section -->

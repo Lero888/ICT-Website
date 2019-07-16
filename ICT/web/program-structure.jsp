@@ -27,7 +27,7 @@
 			</div>
 		</div>
 	</div>
-	
+
 	<div class = "bg-img"></div>
 
 	<!-- body section-->
@@ -115,14 +115,14 @@
 	                <h3>CONTACT US</h3>
 	                <ul style = "list-style-type: none;" class="text-white">
 	                    <li>
-							<a href = "https://www.facebook.com/SWEstudentunion/?ref=br_rs">
-								<img src = "images/facebook.png">
+							<a href = "https://www.facebook.com/SWEstudentunion/?ref=br_rs"> 
+								<img src = "images/facebook.png" alt = "facebook">
 							</a>
-							<a href = "mailto: SWEstudentunion@outlook.com">
-								<img src = "images/mail.png">
+							<a href = "mailto: SWEstudentcouncil@outlook.com">
+								<img src = "images/mail.png" alt = "mail">
 							</a>
 							<a href = "https://xmux.xdea.top/">
-								<img src = "images/xmux.jpg">
+								<img src = "images/xmux.jpg" alt = "xmux">
 							</a>
 	                    </li>
 	                </ul>
