@@ -68,7 +68,7 @@
 				</div>
 			</div>
 			<div class="imgcontainer">
-				<img src="<%=bean.getThumbnail()%>" style="min-width:100%; min-height:300px; max-height: 500px;">
+				<img src="<%=bean.getThumbnail()%>" style="width:100%; min-height:300px; max-height: 500px;">
 			</div>
 
 			<%

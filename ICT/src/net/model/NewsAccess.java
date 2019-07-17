@@ -20,7 +20,7 @@ public class NewsAccess {
 
             Class.forName("com.mysql.jdbc.Driver");
             Statement stm = DriverManager.getConnection("jdbc:mysql://localhost:3306/ICT", "root", "xmuy").createStatement();
-            String sql = "select * from news";
+            String sql = "select * from news order by datecreated DESC";
             ResultSet rs= stm.executeQuery(sql);
 
             while (rs.next())

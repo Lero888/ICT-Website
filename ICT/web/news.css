@@ -4,6 +4,7 @@ html, body{
 
 .container{
 	display:inline-flex;
+	width:100%;
 }
 
 .titlecontainer{
@@ -36,6 +37,8 @@ html, body{
 	height:100%;
 	text-align:left;
 	line-height: 2em;
+	overflow-wrap: break-word;
+	word-wrap: break-word;
 }
 
 .datecreated{

@@ -33,15 +33,15 @@
 	<div class="container">
 		<div class="banner">
 			<div class="category" id="highlight">
-				<div class="leftcc" style="padding-left: 20px;">
+				<div class="leftcc" style="padding-left: 50px;">
 					<strong>Highlights</strong>
 				</div>
 			</div>
+			<div style="display:inline-flex;">
 			<%
 				String category = "highlight";
 				List<NewsBean> model = model_news.get();
-
-				int i =0 ;
+				int i =1;
 
 				for(NewsBean bean: model)
 				{
@@ -49,99 +49,100 @@
 					{
 
 			%>
-
-			<figure class="bignews" style="margin-bottom:3.33px">
-				<!-- bignews -->
-				<a href="news.jsp?nid=<%=bean.getIdnews()%>"><img src="<%=bean.getThumbnail()%>" class="image" style="width:500px; height:100%;"></a>
-				<figcaption class="absolutecapt"><%=bean.getCaption()%></figcaption>
-			</figure>
-
-			<div>
-				<!-- smallnews -->
-				<div style="display:inline-block;">
-					<figure class="relativeimg">
-						<!-- topleft -->
-						<a href="news.jsp?nid=<%=bean.getIdnews()%>"><img src="<%=bean.getThumbnail()%>" class="image" style="width:500px; height:100%;"></a>
-						<figcaption class="absolutecapt"><%=bean.getCaption()%></figcaption>
-					</figure>
-
-					<figure class="relativeimg">
-						<!-- bottomleft -->
-						<a href="news.jsp?nid=<%=bean.getIdnews()%>"><img src="<%=bean.getThumbnail()%>" class="image" style="width:500px; height:100%;"></a>
-						<figcaption class="absolutecapt"><%=bean.getCaption()%></figcaption>
-					</figure>
-
-				</div>
-				<div style="display:inline-block;">
-					<figure class="relativeimg">
-						<!-- topright -->
-						<a href="news.jsp?nid=<%=bean.getIdnews()%>"><img src="<%=bean.getThumbnail()%>" class="image" style="width:500px; height:100%;"></a>
-						<figcaption class="absolutecapt"><%=bean.getCaption()%></figcaption>
-					</figure>
-
-					<figure class="relativeimg">
-						<!-- bottomright -->
-						<a href="news.jsp?nid=<%=bean.getIdnews()%>"><img src="<%=bean.getThumbnail()%>" class="image" style="width:500px; height:100%;"></a>
-						<figcaption class="absolutecapt"><%=bean.getCaption()%></figcaption>
-					</figure>
+				<figure class="bignews" style="margin-bottom:3.33px">
+					<!-- bignews -->
+					<a href="news.jsp?nid=<%=bean.getIdnews()%>"><img src="<%=bean.getThumbnail()%>" class="image" style="width:400px; height:310px;"></a>
+					<figcaption class="absolutecapt"><%=bean.getCaption()%></figcaption>
+				</figure>
 			<%
 						break;
 					}
-					i++;
+
 				}
 			%>
-				<div>
+				<div style="display:inherit;">
 					<!-- smallnews -->
 					<div style="display:inline-block;">
-					<div>
-			<%
-				int cnt = 0;
-				for(int j=i+1; j< model.size();j++)
-				{
-					if(model.get(j).getCategory().equals(category))
-					{
-			%>
-
-						<figure class="relativeimg">
-							<!-- left -->
-							<a href="news.jsp?nid=<%=model.get(j).getIdnews()%>"><img src="<%=model.get(j).getThumbnail()%>" class="image" style="width:500px; height:100%;"></a>
-							<figcaption class="absolutecapt" style="text-align:justify;"><%=model.get(j).getCaption()%></figcaption>
-						</figure>
-
-			<%
-						cnt ++;
-						i++;
-						if(cnt==2)
-							break;
-					}
-				}
-			%>
-					</div>
-<%--					<div style="display:inline-block;">--%>
-					<div>
-				<%
-					cnt = 0;
-					for(int j=i+1; j< model.size();j++)
-					{
-						if(model.get(j).getCategory().equals(category))
+					<%
+						int cnt = 0;
+						for(int j=i; j< model.size();j++)
 						{
-				%>
-
-						<figure class="relativeimg">
-							<!-- right -->
-							<a href="news.jsp?nid=<%=model.get(j).getIdnews()%>"><img src="<%=model.get(j).getThumbnail()%>" class="image" style="width:500px; height:100%;"></a>
-							<figcaption class="absolutecapt" style="text-align:justify;"><%=model.get(j).getCaption()%></figcaption>
-						</figure>
-
-				<%
-							cnt ++;
 							i++;
-							if(cnt==2)
-								break;
+							if(model.get(j).getCategory().equals(category))
+							{
+					%>
+						<figure class="relativeimg" style="margin-bottom:10px;">
+							<!-- topleft -->
+							<a href="news.jsp?nid=<%=model.get(j).getIdnews()%>"><img src="<%=model.get(j).getThumbnail()%>" class="image" style="width:200px; height:150px;"></a>
+							<figcaption class="absolutecapt"><%=model.get(j).getTitle()%></figcaption>
+						</figure>
+					<%
+								cnt ++;
+
+								if(cnt==1)
+									break;
+							}
 						}
-					}
-				%>
-						</div>
+						for(int j=i; j< model.size();j++)
+						{
+							i++;
+							if(model.get(j).getCategory().equals(category))
+							{
+					%>
+						<figure class="relativeimg">
+							<!-- bottomleft -->
+							<a href="news.jsp?nid=<%=model.get(j).getIdnews()%>"><img src="<%=model.get(j).getThumbnail()%>" class="image" style="width:200px; height:150px;"></a>
+							<figcaption class="absolutecapt"><%=model.get(j).getTitle()%></figcaption>
+						</figure>
+					<%
+								cnt ++;
+
+								if(cnt==2)
+									break;
+							}
+						}
+					%>
+
+					</div>
+					<div style="display:inline-block; margin-left:5px;">
+						<%
+							for(int j=i; j< model.size();j++)
+							{
+								i++;
+								if(model.get(j).getCategory().equals(category))
+								{
+						%>
+						<figure class="relativeimg" style="margin-bottom:10px;">
+							<!-- topright -->
+							<a href="news.jsp?nid=<%=model.get(j).getIdnews()%>"><img src="<%=model.get(j).getThumbnail()%>" class="image" style="width:200px; height:150px;"></a>
+							<figcaption class="absolutecapt"><%=model.get(j).getTitle()%></figcaption>
+						</figure>
+						<%
+									cnt ++;
+
+									if(cnt==3)
+										break;
+								}
+							}
+							for(int j=i; j< model.size();j++)
+							{
+								i++;
+								if(model.get(j).getCategory().equals(category))
+								{
+						%>
+							<figure class="relativeimg">
+								<!-- bottomright -->
+								<a href="news.jsp?nid=<%=model.get(j).getIdnews()%>"><img src="<%=model.get(j).getThumbnail()%>" class="image" style="width:200px; height:150px;"></a>
+								<figcaption class="absolutecapt"><%=model.get(j).getTitle()%></figcaption>
+							</figure>
+						<%
+									cnt ++;
+									if(cnt==4)
+										break;
+								}
+							}
+						%>
+					</div>
 				</div>
 			</div>
 		</div>
