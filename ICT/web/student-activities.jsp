@@ -8,10 +8,11 @@
 <html>
 <head>
 	<title>Student Life</title>
-	<link rel="stylesheet" type="text/css" href="student-activities.css">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
 	<link rel="stylesheet" type="text/css" href="header.css">
 	<link rel="stylesheet" type="text/css" href="footer.css">
+	<link rel="stylesheet" type="text/css" href="student-activities.css">
+
 </head>
 <body>
 	<div class="navbarcont" style="height:auto;">
@@ -32,119 +33,122 @@
 	</div>
 	<div class="container">
 		<div class="banner">
-			<div class="category" id="highlight">
-				<div class="leftcc" style="padding-left: 50px;">
-					<strong>Highlights</strong>
-				</div>
-			</div>
-			<div style="display:inline-flex;">
-			<%
-				String category = "highlight";
-				List<NewsBean> model = model_news.get();
-				int i =1;
-
-				for(NewsBean bean: model)
-				{
-					if(bean.getCategory().equals(category))
-					{
-
-			%>
-				<figure class="bignews" style="margin-bottom:3.33px">
-					<!-- bignews -->
-					<a href="news.jsp?nid=<%=bean.getIdnews()%>"><img src="<%=bean.getThumbnail()%>" class="image" style="width:400px; height:310px;"></a>
-					<figcaption class="absolutecapt"><%=bean.getCaption()%></figcaption>
-				</figure>
-			<%
-						break;
-					}
-
-				}
-			%>
-				<div style="display:inherit;">
-					<!-- smallnews -->
-					<div style="display:inline-block;">
-					<%
-						int cnt = 0;
-						for(int j=i; j< model.size();j++)
-						{
-							i++;
-							if(model.get(j).getCategory().equals(category))
-							{
-					%>
-						<figure class="relativeimg" style="margin-bottom:10px;">
-							<!-- topleft -->
-							<a href="news.jsp?nid=<%=model.get(j).getIdnews()%>"><img src="<%=model.get(j).getThumbnail()%>" class="image" style="width:200px; height:150px;"></a>
-							<figcaption class="absolutecapt"><%=model.get(j).getTitle()%></figcaption>
-						</figure>
-					<%
-								cnt ++;
-
-								if(cnt==1)
-									break;
-							}
-						}
-						for(int j=i; j< model.size();j++)
-						{
-							i++;
-							if(model.get(j).getCategory().equals(category))
-							{
-					%>
-						<figure class="relativeimg">
-							<!-- bottomleft -->
-							<a href="news.jsp?nid=<%=model.get(j).getIdnews()%>"><img src="<%=model.get(j).getThumbnail()%>" class="image" style="width:200px; height:150px;"></a>
-							<figcaption class="absolutecapt"><%=model.get(j).getTitle()%></figcaption>
-						</figure>
-					<%
-								cnt ++;
-
-								if(cnt==2)
-									break;
-							}
-						}
-					%>
-
+			<div style="width:80%; display:inherit; justify-content: inherit; flex-wrap: wrap;">
+				<div class="category" id="highlight">
+					<div class="leftcc" style="padding-left: 50px;">
+						<strong>Highlights</strong>
 					</div>
-					<div style="display:inline-block; margin-left:5px;">
-						<%
-							for(int j=i; j< model.size();j++)
-							{
-								i++;
-								if(model.get(j).getCategory().equals(category))
-								{
-						%>
-						<figure class="relativeimg" style="margin-bottom:10px;">
-							<!-- topright -->
-							<a href="news.jsp?nid=<%=model.get(j).getIdnews()%>"><img src="<%=model.get(j).getThumbnail()%>" class="image" style="width:200px; height:150px;"></a>
-							<figcaption class="absolutecapt"><%=model.get(j).getTitle()%></figcaption>
-						</figure>
-						<%
-									cnt ++;
+				</div>
+				<div style="display:inline-flex;">
+					<%
+						String category = "highlight";
+						List<NewsBean> model = model_news.get();
+						int i =1;
 
-									if(cnt==3)
-										break;
-								}
-							}
-							for(int j=i; j< model.size();j++)
+						for(NewsBean bean: model)
+						{
+							if(bean.getCategory().equals(category))
 							{
-								i++;
-								if(model.get(j).getCategory().equals(category))
+
+					%>
+					<figure class="bignews" style="margin-bottom:3.33px">
+						<!-- bignews -->
+						<a href="news.jsp?nid=<%=bean.getIdnews()%>"><img src="<%=bean.getThumbnail()%>" class="image" style="width:400px; height:310px;"></a>
+						<figcaption class="absolutecapt"><%=bean.getCaption()%></figcaption>
+					</figure>
+					<%
+								break;
+							}
+
+						}
+					%>
+					<div style="display:inherit;">
+						<!-- smallnews -->
+						<div style="display:inline-block;">
+							<%
+								int cnt = 0;
+								for(int j=i; j< model.size();j++)
 								{
-						%>
+									i++;
+									if(model.get(j).getCategory().equals(category))
+									{
+							%>
+							<figure class="relativeimg" style="margin-bottom:10px;">
+								<!-- topleft -->
+								<a href="news.jsp?nid=<%=model.get(j).getIdnews()%>"><img src="<%=model.get(j).getThumbnail()%>" class="image" style="width:200px; height:150px;"></a>
+								<figcaption class="absolutecapt"><%=model.get(j).getTitle()%></figcaption>
+							</figure>
+							<%
+										cnt ++;
+
+										if(cnt==1)
+											break;
+									}
+								}
+								for(int j=i; j< model.size();j++)
+								{
+									i++;
+									if(model.get(j).getCategory().equals(category))
+									{
+							%>
+							<figure class="relativeimg">
+								<!-- bottomleft -->
+								<a href="news.jsp?nid=<%=model.get(j).getIdnews()%>"><img src="<%=model.get(j).getThumbnail()%>" class="image" style="width:200px; height:150px;"></a>
+								<figcaption class="absolutecapt"><%=model.get(j).getTitle()%></figcaption>
+							</figure>
+							<%
+										cnt ++;
+
+										if(cnt==2)
+											break;
+									}
+								}
+							%>
+
+						</div>
+						<div style="display:inline-block; margin-left:5px;">
+							<%
+								for(int j=i; j< model.size();j++)
+								{
+									i++;
+									if(model.get(j).getCategory().equals(category))
+									{
+							%>
+							<figure class="relativeimg" style="margin-bottom:10px;">
+								<!-- topright -->
+								<a href="news.jsp?nid=<%=model.get(j).getIdnews()%>"><img src="<%=model.get(j).getThumbnail()%>" class="image" style="width:200px; height:150px;"></a>
+								<figcaption class="absolutecapt"><%=model.get(j).getTitle()%></figcaption>
+							</figure>
+							<%
+										cnt ++;
+
+										if(cnt==3)
+											break;
+									}
+								}
+								for(int j=i; j< model.size();j++)
+								{
+									i++;
+									if(model.get(j).getCategory().equals(category))
+									{
+							%>
 							<figure class="relativeimg">
 								<!-- bottomright -->
 								<a href="news.jsp?nid=<%=model.get(j).getIdnews()%>"><img src="<%=model.get(j).getThumbnail()%>" class="image" style="width:200px; height:150px;"></a>
 								<figcaption class="absolutecapt"><%=model.get(j).getTitle()%></figcaption>
 							</figure>
-						<%
-									cnt ++;
-									if(cnt==4)
-										break;
+							<%
+										cnt ++;
+										if(cnt==4)
+											break;
+									}
 								}
-							}
-						%>
+							%>
+						</div>
 					</div>
 				</div>
 			</div>
+
 		</div>
 
 		<div class="content">
