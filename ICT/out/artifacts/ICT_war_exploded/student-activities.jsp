@@ -56,34 +56,34 @@
 				<figcaption class="absolutecapt"><%=bean.getCaption()%></figcaption>
 			</figure>
 
-<%--			<div>--%>
-<%--				<!-- smallnews -->--%>
-<%--				<div style="display:inline-block;">--%>
-<%--					<figure class="relativeimg">--%>
-<%--						<!-- topleft -->--%>
-<%--						<a href="news.jsp?nid=<%=bean.getIdnews()%>"><img src="<%=bean.getThumbnail()%>" class="image" style="width:500px; height:100%;"></a>--%>
-<%--						<figcaption class="absolutecapt"><%=bean.getCaption()%></figcaption>--%>
-<%--					</figure>--%>
+			<div>
+				<!-- smallnews -->
+				<div style="display:inline-block;">
+					<figure class="relativeimg">
+						<!-- topleft -->
+						<a href="news.jsp?nid=<%=bean.getIdnews()%>"><img src="<%=bean.getThumbnail()%>" class="image" style="width:500px; height:100%;"></a>
+						<figcaption class="absolutecapt"><%=bean.getCaption()%></figcaption>
+					</figure>
 
-<%--					<figure class="relativeimg">--%>
-<%--						<!-- bottomleft -->--%>
-<%--						<a href="news.jsp?nid=<%=bean.getIdnews()%>"><img src="<%=bean.getThumbnail()%>" class="image" style="width:500px; height:100%;"></a>--%>
-<%--						<figcaption class="absolutecapt"><%=bean.getCaption()%></figcaption>--%>
-<%--					</figure>--%>
+					<figure class="relativeimg">
+						<!-- bottomleft -->
+						<a href="news.jsp?nid=<%=bean.getIdnews()%>"><img src="<%=bean.getThumbnail()%>" class="image" style="width:500px; height:100%;"></a>
+						<figcaption class="absolutecapt"><%=bean.getCaption()%></figcaption>
+					</figure>
 
-<%--				</div>--%>
-<%--				<div style="display:inline-block;">--%>
-<%--					<figure class="relativeimg">--%>
-<%--						<!-- topright -->--%>
-<%--						<a href="news.jsp?nid=<%=bean.getIdnews()%>"><img src="<%=bean.getThumbnail()%>" class="image" style="width:500px; height:100%;"></a>--%>
-<%--						<figcaption class="absolutecapt"><%=bean.getCaption()%></figcaption>--%>
-<%--					</figure>--%>
+				</div>
+				<div style="display:inline-block;">
+					<figure class="relativeimg">
+						<!-- topright -->
+						<a href="news.jsp?nid=<%=bean.getIdnews()%>"><img src="<%=bean.getThumbnail()%>" class="image" style="width:500px; height:100%;"></a>
+						<figcaption class="absolutecapt"><%=bean.getCaption()%></figcaption>
+					</figure>
 
-<%--					<figure class="relativeimg">--%>
-<%--						<!-- bottomright -->--%>
-<%--						<a href="news.jsp?nid=<%=bean.getIdnews()%>"><img src="<%=bean.getThumbnail()%>" class="image" style="width:500px; height:100%;"></a>--%>
-<%--						<figcaption class="absolutecapt"><%=bean.getCaption()%></figcaption>--%>
-<%--					</figure>--%>
+					<figure class="relativeimg">
+						<!-- bottomright -->
+						<a href="news.jsp?nid=<%=bean.getIdnews()%>"><img src="<%=bean.getThumbnail()%>" class="image" style="width:500px; height:100%;"></a>
+						<figcaption class="absolutecapt"><%=bean.getCaption()%></figcaption>
+					</figure>
 			<%
 						break;
 					}
@@ -93,7 +93,7 @@
 				<div>
 					<!-- smallnews -->
 					<div style="display:inline-block;">
-<%--					<div>--%>
+					<div>
 			<%
 				int cnt = 0;
 				for(int j=i+1; j< model.size();j++)
