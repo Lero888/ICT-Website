@@ -35,7 +35,7 @@
 		<div class="banner">
 			<div style="width:80%; display:inherit; justify-content: inherit; flex-wrap: wrap;">
 				<div class="category" id="highlight">
-					<div class="leftcc" style="padding-left: 50px;">
+					<div class="leftcc">
 						<strong>Highlights</strong>
 					</div>
 				</div>
