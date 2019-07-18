@@ -32,7 +32,7 @@
     <div class="logoutcontainer">
         <div class="logout">
             <div style="padding-right:10px;">Admin</div>
-            <a href="#" id="log">Logout</a>
+            <a href="admin-logout.jsp" id="log">Logout</a>
         </div>
     </div>
 
