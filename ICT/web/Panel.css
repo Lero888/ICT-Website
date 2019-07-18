@@ -143,15 +143,17 @@ h1{
 	font-size: 1em;
 }
 
-.logout > a{
-	color:black;
-}
-
-.logout > a:hover{
-	color: coral;
-}
-
 #log{
 	padding-left:10px;
 	border-left: 1px solid black;
 }
+
+#log > a{
+	color:black;
+}
+
+#log > a:hover{
+	color: coral;
+}
+
+
