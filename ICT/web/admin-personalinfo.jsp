@@ -55,8 +55,14 @@
 
 	%>
 
-	<div style = "margin: 50px; text-align: center;">
-		<h1>Staff Information</h1>
+	<div class = "header1" style = "display: inline-flex; justify-content:center">
+		<div class = "navigation_arrow"><a href="admin-news-panel.jsp"> <b>&#10094;</b> </a></div>
+		<div style="padding:0 18px 0 20px;"><h1>Staff Information</h1></div>
+		<div class = "navigation_arrow"><a href="admin-news-panel.jsp"> <b>&#10095;</b> </a></div>
+
+	</div>
+	<div class = "back_to_staff_panel">
+		<p style="text-align:center;"><a href = "admin-staff-panel.jsp">Back to Staff Panel</a></p>
 	</div>
 	
 	<div class = "flexcontainer">
@@ -143,24 +149,29 @@
 				<img src="images/<%=bean.getImage()%>">
 				<h3><%=bean.getStaff_name()%></h3>
 
+				<a href = "admin-personalinfo.jsp?sid=<%=sid%>">
+					<div class = "title-box">
+						<div class = "hover">
+							<h3>Personal Info</h3>
+						</div>
+					</div>
+				</a>
 
-				<div class = "title-box">
-	  				<div class = "hover">
-	  					<h3><a href = "admin-personalinfo.jsp?sid=<%=sid%>">Personal Info</a></h3>
-	  				</div>
-	  			</div>
+				<a href = "admin-image.jsp?sid=<%=sid%>">
+					<div class = "title-box">
+						<div class = "hover">
+							<h3>Image</h3>
+						</div>
+					</div>
+				</a>
 
-	  			<div class = "title-box">
-	  				<div class = "hover">
-	  					<h3><a href = "admin-image.jsp?sid=<%=sid%>">Image</a></h3>
-	  				</div>	
-	  			</div>
-
-	  			<div class = "title-box">
-	  				<div class = "hover">
-	  					<h3><a href = "admin-background.jsp?sid=<%=sid%>">Background and Expertise</a></h3>
-	  				</div>
-	  			</div>
+				<a href = "admin-background.jsp?sid=<%=sid%>">
+					<div class = "title-box">
+						<div class = "hover">
+							<h3>Background and Expertise</h3>
+						</div>
+					</div>
+				</a>
 	  		</div>
 		</div>
 	</div>

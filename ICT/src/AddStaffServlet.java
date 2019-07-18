@@ -69,8 +69,7 @@ public class AddStaffServlet extends HttpServlet {
 
             String EduBg = request.getParameter("Educational-Background");
             String EduBgs[] = EduBg.split("\n");
-            for(String str: EduBgs)
-            {
+            for (String str : EduBgs) {
                 sql = "insert into edu_bg(staff_id, description) values (" + staff_id + ", '" + str + "')";
                 stm.execute(sql);
             }
@@ -98,9 +97,6 @@ public class AddStaffServlet extends HttpServlet {
                 sql = "insert into rep_pub(staff_id, description) values (" + staff_id + ", '" + str + "')";
                 stm.execute(sql);
             }
-
-
-
 
             response.sendRedirect("admin-staff-panel.jsp");
         }

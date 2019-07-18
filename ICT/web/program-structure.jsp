@@ -16,7 +16,7 @@
 	<div class="navbarcont">
 		<div class="navbarcont2">
 			<div><a href="home.jsp">
-				<img src="images/logo.png" class="navbarlogo">
+				<img src="images\logo.png" class="navbarlogo">
 			</a></div>
 			<div class="navigationlist">
 				<div id="nav_item"><a href="home.jsp">Home</a></div>
@@ -45,7 +45,7 @@
 		<div class = "column">
 			<a href="computer-science-tech.html">
 				<div class="course_container">
-					 <img src="images/PS - cst.png" alt="Computer Science Technology" class="image">
+					 <img src="images\PS - cst.png" alt="Computer Science Technology" class="image">
 						<div class="overlay">
 	   						<div class="text">Computer Science Technology</div>
 						</div>
@@ -56,7 +56,7 @@
 		<div class = "column">
 			<a href="software-engineering.jsp">
 				<div class="course_container">
-					 <img src="images/PS - swe.png" alt="Software Engineering" class="image">
+					 <img src="images\PS - swe.png" alt="Software Engineering" class="image">
   						<div class="overlay">
 	   						<div class="text">Software Engineering</div>
 					</div>
@@ -67,7 +67,7 @@
 		<div class = "column">
 			<a href="digital-media-tech.html">
 				<div class="course_container">
- 					 <img src="images/PS - dmt.png" alt="Digital Media Technology" class="image">
+ 					 <img src="images\PS - dmt.png" alt="Digital Media Technology" class="image">
   						<div class="overlay">
     						<div class="text">Digital Media Technology</div>
   						</div>
@@ -116,13 +116,13 @@
 	                <ul style = "list-style-type: none;" class="text-white">
 	                    <li>
 							<a href = "https://www.facebook.com/SWEstudentunion/?ref=br_rs"> 
-								<img src = "images/facebook.png" alt = "facebook">
+								<img src = "images\facebook.png" alt = "facebook">
 							</a>
 							<a href = "mailto: SWEstudentcouncil@outlook.com">
-								<img src = "images/mail.png" alt = "mail">
+								<img src = "images\mail.png" alt = "mail">
 							</a>
 							<a href = "https://xmux.xdea.top/">
-								<img src = "images/xmux.jpg" alt = "xmux">
+								<img src = "images\xmux.jpg" alt = "xmux">
 							</a>
 	                    </li>
 	                </ul>

@@ -29,12 +29,7 @@
 			</div>
 		</div>
 	</div>
-    <div class="logoutcontainer">
-        <div class="logout">
-            <div style="padding-right:10px;">Admin</div>
-            <a href="admin-logout.jsp" id="log">Logout</a>
-        </div>
-    </div>
+
 
 
 	<div class="header1">
@@ -90,7 +85,6 @@
 	</div>
 
 	<a href="admin-add-new-staff.jsp"><div class="new"><img src="images/add.png"><p style="color:black;">Add Staff</p></div></a>
-
 
 		<!-- Footer section -->
 		<footer>

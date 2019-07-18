@@ -55,6 +55,86 @@
     </servlet-mapping>
 
     <servlet>
+        <servlet-name>ModifyPositionServlet</servlet-name>
+        <servlet-class>ModifyPositionServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>ModifyPositionServlet</servlet-name>
+        <url-pattern>/ModifyPositionServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ModifySchoolServlet</servlet-name>
+        <servlet-class>ModifySchoolServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>ModifySchoolServlet</servlet-name>
+        <url-pattern>/ModifySchoolServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ModifyTelServlet</servlet-name>
+        <servlet-class>ModifyTelServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>ModifyTelServlet</servlet-name>
+        <url-pattern>/ModifyTelServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ModifyEmailServlet</servlet-name>
+        <servlet-class>ModifyEmailServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>ModifyEmailServlet</servlet-name>
+        <url-pattern>/ModifyEmailServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ModifyEduServlet</servlet-name>
+        <servlet-class>ModifyEduServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>ModifyEduServlet</servlet-name>
+        <url-pattern>/ModifyEduServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ModifyResearchServlet</servlet-name>
+        <servlet-class>ModifyResearchServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>ModifyResearchServlet</servlet-name>
+        <url-pattern>/ModifyResearchServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ModifyAcademicServlet</servlet-name>
+        <servlet-class>ModifyAcademicServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>ModifyAcademicServlet</servlet-name>
+        <url-pattern>/ModifyAcademicServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ModifyRepresentativeServlet</servlet-name>
+        <servlet-class>ModifyRepresentativeServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>ModifyRepresentativeServlet</servlet-name>
+        <url-pattern>/ModifyRepresentativeServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
         <servlet-name>StaffImageServlet</servlet-name>
         <servlet-class>StaffImageServlet</servlet-class>
     </servlet>
@@ -64,14 +144,15 @@
         <url-pattern>/StaffImageServlet</url-pattern>
     </servlet-mapping>
 
-    <filter>
-        <filter-name>AdminLoginFilter</filter-name>
-        <filter-class>AdminLoginFilter</filter-class>
-    </filter>
+    <servlet>
+        <servlet-name>AddStaffFilter</servlet-name>
+        <servlet-class>AddStaffFilter</servlet-class>
+    </servlet>
 
-    <filter-mapping>
-        <filter-name>AdminLoginFilter</filter-name>
-        <url-pattern>/AdminLoginServlet</url-pattern>
-    </filter-mapping>
+    <servlet-mapping>
+        <servlet-name>AddStaffFilter</servlet-name>
+        <url-pattern>/AddStaffFilter</url-pattern>
+    </servlet-mapping>
+
 
 </web-app>

@@ -13,9 +13,7 @@
 <body>
     <%
         session.invalidate();
+        response.sendRedirect("admin-login.jsp");
     %>
-    <h1><font color="Red">You are Sucessfully logged out...</font></h1>
-
-    <a href="admin-login.jsp">Go-Back To Login Page</a>
 </body>
 </html>

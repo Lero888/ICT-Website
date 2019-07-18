@@ -29,13 +29,6 @@
 		</div>
 	</div>
 
-    <div class="logoutcontainer">
-        <div class="logout">
-            <div style="padding-right:10px;">Admin</div>
-            <a href="admin-logout.jsp" id="log">Logout</a>
-        </div>
-    </div>
-
 	<div class="header1">
 		<div class="navigation_arrow"> <a href="admin-staff-panel.jsp"> <b>&#10094;</b> </a> </div>
 		<div><h1>News Management Panel</h1></div>
@@ -79,7 +72,7 @@
 			}
 		%>
 
-		<a href="admin-add-news.jsp"><div class="new"><img src="images/add.png"> <p style="color:black;">Add News</p></div></a>
+		<a href="admin-add-news.jsp"><div class="new"><img src="images/add.png"><p style="color:black;">Add News</p></div></a>
 
 	</div>
 

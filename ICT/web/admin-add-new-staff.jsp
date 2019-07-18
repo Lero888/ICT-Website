@@ -41,7 +41,7 @@
 		<div class = "flexcontainer">
 			<div class="flexbox">
 		  		<div class="col" style = "margin-top: 16px;">
-					<input type="text" name="name" placeholder="Full name" style = "width: 299px;">
+					<input type="text" name="name" placeholder="Full name" style = "width: 299px;" required>
 		  		</div>
 		  		
 		  		<div class="col">
@@ -51,7 +51,7 @@
 
 			<div class="flexbox">
 		  		<div class="col" style = "margin-top: 16px;">
-					<input type="text" name="position" placeholder="Position" style = "width: 299px;">
+					<input type="text" name="position" placeholder="Position" style = "width: 299px;" required>
 		  		</div>
 		  		
 		  		<div class="col">
@@ -75,7 +75,7 @@
 
 			<div class="flexbox">
 		  		<div class="col" style = "margin-top: 16px;">
-		  			<input type="text" name="tel" placeholder="XXX-XXXXXXX" style = "width: 299px;">
+		  			<input type="text" name="tel" placeholder="XXX-XXXXXXX" style = "width: 299px;" required>
 		  		</div>
 		  		
 		  		<div class="col">
@@ -85,7 +85,7 @@
 
 			<div class="flexbox">
 		  		<div class="col" style = "margin-top: 16px;">
-					<input type="text" name="email" placeholder="Email" style = "width: 299px;">
+					<input type="email" name="email" placeholder="Email" style = "width: 299px;" required>
 		  		</div>
 		  		
 		  		<div class="col">
@@ -102,8 +102,7 @@
 		<div class = "flexcontainer">
 			<div class="flexbox">
 		  		<div class="col" style = "flex: 8;">
-		  			<textarea name="Educational-Background">
-					</textarea>
+		  			<textarea name="Educational-Background" required></textarea>
 		  		</div>
 		  		
 		  		<div class="col" style = "flex: 2; min-width: 178.41px;">
@@ -113,8 +112,7 @@
 
 			<div class="flexbox">
 		  		<div class="col" style = "flex: 8;">
-		  			<textarea name="Research-Interest">
-					</textarea>
+		  			<textarea name="Research-Interest" required></textarea>
 		  		</div>
 		  		
 		  		<div class="col"  style = "flex: 2; min-width: 178.41px;">
@@ -124,8 +122,7 @@
 
 			<div class="flexbox">
 		  		<div class="col"  style = "flex: 8;">
-		  			<textarea name="Academic-Experience">
-					</textarea>
+		  			<textarea name="Academic-Experience" required></textarea>
 		  		</div>
 		  		
 		  		<div class="col" style = "flex: 2; min-width: 178.41px;">
@@ -135,8 +132,7 @@
 
 			<div class="flexbox">
 		  		<div class="col"  style = "flex: 8;">
-		  			<textarea name="Representative-Publications">
-					</textarea>
+		  			<textarea name="Representative-Publications" required></textarea>
 		  		</div>
 		  		
 		  		<div class="col" style = "flex: 2; min-width: 178.41px;">
