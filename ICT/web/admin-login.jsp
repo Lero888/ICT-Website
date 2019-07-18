@@ -21,8 +21,8 @@
 					</div>
 					<form id="login" method="post" action="./AdminLoginServlet">
 						<div class="inputbox">
-							<input type="text" name="username" placeholder="Username" style="height: 40px; padding-left: 10px; width:70%;">
-							<input type="password" name="password" placeholder="Password" style="height: 40px; padding-left: 10px; width:70%;">
+							<input type="text" name="username" placeholder="Username" style="height: 40px; padding-left: 10px; width:186px;">
+							<input type="password" name="password" placeholder="Password" style="height: 40px; padding-left: 10px; width:186px;">
 							<button class="btn" onclick="document.getElementById('login').submit();">Login</button>
 						</div>
 					</form>

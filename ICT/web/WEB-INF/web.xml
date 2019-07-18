@@ -64,6 +64,14 @@
         <url-pattern>/StaffImageServlet</url-pattern>
     </servlet-mapping>
 
+    <filter>
+        <filter-name>AdminLoginFilter</filter-name>
+        <filter-class>AdminLoginFilter</filter-class>
+    </filter>
 
+    <filter-mapping>
+        <filter-name>AdminLoginFilter</filter-name>
+        <url-pattern>/AdminLoginServlet</url-pattern>
+    </filter-mapping>
 
 </web-app>
