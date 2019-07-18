@@ -29,6 +29,13 @@
 		</div>
 	</div>
 
+    <div class="logoutcontainer">
+        <div class="logout">
+            <div style="padding-right:10px;">Admin</div>
+            <a href="#" id="log">Logout</a>
+        </div>
+    </div>
+
 	<div class="header1">
 		<div class="navigation_arrow"> <a href="admin-staff-panel.jsp"> <b>&#10094;</b> </a> </div>
 		<div><h1>News Management Panel</h1></div>

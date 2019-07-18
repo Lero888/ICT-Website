@@ -140,7 +140,7 @@ h1{
 .logout{
 	padding: 10px 20px;
 	display:inline-flex;
-	font-size: 5px;
+	font-size: 1em;
 }
 
 .logout > a{
