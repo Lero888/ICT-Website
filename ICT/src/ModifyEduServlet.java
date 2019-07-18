@@ -16,14 +16,20 @@ public class ModifyEduServlet extends HttpServlet {
             Statement stm = DriverManager.getConnection("jdbc:mysql://localhost:3306/ICT", "root", "xmuy").createStatement();
 
             ResultSet rs = stm.executeQuery("select * from staff order by staff_id desc");
-            String staff_id = rs.getString("staff_id");
+            String staff_id = request.getParameter("sid");
 
-            String EduBg = request.getParameter("Educational-Background");
+            String EduBg = request.getParameter("educational");
             String EduBgs[] = EduBg.split("\n");
+            String sql = "delete from edu_bg where staff_id = " + request.getParameter("sid") + "";
+            stm.execute(sql);
+            sql = "delete from edu_bg where staff_id=" + request.getParameter("sid") + " and description = \"\" ";
+            stm.execute(sql);
             for(String str: EduBgs)
             {
-                String sql = "update edu_bg set description = '" + str + "' where staff_id = " + request.getParameter("sid") + "";
-                stm.execute(sql);
+                if(!(str.length()==1)) {
+                    sql = "insert into edu_bg(staff_id, description) values (" + staff_id + ", '" + str + "')";
+                    stm.execute(sql);
+                }
             }
 
             response.sendRedirect("admin-background.jsp?sid=" + request.getParameter("sid"));

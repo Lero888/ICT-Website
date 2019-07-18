@@ -66,19 +66,16 @@
                                         <%
                                             List<EduBgBean> model2 = model_EduBg.get();
 
+//                                            out.print(model2);
+
                                             for(EduBgBean bean2: model2)
                                             {
                                                 if(bean2.getStaff_id().equals(sid))
                                                 {
-
-                                        %>
-
-<%=bean2.getDescription()%>
-
-                                    <%
+                                                    bean2.getDescription();
+                                                }
                                             }
-                                        }
-                                    %>
+                                        %>
 
                                 </textarea> <br></br>
                                 <button><a href="admin-background.jsp?sid=<%=sid%>" style = "color: #000000; text-decoration: none;">Cancel</a></button>
