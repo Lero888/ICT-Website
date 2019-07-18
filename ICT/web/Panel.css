@@ -138,7 +138,7 @@ h1{
 }
 
 .logout{
-	padding: 10px 10px;
+	padding: 10px 20px;
 	display:inline-flex;
 }
 
@@ -148,4 +148,9 @@ h1{
 
 .logout > a:hover{
 	color: coral;
+}
+
+#log{
+	padding-left:10px;
+	border-left: 1px solid black;
 }
