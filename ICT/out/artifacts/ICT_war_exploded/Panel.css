@@ -148,11 +148,11 @@ h1{
 	border-left: 1px solid black;
 }
 
-#log > a{
+.logout > a{
 	color:black;
 }
 
-#log > a:hover{
+.logout > a:hover{
 	color: coral;
 }
 
