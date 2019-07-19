@@ -13,18 +13,24 @@
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
 </head>
 <body>
+<%
+	response.setHeader("Cache-Control","no-cache");
+	response.setHeader("Cache-Control","no-store");
+	response.setHeader("Pragma","no-cache");
+	response.setDateHeader ("Expires", 0);
 
-	<div class="navbarcont">
+	if(session.getAttribute("admin_id")==null)
+		response.sendRedirect("admin-login.jsp");
+
+%>
+<div class="navbarcont">
 		<div class="navbarcont2">
 			<div><a href="home.jsp">
 				<img src="images/logo.png" class="navbarlogo">
 			</a></div>
-			<div class="navigationlist">
-				<div id="nav_item"><a href="home.jsp">Home</a></div>
-				<div id="nav_item"><a href="staff.jsp">Staff</a></div>
-				<div id="nav_item"><a href="program-structure.jsp">Program Structure</a></div>
-				<div id="nav_item"><a href="student-activities.jsp">Student Activities</a></div>
-				<div id="nav_item"><a href="about.jsp">About</a></div>
+			<div class="logout">
+				<div style="padding-right:10px; color:white;"><%=session.getAttribute("username")%></div>
+				<a href="./AdminLogoutServlet" id ="log">Logout</a>
 			</div>
 		</div>
 	</div>

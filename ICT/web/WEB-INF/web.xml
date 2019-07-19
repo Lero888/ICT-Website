@@ -15,6 +15,16 @@
     </servlet-mapping>
 
     <servlet>
+        <servlet-name>AdminLogoutServlet</servlet-name>
+        <servlet-class>AdminLogoutServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>AdminLogoutServlet</servlet-name>
+        <url-pattern>/AdminLogoutServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
         <servlet-name>DeleteStaffServlet</servlet-name>
         <servlet-class>DeleteStaffServlet</servlet-class>
     </servlet>
