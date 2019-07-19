@@ -1,9 +1,6 @@
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
+import javax.servlet.http.*;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.DriverManager;
@@ -26,8 +23,17 @@ public class AdminLoginServlet extends HttpServlet {
             ResultSet rs = stm.executeQuery(sql);
 
             if (rs.next()) {
+
+                Cookie ck_username = new Cookie("username", username);
+                Cookie ck_password = new Cookie("password", password);
+                ck_username.setMaxAge(24*60*60);
+                ck_password.setMaxAge(24*60*60);
+                response.addCookie(ck_username);
+                response.addCookie(ck_password);
+
                 session.setAttribute("admin_id", rs.getString("admin_id"));
                 session.setAttribute("username", username);
+
                 response.sendRedirect("admin-staff-panel.jsp");
                 return;
             }
@@ -42,6 +48,6 @@ public class AdminLoginServlet extends HttpServlet {
     }
 
     protected void doGet(javax.servlet.http.HttpServletRequest request, javax.servlet.http.HttpServletResponse response) throws javax.servlet.ServletException, IOException {
-        response.sendRedirect("login.jsp");
+        doPost(request,response);
     }
 }

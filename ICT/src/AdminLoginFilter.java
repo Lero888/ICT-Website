@@ -9,9 +9,10 @@ public class AdminLoginFilter implements Filter {
     }
 
     public void doFilter(ServletRequest req, ServletResponse resp, FilterChain chain) throws ServletException, IOException {
+
         String username = req.getParameter("username");
         String password = req.getParameter("password");
-        if( username.contains("\'") || password.contains("\'"))
+        if( username.contains("\'") || password.contains("\'") || username.contains("<script>") || username.contains("</script>")|| password.contains("<script>") || password.contains("</script>"))
         {
             PrintWriter out = resp.getWriter();
             out.println("Invalid character in username or password");
@@ -21,6 +22,9 @@ public class AdminLoginFilter implements Filter {
         {
             chain.doFilter(req, resp);
         }
+
+
+
     }
 
     public void init(FilterConfig config) throws ServletException {

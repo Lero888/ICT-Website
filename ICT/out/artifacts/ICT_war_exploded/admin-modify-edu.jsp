@@ -61,32 +61,25 @@
                 <div class = "infocontainer">
                     <div class = "infobox">
                         <div class = "column" style = "margin-bottom: 15px; text-align: justify;">
-                            <form action = "">
-                                <textarea style = "margin-top: 15px; width: 482px; height:202px;" name = "educational">
-                                        <%
-                                            List<EduBgBean> model2 = model_EduBg.get();
-
-                                            for(EduBgBean bean2: model2)
-                                            {
-                                                if(bean2.getStaff_id().equals(sid))
-                                                {
-
-                                        %>
-
-<%=bean2.getDescription()%>
-
-                                    <%
-                                            }
+                            <form action = "./ModifyEduServlet?sid=<%=request.getParameter("sid")%>" method = "post">
+                                <textarea style = "margin-top: 15px; width: 482px; height:202px;" name = "educational" required><%
+                                    List<EduBgBean> model2 = model_EduBg.get();
+                                    for(EduBgBean bean2: model2)
+                                    {
+                                        if(bean2.getStaff_id().equals(sid))
+                                        {
+                                            out.println(bean2.getDescription());
                                         }
-                                    %>
+                                    }
+                                %></textarea>
 
-                                </textarea> <br></br>
-                                <button><a href="admin-personalinfo.jsp?sid=<%=sid%>" style = "color: #000000; text-decoration: none;">Cancel</a></button>
+                                <br></br>
+                                <button><a href="admin-background.jsp?sid=<%=sid%>" style = "color: #000000; text-decoration: none;">Cancel</a></button>
                         </div>
 
                         <div class = "column" style = "flex: 2;">
                             <p>Educational Background</p>
-                            <input type = "submit" value = "Save Changes" style = "margin-top: 155px;">
+                            <input type = "submit" value = "Save Changes" style = "margin-top: 170px;">
                             </form>
                         </div>
                     </div>
@@ -209,23 +202,29 @@
                 <img src="images/<%=bean.getImage()%>">
                 <h3><%=bean.getStaff_name()%></h3>
 
-                <div class = "title-box">
-                    <div class = "hover">
-                        <h3><a href = "admin-personalinfo.jsp?sid=<%=sid%>">Personal Info</a></h3>
+                <a href = "admin-personalinfo.jsp?sid=<%=sid%>">
+                    <div class = "title-box">
+                        <div class = "hover">
+                            <h3>Personal Info</h3>
+                        </div>
                     </div>
-                </div>
+                </a>
 
-                <div class = "title-box">
-                    <div class = "hover">
-                        <h3><a href = "admin-image.jsp?sid=<%=sid%>">Image</a></h3>
+                <a href = "admin-image.jsp?sid=<%=sid%>">
+                    <div class = "title-box">
+                        <div class = "hover">
+                            <h3>Image</h3>
+                        </div>
                     </div>
-                </div>
+                </a>
 
-                <div class = "title-box">
-                    <div class = "hover">
-                        <h3><a href = "admin-background.jsp?sid=<%=sid%>">Background and Expertise</a></h3>
+                <a href = "admin-background.jsp?sid=<%=sid%>">
+                    <div class = "title-box">
+                        <div class = "hover">
+                            <h3>Background and Expertise</h3>
+                        </div>
                     </div>
-                </div>
+                </a>
             </div>
         </div>
     </div>

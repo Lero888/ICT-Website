@@ -70,23 +70,29 @@
 				<h3><%=rs.getString("name")%></h3>
 
 
-				<div class = "title-box">
-					<div class = "hover">
-						<h3><a href = "admin-personalinfo.jsp?sid=<%=sid%>">Personal Info</a></h3>
+				<a href = "admin-personalinfo.jsp?sid=<%=sid%>">
+					<div class = "title-box">
+						<div class = "hover">
+							<h3>Personal Info</h3>
+						</div>
 					</div>
-				</div>
+				</a>
 
-				<div class = "title-box">
-					<div class = "hover">
-						<h3><a href = "admin-image.jsp?sid=<%=sid%>">Image</a></h3>
+				<a href = "admin-image.jsp?sid=<%=sid%>">
+					<div class = "title-box">
+						<div class = "hover">
+							<h3>Image</h3>
+						</div>
 					</div>
-				</div>
+				</a>
 
-				<div class = "title-box">
-					<div class = "hover">
-						<h3><a href = "admin-background.jsp?sid=<%=sid%>">Background and Expertise</a></h3>
+				<a href = "admin-background.jsp?sid=<%=sid%>">
+					<div class = "title-box">
+						<div class = "hover">
+							<h3>Background and Expertise</h3>
+						</div>
 					</div>
-				</div>
+				</a>
 			</div>
 		</div>
 	</div>

@@ -9,7 +9,7 @@ html, body {
 /* The image for background */
 .bg-img {
   /*image used*/
-  background-image: url("images\course-banner.jpg");
+  background-image: url("images/course-banner.jpg");
 
    /* half height */
   height: 50%; 

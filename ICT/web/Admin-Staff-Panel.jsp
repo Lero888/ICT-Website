@@ -5,6 +5,11 @@
 <%@ page import="java.util.List" %>
 <jsp:useBean id="model_staff" class="net.model.StaffAccess" />
 
+<%
+	if(session.getAttribute("username")==null)
+		response.sendRedirect("admin-login.jsp");
+%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -40,17 +45,6 @@
 
 	<div class="container">
 
-<%--		<%--%>
-<%--			Class.forName("com.mysql.jdbc.Driver");--%>
-<%--			Statement stm = DriverManager.getConnection("jdbc:mysql://localhost:3306/ICT", "root", "xmuy").createStatement();--%>
-<%--			String sql = "select staff_id as sid, staff_name as name, image as image, email as email, tel as tel\n" +--%>
-<%--					"from staff";--%>
-<%--			ResultSet rs= stm.executeQuery(sql);--%>
-
-<%--			while(rs.next())--%>
-<%--			{--%>
-<%--		%>--%>
-
 		<%
 			List<StaffBean> model = model_staff.get();
 
@@ -58,9 +52,7 @@
 			{
 		%>
 
-		<div class="item">
-
-			<a href = "admin-personalinfo.jsp?sid=<%=bean.getStaff_id()%>">
+			<div onclick="window.location.href='admin-personalinfo.jsp?sid=<%=bean.getStaff_id()%>'" class="item">
 				<div class="left">
 					<div class="image-container"><img src="images/<%=bean.getImage()%>"></div>
 
@@ -71,12 +63,10 @@
 					</div>
 
 				</div>
-			</a>
 
-			<div class="delete"><a href="./DeleteStaffServlet?sid=<%=bean.getStaff_id()%>"><img src="images/delete.png"></a></div>
+				<div class="delete"><a href="./DeleteStaffServlet?sid=<%=bean.getStaff_id()%>"><img src="images/delete.png"></a></div>
+			</div>
 
-
-		</div>
 
 		<%
 			}
@@ -85,7 +75,6 @@
 	</div>
 
 	<a href="admin-add-new-staff.jsp"><div class="new"><img src="images/add.png"><p style="color:black;">Add Staff</p></div></a>
-
 
 		<!-- Footer section -->
 		<footer>

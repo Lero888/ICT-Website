@@ -6,6 +6,30 @@ html, body {
   height: 100%;
 }
 
+
+.header1 {
+  width: 100%;
+  margin:0 auto;
+  margin-top: 5%;
+  display: inline-block;
+
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.header1 a{
+  color:black;
+}
+
+.header1 a:hover{
+  color: gray;
+}
+
+.h1 {
+  text-align: center;
+}
+
 .flexcontainer a {
   color: #000000;
   text-decoration: none;

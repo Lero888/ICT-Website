@@ -69,7 +69,7 @@
                     <div class = "infobox" style = "background-color: #F5F5F5">
                         <div class = "column" style = "flex: 8.5;">
                             <form action = "./ModifyNameServlet?sid=<%=request.getParameter("sid")%>" method = "post">
-                                <input type="text" name="name" value="<%=bean.getStaff_name()%>" placeholder="Name"> <br></br>
+                                <input type="text" name="name" value="<%=bean.getStaff_name()%>" placeholder="Name" required> <br></br>
                                 <button><a href="admin-personalinfo.jsp?sid=<%=sid%>" style = "color: #000000; text-decoration: none;">Cancel</a></button>
                         </div>
 
@@ -143,24 +143,29 @@
                 <img src="images/<%=bean.getImage()%>">
                 <h3><%=bean.getStaff_name()%></h3>
 
-
-                <div class = "title-box">
-                    <div class = "hover">
-                        <h3><a href = "admin-personalinfo.jsp?sid=<%=sid%>">Personal Info</a></h3>
+                <a href = "admin-personalinfo.jsp?sid=<%=sid%>">
+                    <div class = "title-box">
+                        <div class = "hover">
+                            <h3>Personal Info</h3>
+                        </div>
                     </div>
-                </div>
+                </a>
 
-                <div class = "title-box">
-                    <div class = "hover">
-                        <h3><a href = "admin-image.jsp?sid=<%=sid%>">Image</a></h3>
+                <a href = "admin-image.jsp?sid=<%=sid%>">
+                    <div class = "title-box">
+                        <div class = "hover">
+                            <h3>Image</h3>
+                        </div>
                     </div>
-                </div>
+                </a>
 
-                <div class = "title-box">
-                    <div class = "hover">
-                        <h3><a href = "admin-background.jsp?sid=<%=sid%>">Background and Expertise</a></h3>
+                <a href = "admin-background.jsp?sid=<%=sid%>">
+                    <div class = "title-box">
+                        <div class = "hover">
+                            <h3>Background and Expertise</h3>
+                        </div>
                     </div>
-                </div>
+                </a>
             </div>
         </div>
     </div>

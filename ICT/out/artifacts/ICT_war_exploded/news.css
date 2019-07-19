@@ -121,6 +121,10 @@ html, body{
 	color: black;
 }
 
+a{
+	color:black;
+}
+
 .sidect > a:hover{
 	color:#2052f7;
 }

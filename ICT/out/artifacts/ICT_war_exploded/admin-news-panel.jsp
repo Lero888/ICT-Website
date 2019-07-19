@@ -1,6 +1,9 @@
 <%@ page import="java.sql.DriverManager" %>
 <%@ page import="java.sql.Statement" %>
 <%@ page import="java.sql.ResultSet" %>
+<%@ page import="net.model.NewsBean" %>
+<%@ page import="java.util.List" %>
+<jsp:useBean id="model_news" class="net.model.NewsAccess" />
 
 
 <!DOCTYPE html>
@@ -37,42 +40,47 @@
 
 	<div class="container">
 
-		<%
-			Class.forName("com.mysql.jdbc.Driver");
-			Statement stm = DriverManager.getConnection("jdbc:mysql://localhost:3306/ICT", "root", "xmuy").createStatement();
-			String sql = "SELECT idnews as nid, title as title, thumbnail as thumbnail, datecreated as date\n" +
-					"from news";
-			ResultSet rs= stm.executeQuery(sql);
+<%--		<%--%>
+<%--			Class.forName("com.mysql.jdbc.Driver");--%>
+<%--			Statement stm = DriverManager.getConnection("jdbc:mysql://localhost:3306/ICT", "root", "xmuy").createStatement();--%>
+<%--			String sql = "SELECT idnews as nid, title as title, thumbnail as thumbnail, datecreated as date\n" +--%>
+<%--					"from news";--%>
+<%--			ResultSet rs= stm.executeQuery(sql);--%>
 
-			while(rs.next())
+<%--			while(rs.next())--%>
+<%--			{--%>
+<%--		%>--%>
+
+		<%
+			List<NewsBean> model = model_news.get();
+
+			for(NewsBean bean: model)
 			{
 		%>
 
-		<div class="item">
+		<div onclick="window.location.href='#'" class="item">
 
 			<div class="left">
-				<div class="image-container"><img src="<%=rs.getString("thumbnail")%>"></div>
+				<div class="image-container"><img src="<%=bean.getThumbnail()%>"></div>
 
 				<div class="info">
-					<h3><%=rs.getString("title")%></h3>
+					<h3><%=bean.getTitle()%></h3>
 					<div class="date">
 						<!-- Date created -->
 						<i class="fas fa-calendar-alt"></i>
-						Date Created: <time datetime="2018-05-21"><%=rs.getString("date")%></time>
+						Date Created: <time datetime="2018-05-21"><%=bean.getDatecreated()%></time>
 					</div>
 				</div>
-
 			</div>
 
-			<div class="delete"><a href="./DeleteNewsServlet?nid=<%=rs.getString("nid")%>"><img src="images/delete.png"></a></div>
-
+			<div class="delete"><a href="./DeleteNewsServlet?nid=<%=bean.getIdnews()%>"><img src="images/delete.png"></a></div>
 		</div>
 
 		<%
 			}
 		%>
 
-		<a href="admin-add-news.jsp"><div class="new"><img src="images/add.png"> <p style="color:black;">Add News</p></div></a>
+		<a href="admin-add-news.jsp"><div class="new"><img src="images/add.png"><p style="color:black;">Add News</p></div></a>
 
 	</div>
 

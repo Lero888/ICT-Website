@@ -34,9 +34,9 @@
 	<div class="container">
 		<%
 			List<NewsBean> model = model_news.get();
-			for(int i= model.size();i-->0;)
+			for(NewsBean bean: model)
 			{
-				NewsBean bean = model.get(i);
+
 		%>
 		<div class="newscontainer">	
 			<a href="news.jsp?nid=<%=bean.getIdnews()%>">
