@@ -131,12 +131,6 @@ h1{
 	transition-duration: 0.2s;
 }
 
-.logoutcontainer{
-	width:100%;
-	display:flex;
-	justify-content:flex-end;
-}
-
 .logout{
 	padding: 10px 20px;
 	display:inline-flex;

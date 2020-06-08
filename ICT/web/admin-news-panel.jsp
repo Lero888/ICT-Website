@@ -13,16 +13,16 @@
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
 </head>
 <body>
-<%
-	response.setHeader("Cache-Control","no-cache");
-	response.setHeader("Cache-Control","no-store");
-	response.setHeader("Pragma","no-cache");
-	response.setDateHeader ("Expires", 0);
+	<%
+		response.setHeader("Cache-Control","no-cache");
+		response.setHeader("Cache-Control","no-store");
+		response.setHeader("Pragma","no-cache");
+		response.setDateHeader ("Expires", 0);
 
-	if(session.getAttribute("admin_id")==null)
-		response.sendRedirect("admin-login.jsp");
+		if(session.getAttribute("admin_id")==null)
+			response.sendRedirect("admin-login.jsp");
 
-%>
+	%>
 <div class="navbarcont">
 		<div class="navbarcont2">
 			<div><a href="home.jsp">

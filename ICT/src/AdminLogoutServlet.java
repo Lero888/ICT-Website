@@ -18,7 +18,6 @@ public class AdminLogoutServlet extends HttpServlet {
         session.invalidate();
 
         request.getRequestDispatcher("admin-login.jsp").include(request, response);
-
         Cookie ck=new Cookie("username","");
         ck.setMaxAge(0);
         response.addCookie(ck);

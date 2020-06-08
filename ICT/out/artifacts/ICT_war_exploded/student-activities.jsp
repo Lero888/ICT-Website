@@ -75,7 +75,7 @@
 							%>
 							<figure class="relativeimg" style="margin-bottom:10px;">
 								<!-- topleft -->
-								<a href="news.jsp?nid=<%=model.get(j).getIdnews()%>"><img src="<%=model.get(j).getThumbnail()%>" class="image" style="width:200px; height:150px;"></a>
+								<a href="news.jsp?nid=<%=model.get(j).getIdnews()%>"><img src="images/<%=model.get(j).getThumbnail()%>" class="image" style="width:200px; height:150px;"></a>
 								<figcaption class="absolutecapt"><%=model.get(j).getTitle()%></figcaption>
 							</figure>
 							<%

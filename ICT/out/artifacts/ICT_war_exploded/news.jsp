@@ -43,7 +43,6 @@
 				{
 					if(bean.getIdnews().equals(nid))
 					{
-
 			%>
 			<div class="titlecontainer">
 				<h1><%=bean.getTitle()%></h1>

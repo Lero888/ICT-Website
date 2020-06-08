@@ -55,6 +55,16 @@
     </servlet-mapping>
 
     <servlet>
+        <servlet-name>AddNewsServlet</servlet-name>
+        <servlet-class>AddNewsServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>AddNewsServlet</servlet-name>
+        <url-pattern>/AddNewsServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
         <servlet-name>ModifyNameServlet</servlet-name>
         <servlet-class>ModifyNameServlet</servlet-class>
     </servlet>
@@ -62,6 +72,16 @@
     <servlet-mapping>
         <servlet-name>ModifyNameServlet</servlet-name>
         <url-pattern>/ModifyNameServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ModifyNewsServlet</servlet-name>
+        <servlet-class>ModifyNewsServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>ModifyNewsServlet</servlet-name>
+        <url-pattern>/ModifyNewsServlet</url-pattern>
     </servlet-mapping>
 
     <servlet>
