@@ -5,6 +5,8 @@
 	<link rel="stylesheet" type="text/css" href="header.css">
 	<link rel="stylesheet" type="text/css" href="footer.css">
 	<link rel="stylesheet" type="text/css" href="program-structure.css">
+	<link rel="stylesheet" type="text/css" href="back-to-top-button.css">
+	<script type=text/javascript src="back-to-top-button.js"></script>
 
 	<style>
 		.image-with-tag {float:none; margin:0 auto 10px; display:block; width:400px; padding-bottom:35%;}
@@ -19,11 +21,11 @@
 				<img src="images\logo.png" class="navbarlogo">
 			</a></div>
 			<div class="navigationlist">
-				<div id="nav_item"><a href="home.jsp">Home</a></div>
-				<div id="nav_item"><a href="staff.jsp">Staff</a></div>
-				<div id="nav_item"><a href="program-structure.jsp">Program Structure</a></div>
-				<div id="nav_item"><a href="student-activities.jsp">Student Activities</a></div>
-				<div id="nav_item"><a href="about.jsp">About</a></div>
+				<div class="nav_item"><a href="home.jsp">Home</a></div>
+				<div class="nav_item"><a href="staff.jsp">Staff</a></div>
+				<div class="nav_item"><a href="program-structure.jsp">Program Structure</a></div>
+				<div class="nav_item"><a href="student-activities.jsp">Student Activities</a></div>
+				<div class="nav_item"><a href="about.jsp">About</a></div>
 			</div>
 		</div>
 	</div>
@@ -31,6 +33,8 @@
 	<div class = "bg-img"></div>
 
 	<!-- body section-->
+	<button onclick="topFunction()" id="myBtn" title="Go to top">&#8593;</button>
+
 	<div class = "row" style = "margin-bottom: -50px;">
 		<p style = "font-size: 30px"><b>Program Structure</b></p>
 	</div>
@@ -43,7 +47,7 @@
 
 	<div class = "row" >
 		<div class = "column">
-			<a href="computer-science-tech.html">
+			<a href="computer-sci-tech.jsp">
 				<div class="course_container">
 					 <img src="images\PS - cst.png" alt="Computer Science Technology" class="image">
 						<div class="overlay">
@@ -65,7 +69,7 @@
 		</div>
 
 		<div class = "column">
-			<a href="digital-media-tech.html">
+			<a href="digital-media-tech.jsp">
 				<div class="course_container">
  					 <img src="images\PS - dmt.png" alt="Digital Media Technology" class="image">
   						<div class="overlay">
@@ -83,7 +87,7 @@
 	        <div class="footer-container">
 	            <div class="footer-column">
 	                <h3>EXPLORE</h3>
-	                <ul style = "list-style-type: none;" class="text-white">
+	                <ul class="text-white">
 	                    <li><a href="home.jsp">Home</a></li>
 	                    <li><a href="staff.jsp">Staff</a></li>
 	                    <li><a href="program-structure.jsp">Program Structure</a></li>
@@ -94,15 +98,15 @@
 
 	            <div class="footer-column">
 	                <h3>QUICK LINK</h3>
-	                <ul style = "list-style-type: none;" class="text-white">
-	                    <li><a href="http://www.xmu.edu.my/">Xiamen University Malaysia</a></li>
-	                    <li><a href="https://linc.xmu.edu.my/">Library</a></li>
+	                <ul class="text-white">
+	                    <li><a href="http://www.xmu.edu.my/" target="_blank" rel="noopener">Xiamen University Malaysia</a></li>
+	                    <li><a href="https://linc.xmu.edu.my/" target="_blank" rel="noopener">Library</a></li>
 	                </ul>
 	            </div>
 
 	            <div class="footer-column">
 	                <h3>OFFICE ADDRESS</h3>
-	                <ul style = "list-style-type: none;" class="text-white">
+	                <ul class="text-white">
 	                	<li>Xiamen University Malaysia</li>
 	                    <li>10, Jalan Sunsuria,</li>
 	                    <li>Bandar Sunsuria,</li>
@@ -113,15 +117,15 @@
 
 	            <div class="footer-column">
 	                <h3>CONTACT US</h3>
-	                <ul style = "list-style-type: none;" class="text-white">
+	                <ul class="text-white">
 	                    <li>
-							<a href = "https://www.facebook.com/SWEstudentunion/?ref=br_rs"> 
+							<a href = "https://www.facebook.com/SWEstudentunion/?ref=br_rs" target="_blank" rel="noopener">
 								<img src = "images\facebook.png" alt = "facebook">
 							</a>
-							<a href = "mailto: SWEstudentcouncil@outlook.com">
+							<a href = "mailto: swestudentcouncil@outlook.com">
 								<img src = "images\mail.png" alt = "mail">
 							</a>
-							<a href = "https://xmux.xdea.top/">
+							<a href = "https://xmux.xdea.top/" target="_blank" rel="noopener">
 								<img src = "images\xmux.jpg" alt = "xmux">
 							</a>
 	                    </li>

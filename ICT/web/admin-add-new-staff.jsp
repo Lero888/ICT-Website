@@ -1,3 +1,30 @@
+<%@ page import="java.util.List" %>
+<%@ page import="net.model.StaffBean" %>
+<jsp:useBean id="model_staff" class="net.model.StaffAccess" />
+<%
+	List<StaffBean> model = model_staff.get();
+	int sid=0;
+	String temp = "";
+	int temp2 = 0;
+	boolean inc = true;
+
+	for(int i=1;i<=model.size();i++)
+	{
+		sid=i;
+		temp = model.get(i-1).getStaff_id();
+		temp2 = Integer.parseInt(temp);
+		if( temp2!=(sid)  )
+		{
+			inc = false;
+			break;
+		}
+	}
+
+	if(inc == true)
+	{
+		sid = sid + 1;
+	}
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -5,6 +32,8 @@
 	<link rel="stylesheet" type="text/css" href="header.css">
 	<link rel="stylesheet" type="text/css" href="footer.css">
 	<link rel="stylesheet" type="text/css" href="admin-add-new-staff.css">
+	<link rel="stylesheet" type="text/css" href="back-to-top-button.css">
+	<script type=text/javascript src="back-to-top-button.js"></script>
 
 	<style>
 		.image-with-tag {float:none; margin:0 auto 10px; display:block; width:400px; padding-bottom:35%;}
@@ -12,21 +41,28 @@
 </head>
 
 <body>
+<%
+	response.setHeader("Cache-Control","no-cache");
+	response.setHeader("Cache-Control","no-store");
+	response.setHeader("Pragma","no-cache");
+	response.setDateHeader ("Expires", 0);
 
+	if(session.getAttribute("username")==null || session == null)
+		response.sendRedirect("admin-login.jsp");
+%>
 	<div class="navbarcont">
 		<div class="navbarcont2">
 			<div><a href="home.jsp">
 				<img src="images/logo.png" class="navbarlogo">
 			</a></div>
-			<div class="navigationlist">
-				<div id="nav_item"><a href="home.jsp">Home</a></div>
-				<div id="nav_item"><a href="staff.jsp">Staff</a></div>
-				<div id="nav_item"><a href="program-structure.jsp">Program Structure</a></div>
-				<div id="nav_item"><a href="student-activities.jsp">Student Activities</a></div>
-				<div id="nav_item"><a href="about.jsp">About</a></div>
+			<div class="logout">
+				<div style="padding-right:10px; color:white;"><%=session.getAttribute("username")%></div>
+				<a href="./AdminLogoutServlet" id ="log">Logout</a>
 			</div>
 		</div>
 	</div>
+
+	<button onclick="topFunction()" id="myBtn" title="Go to top">&#8593;</button>
 
 	<div style = "margin: 50px; text-align: left;">
 		<h1 style = "text-align: center;">Add A Staff</h1>
@@ -38,6 +74,7 @@
 	</div>
 
 	<form action = "./AddStaffServlet" method = "post" enctype="multipart/form-data">
+		<input type="hidden" name="sid" value="<%=sid%>"/>
 		<div class = "flexcontainer">
 			<div class="flexbox">
 		  		<div class="col" style = "margin-top: 16px;">
@@ -61,7 +98,8 @@
 
 			<div class="flexbox">
 		  		<div class="col" style = "margin-top: 16px;">
-	  				<select name="school">
+	  				<select name="school" required>
+						<option value="" selected disabled hidden>Select one</option>
 	  					<option value="School of Energy and Chemical Engineering">School of Energy and Chemical Engineering</option>
 	  					<option value="School of Information Science and Technology">School of Information Science and Technology</option>
 	  					<option value="School of Ocean and Environment">School of Ocean and Environment</option>
@@ -172,7 +210,7 @@
 			<div class="footer-container">
 				<div class="footer-column">
 					<h3>EXPLORE</h3>
-					<ul style = "list-style-type: none;" class="text-white">
+					<ul class="text-white">
 						<li><a href="home.jsp">Home</a></li>
 						<li><a href="staff.jsp">Staff</a></li>
 						<li><a href="program-structure.jsp">Program Structure</a></li>
@@ -183,15 +221,15 @@
 
 				<div class="footer-column">
 					<h3>QUICK LINK</h3>
-					<ul style = "list-style-type: none;" class="text-white">
-						<li><a href="http://www.xmu.edu.my/">Xiamen University Malaysia</a></li>
-						<li><a href="https://linc.xmu.edu.my/">Library</a></li>
+					<ul class="text-white">
+						<li><a href="http://www.xmu.edu.my/" target="_blank" rel="noopener">Xiamen University Malaysia</a></li>
+						<li><a href="https://linc.xmu.edu.my/" target="_blank" rel="noopener">Library</a></li>
 					</ul>
 				</div>
 
 				<div class="footer-column">
 					<h3>OFFICE ADDRESS</h3>
-					<ul style = "list-style-type: none;" class="text-white">
+					<ul class="text-white">
 						<li>Xiamen University Malaysia</li>
 						<li>10, Jalan Sunsuria,</li>
 						<li>Bandar Sunsuria,</li>
@@ -202,18 +240,17 @@
 
 				<div class="footer-column">
 					<h3>CONTACT US</h3>
-					<ul style = "list-style-type: none;" class="text-white">
+					<ul class="text-white">
 						<li>
-							<a href = "https://www.facebook.com/SWEstudentunion/?ref=br_rs">
-								<img src = "images/facebook.png" alt = "facebook">
+							<a href = "https://www.facebook.com/SWEstudentunion/?ref=br_rs" target="_blank" rel="noopener">
+								<img src = "images\facebook.png" alt = "facebook">
 							</a>
-							<a href = "mailto: SWEstudentcouncil@outlook.com">
-								<img src = "images/mail.png" alt = "mail">
+							<a href = "mailto: swestudentcouncil@outlook.com">
+								<img src = "images\mail.png" alt = "mail">
 							</a>
-							<a href = "https://xmux.xdea.top/">
-								<img src = "images/xmux.jpg" alt = "xmux">
+							<a href = "https://xmux.xdea.top/" target="_blank" rel="noopener">
+								<img src = "images\xmux.jpg" alt = "xmux">
 							</a>
-
 						</li>
 					</ul>
 				</div>
@@ -225,6 +262,7 @@
 			Copyright &#0169 2019 Information Technology Xiamen University Malaysia. All rights reserved.
 		</div>
 	</footer>
+
 
 </body>
 </html>

@@ -6,6 +6,58 @@ html, body {
   height: 100%;
 }
 
+
+.header1 {
+  width: 100%;
+  margin:0 auto;
+  margin-top: 5%;
+  display: inline-flex;
+
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.header1 a{
+  color:black;
+}
+
+.header1 a:hover{
+  color: gray;
+}
+
+.header1 h1 {
+  text-align: center;
+}
+
+.navigation_arrow {
+  font-size: 2em;
+  cursor: pointer;
+  width:  20px;
+  text-align: center;
+}
+
+.navigation_arrow:hover{
+  color: gray;
+}
+
+.back_to_staff_panel a {
+  color: #365899;
+  text-decoration: none;
+}
+
+.back_to_staff_panel  a:link, .back_to_staff_panel  a:visited {
+  color: #365899;
+}
+
+.back_to_staff_panel  a:hover {
+  color: #666565;
+  text-decoration: underline;
+}
+
+.back_to_staff_panel p {
+  color: #666565;
+}
 .flexcontainer a {
   color: #000000;
   text-decoration: none;

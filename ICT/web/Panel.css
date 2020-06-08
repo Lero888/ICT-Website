@@ -30,6 +30,11 @@ h1{
 	color: gray;
 }
 
+
+.item:hover {
+	cursor: pointer;
+}
+
 .item a{
 	text-decoration: none;
 	color:black;
@@ -110,6 +115,7 @@ h1{
 .info {
 	padding-left: 2%;
 	padding-top: 20px;
+	width:fit-content;
 }
 
 .image-container {
@@ -131,19 +137,5 @@ h1{
 	transition-duration: 0.2s;
 }
 
-.logout{
-	padding: 10px 20px;
-	display:inline-flex;
-	font-size: 1em;
-}
-
-#log{
-	padding-left:10px;
-	border-left: 1px solid white;
-}
-
-.logout > a:hover{
-	color: coral;
-}
 
 

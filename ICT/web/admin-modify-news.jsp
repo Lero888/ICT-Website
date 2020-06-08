@@ -16,22 +16,33 @@
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
 	<link rel="stylesheet" type="text/css" href="header.css">
 	<link rel="stylesheet" type="text/css" href="footer.css">
+	<link rel="stylesheet" type="text/css" href="back-to-top-button.css">
+	<script type=text/javascript src="back-to-top-button.js"></script>
 </head>
 <body>
+<%
+	response.setHeader("Cache-Control","no-cache");
+	response.setHeader("Cache-Control","no-store");
+	response.setHeader("Pragma","no-cache");
+	response.setDateHeader ("Expires", 0);
+
+	if(session.getAttribute("username")==null || session == null)
+		response.sendRedirect("admin-login.jsp");
+%>
 	<div class="navbarcont">
 		<div class="navbarcont2">
 			<div><a href="home.jsp">
-				<img src="images/logo.png" class="navbarlogo">
+				<img src="images/logo.png" alt="logo" class="navbarlogo">
 			</a></div>
-			<div class="navigationlist">
-				<div id="nav_item"><a href="home.jsp">Home</a></div>
-				<div id="nav_item"><a href="staff.jsp">Staff</a></div>
-				<div id="nav_item"><a href="program-structure.jsp">Program Structure</a></div>
-				<div id="nav_item"><a href="student-activities.jsp">Student Activities</a></div>
-				<div id="nav_item"><a href="about.jsp">About</a></div>
-			</div>	
+			<div class="logout">
+				<div style="padding-right:10px; color:white;"><%=session.getAttribute("username")%></div>
+				<a href="./AdminLogoutServlet" id ="log">Logout</a>
+			</div>
 		</div>
 	</div>
+
+	<button onclick="topFunction()" id="myBtn" title="Go to top">&#8593;</button>
+
 	<form id="modifynews" method="post" action="./ModifyNewsServlet" enctype="multipart/form-data">
 		<input type="hidden" name="nid" value="<%=request.getParameter("nid")%>">
 		<div class="container">
@@ -46,21 +57,21 @@
 							{
 					%>
 					<div style="margin-bottom:10px; width:100%;">
-						<input type="text" name="title" value="<%=bean.getTitle()%>" style="width:100%;" title="Title" >
+						<input type="text" name="title" value="<%=bean.getTitle()%>" style="width:100%;" title="Title" required="required">
 					</div>
 					<div style="width:100%;">
-						<input type="text" name="caption" value="<%=bean.getCaption()%>" style="width:100%;" title="Caption">
+						<input type="text" name="caption" value="<%=bean.getCaption()%>" style="width:100%;" title="Caption" required="required">
 					</div>
 
 					<div class="details">
 						<div style="display:inline-flex; justify-content: space-between; width:100%;">
 							<div class="datecreated">
 								<i class="fas fa-clock" style="font-size: 15px; margin-right:5px;"></i>
-								<input type="text" name="date" value="<%=bean.getDatecreated()%>" style="width:100%;" title="date">
+								<input type="date" name="date" value="<%=bean.getDatecreated()%>" style="width:100%;" title="date" required = "required">
 							</div>
 							<div style="display:flex;align-items:center;">
-								<select name="category" required style=" height:20px;">
-									<option value="" selected disabled hidden>Select one</option>
+								<select name="category" style="height:20px;" required>
+									<option value="" selected disabled hidden><%=bean.getCategory()%></option>
 									<option value="Highlight">Highlight</option>
 									<option value="Most Read">Most Read</option>
 									<option value="Normal">Normal</option>
@@ -82,12 +93,16 @@
 					</div>
 				</div>
 				<div class="imgcontainer">
-					<img src="images/<%=bean.getThumbnail()%>" style="min-width:70%; min-height:300px; max-height: 500px;" title="<%=bean.getTitle()%>" >
+					<img src="images/<%=bean.getThumbnail()%>" alt="<%=bean.getCaption()%>" style="min-width:70%; min-height:300px; max-height: 500px;" title="<%=bean.getTitle()%>" >
 				</div>
-				<input type="file" name="image" accept="image/*">
+
+				<div class = "imgcontainer">
+					<input type="file" name="image" accept="image/*">
+				</div>
+
 
 				<div class="content">
-					<textarea name="n_content" style="min-width:1063px; height:500px; margin-top:50px;" title="Content"><%
+					<textarea name="n_content" style="min-width:1063px; height:500px; margin-top:50px;" title="Content" required="required"><%
 								List<NewsContentBean> model3 = model_newsContent.get();
 								for(NewsContentBean bean3: model3)
 								{
@@ -104,7 +119,7 @@
 					%></textarea>
 				</div>
 				<div style = "flexbox">
-					<div style="display:flex; justify-content:flex-end;">
+					<div style="display:flex; justify-content:flex-start; margin-top: 20px;">
 						<input type= "submit" value = "Submit" style = "margin-right: 10px;">
 						<button class="btn-cancel" onclick="location.href='admin-news-panel.jsp';">Cancel</button>
 					</div>
@@ -113,9 +128,6 @@
 		</div>
 	</form>
 
-
-
-
 	<!-- Footer section -->
 	<footer>
 		<section class="footer">
@@ -123,7 +135,7 @@
 			<div class="footer-container">
 				<div class="footer-column">
 					<h3>EXPLORE</h3>
-					<ul style = "list-style-type: none;" class="text-white">
+					<ul class="text-white">
 						<li><a href="home.jsp">Home</a></li>
 						<li><a href="staff.jsp">Staff</a></li>
 						<li><a href="program-structure.jsp">Program Structure</a></li>
@@ -134,15 +146,15 @@
 
 				<div class="footer-column">
 					<h3>QUICK LINK</h3>
-					<ul style = "list-style-type: none;" class="text-white">
-						<li><a href="http://www.xmu.edu.my/">Xiamen University Malaysia</a></li>
-						<li><a href="https://linc.xmu.edu.my/">Library</a></li>
+					<ul class="text-white">
+						<li><a href="http://www.xmu.edu.my/" target="_blank" rel="noopener">Xiamen University Malaysia</a></li>
+						<li><a href="https://linc.xmu.edu.my/" target="_blank" rel="noopener">Library</a></li>
 					</ul>
 				</div>
 
 				<div class="footer-column">
 					<h3>OFFICE ADDRESS</h3>
-					<ul style = "list-style-type: none;" class="text-white">
+					<ul class="text-white">
 						<li>Xiamen University Malaysia</li>
 						<li>10, Jalan Sunsuria,</li>
 						<li>Bandar Sunsuria,</li>
@@ -153,18 +165,17 @@
 
 				<div class="footer-column">
 					<h3>CONTACT US</h3>
-					<ul style = "list-style-type: none;" class="text-white">
+					<ul class="text-white">
 						<li>
-							<a href = "https://www.facebook.com/SWEstudentunion/?ref=br_rs">
-								<img src = "images/facebook.png">
+							<a href = "https://www.facebook.com/SWEstudentunion/?ref=br_rs" target="_blank" rel="noopener">
+								<img src = "images\facebook.png" alt = "facebook">
 							</a>
-							<a href = "mailto: SWEstudentunion@outlook.com">
-								<img src = "images/mail.png">
+							<a href = "mailto: swestudentcouncil@outlook.com">
+								<img src = "images\mail.png" alt = "mail">
 							</a>
-							<a href = "https://xmux.xdea.top/">
-								<img src = "images/xmux.jpg">
+							<a href = "https://xmux.xdea.top/" target="_blank" rel="noopener">
+								<img src = "images\xmux.jpg" alt = "xmux">
 							</a>
-
 						</li>
 					</ul>
 				</div>

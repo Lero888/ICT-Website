@@ -7,19 +7,22 @@ import java.io.PrintWriter;
 @WebServlet(name = "AdminLogoutServlet")
 public class AdminLogoutServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-    }
-
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
         HttpSession session  = request.getSession();
 
         response.setContentType("text/html");
         session.invalidate();
 
+        session = request.getSession(false);
+
         request.getRequestDispatcher("admin-login.jsp").include(request, response);
-        Cookie ck=new Cookie("username","");
+        Cookie ck = new Cookie("username","");
         ck.setMaxAge(0);
         response.addCookie(ck);
+
+    }
+
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        doPost(request,response);
     }
 }

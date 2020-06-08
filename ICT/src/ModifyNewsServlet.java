@@ -53,13 +53,14 @@ public class ModifyNewsServlet extends HttpServlet {
             PrintWriter out = new PrintWriter(System.out);
             for(String str: news_c)
             {
+                if(!str.isBlank())
                 {
                     sql = "insert into news_content(nid, content) values (" + news_id + ", '" + str + "')";
                     stm.execute(sql);
                 }
             }
 
-            response.sendRedirect("admin-news.jsp?nid=" + request.getParameter("nid"));
+            response.sendRedirect("admin-news-panel.jsp");
         }
         catch (Exception e){
             e.printStackTrace();

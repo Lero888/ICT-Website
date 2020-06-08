@@ -12,6 +12,8 @@
 	<link rel="stylesheet" type="text/css" href="header.css">
 	<link rel="stylesheet" type="text/css" href="footer.css">
 	<link rel="stylesheet" type="text/css" href="student-activities.css">
+	<link rel="stylesheet" type="text/css" href="back-to-top-button.css">
+	<script type=text/javascript src="back-to-top-button.js"></script>
 
 </head>
 <body>
@@ -19,18 +21,20 @@
 		<div class="navbarcont2">
 			<div><a href="home.jsp">
 				<img src="images/logo.png" class="navbarlogo">
-			</a></div>	
+			</a></div>
 			<div class="navigationlist">
-				<div id="nav_item"><a href="home.jsp">Home</a></div>
-				<div id="nav_item"><a href="staff.jsp">Staff</a></div>
-				<div id="nav_item"><a href="program-structure.jsp">Program Structure</a></div>
-				<div id="nav_item"><a href="student-activities.jsp">Student Activities</a></div>
-				<div id="nav_item"><a href="about.jsp">About</a></div>
-			</div>	
+				<div class="nav_item"><a href="home.jsp">Home</a></div>
+				<div class="nav_item"><a href="staff.jsp">Staff</a></div>
+				<div class="nav_item"><a href="program-structure.jsp">Program Structure</a></div>
+				<div class="nav_item"><a href="student-activities.jsp">Student Activities</a></div>
+				<div class="nav_item"><a href="about.jsp">About</a></div>
+			</div>
 		</div>
 	</div>
-		
-	</div>
+
+	<!-- body section-->
+	<button onclick="topFunction()" id="myBtn" title="Go to top" style="width:40px;">&#8593;</button>
+
 	<div class="container">
 		<div class="banner">
 			<div style="width:80%; display:inherit; justify-content: inherit; flex-wrap: wrap;">
@@ -41,7 +45,7 @@
 				</div>
 				<div style="display:inline-flex;">
 					<%
-						String category = "highlight";
+						String category = "Highlight";
 						List<NewsBean> model = model_news.get();
 						int i =1;
 
@@ -53,7 +57,7 @@
 					%>
 					<figure class="bignews" style="margin-bottom:3.33px">
 						<!-- bignews -->
-						<a href="news.jsp?nid=<%=bean.getIdnews()%>"><img src="<%=bean.getThumbnail()%>" class="image" style="width:400px; height:310px;"></a>
+						<a href="news.jsp?nid=<%=bean.getIdnews()%>"><img src="images/<%=bean.getThumbnail()%>" class="image" style="width:400px; height:310px;"></a>
 						<figcaption class="absolutecapt"><%=bean.getCaption()%></figcaption>
 					</figure>
 					<%
@@ -93,7 +97,7 @@
 							%>
 							<figure class="relativeimg">
 								<!-- bottomleft -->
-								<a href="news.jsp?nid=<%=model.get(j).getIdnews()%>"><img src="<%=model.get(j).getThumbnail()%>" class="image" style="width:200px; height:150px;"></a>
+								<a href="news.jsp?nid=<%=model.get(j).getIdnews()%>"><img src="images/<%=model.get(j).getThumbnail()%>" class="image" style="width:200px; height:150px;"></a>
 								<figcaption class="absolutecapt"><%=model.get(j).getTitle()%></figcaption>
 							</figure>
 							<%
@@ -116,7 +120,7 @@
 							%>
 							<figure class="relativeimg" style="margin-bottom:10px;">
 								<!-- topright -->
-								<a href="news.jsp?nid=<%=model.get(j).getIdnews()%>"><img src="<%=model.get(j).getThumbnail()%>" class="image" style="width:200px; height:150px;"></a>
+								<a href="news.jsp?nid=<%=model.get(j).getIdnews()%>"><img src="images/<%=model.get(j).getThumbnail()%>" class="image" style="width:200px; height:150px;"></a>
 								<figcaption class="absolutecapt"><%=model.get(j).getTitle()%></figcaption>
 							</figure>
 							<%
@@ -134,7 +138,7 @@
 							%>
 							<figure class="relativeimg">
 								<!-- bottomright -->
-								<a href="news.jsp?nid=<%=model.get(j).getIdnews()%>"><img src="<%=model.get(j).getThumbnail()%>" class="image" style="width:200px; height:150px;"></a>
+								<a href="news.jsp?nid=<%=model.get(j).getIdnews()%>"><img src="images/<%=model.get(j).getThumbnail()%>" class="image" style="width:200px; height:150px;"></a>
 								<figcaption class="absolutecapt"><%=model.get(j).getTitle()%></figcaption>
 							</figure>
 							<%
@@ -159,10 +163,11 @@
 						<strong>RECENT</strong>
 					</div>
 					<div class="rightcc">
-						<a href="morenews.jsp">More...</a>
+						<a href="more-news.jsp">More...</a>
 					</div>
 				</div>
-				<div>
+
+				<div class = "show_more">
 					<%
 						List<NewsBean> model1 = model_news.get();
 
@@ -174,7 +179,7 @@
 						<button type="button" onclick="location.href='news.jsp?nid=<%=bean1.getIdnews()%>';">
 							<div style="display:flex;">
 								<!-- img -->
-								<img src="<%=bean1.getThumbnail()%>" class="newsimg">
+								<img src="images/<%=bean1.getThumbnail()%>" class="newsimg">
 							</div>
 							<div style="width:70%; display:flex;">
 								<div style="padding:10px 0 0 20px;">
@@ -194,11 +199,10 @@
 
 					<%}%>
 					<div class="showmore">
-						<button type="button" onclick="location.href='morenews.jsp';">
+						<button type="button" onclick="location.href='more-news.jsp';">
 								<b>Show more news</b>
 						</button>
 					</div>
-
 				</div>
 			</div>
 		</div>
@@ -211,7 +215,7 @@
 			<div class="footer-container">
 				<div class="footer-column">
 					<h3>EXPLORE</h3>
-					<ul style = "list-style-type: none;" class="text-white">
+					<ul class="text-white">
 						<li><a href="home.jsp">Home</a></li>
 						<li><a href="staff.jsp">Staff</a></li>
 						<li><a href="program-structure.jsp">Program Structure</a></li>
@@ -222,15 +226,15 @@
 
 				<div class="footer-column">
 					<h3>QUICK LINK</h3>
-					<ul style = "list-style-type: none;" class="text-white">
-						<li><a href="http://www.xmu.edu.my/">Xiamen University Malaysia</a></li>
-						<li><a href="https://linc.xmu.edu.my/">Library</a></li>
+					<ul class="text-white">
+						<li><a href="http://www.xmu.edu.my/" target="_blank" rel="noopener">Xiamen University Malaysia</a></li>
+						<li><a href="https://linc.xmu.edu.my/" target="_blank" rel="noopener">Library</a></li>
 					</ul>
 				</div>
 
 				<div class="footer-column">
 					<h3>OFFICE ADDRESS</h3>
-					<ul style = "list-style-type: none;" class="text-white">
+					<ul class="text-white">
 						<li>Xiamen University Malaysia</li>
 						<li>10, Jalan Sunsuria,</li>
 						<li>Bandar Sunsuria,</li>
@@ -241,18 +245,17 @@
 
 				<div class="footer-column">
 					<h3>CONTACT US</h3>
-					<ul style = "list-style-type: none;" class="text-white">
+					<ul class="text-white">
 						<li>
-							<a href = "https://www.facebook.com/SWEstudentunion/?ref=br_rs">
-								<img src = "images/facebook.png">
+							<a href = "https://www.facebook.com/SWEstudentunion/?ref=br_rs" target="_blank" rel="noopener">
+								<img src = "images\facebook.png" alt = "facebook">
 							</a>
-							<a href = "mailto: SWEstudentunion@outlook.com">
-								<img src = "images/mail.png">
+							<a href = "mailto: swestudentcouncil@outlook.com">
+								<img src = "images\mail.png" alt = "mail">
 							</a>
-							<a href = "https://xmux.xdea.top/">
-								<img src = "images/xmux.jpg">
+							<a href = "https://xmux.xdea.top/" target="_blank" rel="noopener">
+								<img src = "images\xmux.jpg" alt = "xmux">
 							</a>
-
 						</li>
 					</ul>
 				</div>
@@ -264,7 +267,6 @@
 			Copyright &#0169 2019 Information Technology Xiamen University Malaysia. All rights reserved.
 		</div>
 	</footer>
-	
 
 </body>
 </html>

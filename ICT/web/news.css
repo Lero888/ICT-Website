@@ -121,6 +121,14 @@ html, body{
 	color: black;
 }
 
+.sidect > a:link{
+	color:black;
+}
+
+.mostreadcontent > a:link{
+	color:black;
+}
+
 a{
 	color:black;
 }

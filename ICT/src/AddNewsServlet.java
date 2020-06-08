@@ -5,10 +5,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.Part;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
+import java.io.*;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
@@ -37,23 +34,32 @@ public class AddNewsServlet extends HttpServlet {
             byte[] data = new byte[1024 * 1024 * 1024];
             int len = is.read(data);
 
-            OutputStream os = new FileOutputStream(getServletContext().getRealPath("./images") + "/" + caption + ".png");
+            String temp = title.replaceAll("[^a-zA-Z0-9 -]", "");
+
+            OutputStream os = new FileOutputStream(getServletContext().getRealPath("./images") + "/" + temp + ".png");
             os.write(data, 0, len);
             os.close();
 
-            sql = "insert into news(title, caption, thumbnail, datecreated, category) values ('" + title + "', '" + caption + "', '" + caption + ".png', '" + sDate + "', '" + category + "')";
+
+
+            sql = "insert into news(title, caption, thumbnail, datecreated, category) values ('" + title + "', '" + caption + "', '" + temp + ".png', '" + sDate + "', '" + category + "')";
 
             stm.execute(sql);
 
-            ResultSet rs = stm.executeQuery("select * from news_content order by nid desc");
+            ResultSet rs = stm.executeQuery("select * from news order by idnews desc");
             rs.next();
-            String news_id = rs.getString("nid");
+            String news_id = rs.getString("idnews");
 
             String news_content = request.getParameter("n_content");
             String news_c[] = news_content.split("\n");
             for (String str : news_c) {
-                sql = "insert into news_content(nid, content) values ('" + news_id + "', '" + str + "')";
-                stm.execute(sql);
+                if(!str.isBlank())
+                {
+                    PrintWriter out = response.getWriter();
+                    out.println(str);
+                    sql = "insert into news_content(nid, content) values ('" + news_id + "', '" + str + "')";
+                    stm.execute(sql);
+                }
             }
             response.sendRedirect("admin-news-panel.jsp");
         }

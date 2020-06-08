@@ -1,5 +1,7 @@
 package net.model;
 
+import java.util.Comparator;
+
 public class StaffBean {
 
     protected String staff_id;
@@ -9,6 +11,17 @@ public class StaffBean {
     protected String tel;
     protected String email;
     protected String image;
+
+    public static Comparator<StaffBean> StaffNameComparator = new Comparator<StaffBean>() {
+
+        public int compare(StaffBean s1, StaffBean s2) {
+            String StaffName1 = s1.getStaff_name().toUpperCase();
+            String StaffName2 = s2.getStaff_name().toUpperCase();
+
+            //Return ascending order
+            return StaffName1.compareTo(StaffName2);
+        }
+    };
 
     public String getStaff_id() {
         return staff_id;

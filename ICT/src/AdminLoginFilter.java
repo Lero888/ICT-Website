@@ -12,18 +12,20 @@ public class AdminLoginFilter implements Filter {
 
         String username = req.getParameter("username");
         String password = req.getParameter("password");
-        if( username.contains("\'") || password.contains("\'") || username.contains("<script>") || username.contains("</script>")|| password.contains("<script>") || password.contains("</script>"))
+
+
+        if( username.contains("\'") || username.contains("<script>") || username.contains("</script>")
+           || password.contains("\'") || password.contains("<script>") || password.contains("</script>")
+        )
         {
             PrintWriter out = resp.getWriter();
-            out.println("Invalid character in username or password");
+            out.println("Invalid character in username or password.");
         }
 
         else
         {
             chain.doFilter(req, resp);
         }
-
-
 
     }
 

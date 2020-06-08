@@ -75,16 +75,6 @@
     </servlet-mapping>
 
     <servlet>
-        <servlet-name>ModifyNewsServlet</servlet-name>
-        <servlet-class>ModifyNewsServlet</servlet-class>
-    </servlet>
-
-    <servlet-mapping>
-        <servlet-name>ModifyNewsServlet</servlet-name>
-        <url-pattern>/ModifyNewsServlet</url-pattern>
-    </servlet-mapping>
-
-    <servlet>
         <servlet-name>ModifyPositionServlet</servlet-name>
         <servlet-class>ModifyPositionServlet</servlet-class>
     </servlet>
@@ -165,24 +155,146 @@
     </servlet-mapping>
 
     <servlet>
-        <servlet-name>StaffImageServlet</servlet-name>
-        <servlet-class>StaffImageServlet</servlet-class>
+        <servlet-name>ModifyNewsServlet</servlet-name>
+        <servlet-class>ModifyNewsServlet</servlet-class>
     </servlet>
 
     <servlet-mapping>
-        <servlet-name>StaffImageServlet</servlet-name>
-        <url-pattern>/StaffImageServlet</url-pattern>
+        <servlet-name>ModifyNewsServlet</servlet-name>
+        <url-pattern>/ModifyNewsServlet</url-pattern>
     </servlet-mapping>
 
     <servlet>
-        <servlet-name>AddStaffFilter</servlet-name>
-        <servlet-class>AddStaffFilter</servlet-class>
+        <servlet-name>ModifyImageServlet</servlet-name>
+        <servlet-class>ModifyImageServlet</servlet-class>
     </servlet>
 
     <servlet-mapping>
-        <servlet-name>AddStaffFilter</servlet-name>
-        <url-pattern>/AddStaffFilter</url-pattern>
+        <servlet-name>ModifyImageServlet</servlet-name>
+        <url-pattern>/ModifyImageServlet</url-pattern>
     </servlet-mapping>
+
+
+
+    <filter>
+       <filter-name>AdminLoginFilter</filter-name>
+        <filter-class>AdminLoginFilter</filter-class>
+    </filter>
+
+    <filter-mapping>
+        <filter-name>AdminLoginFilter</filter-name>
+        <url-pattern>/AdminLoginServlet</url-pattern>
+    </filter-mapping>
+
+    <filter>
+        <filter-name>AddStaffFilter</filter-name>
+        <filter-class>AddStaffFilter</filter-class>
+    </filter>
+
+    <filter-mapping>
+        <filter-name>AddStaffFilter</filter-name>
+        <url-pattern>/AddStaffServlet</url-pattern>
+    </filter-mapping>
+
+    <filter>
+        <filter-name>AddNewsFilter</filter-name>
+        <filter-class>AddNewsFilter</filter-class>
+    </filter>
+
+    <filter-mapping>
+        <filter-name>AddNewsFilter</filter-name>
+        <url-pattern>/AddNewsServlet</url-pattern>
+    </filter-mapping>
+
+    <filter>
+        <filter-name>ModifyAcademicFilter</filter-name>
+        <filter-class>ModifyAcademicFilter</filter-class>
+    </filter>
+
+    <filter-mapping>
+        <filter-name>ModifyAcademicFilter</filter-name>
+        <url-pattern>/ModifyAcademicServlet</url-pattern>
+    </filter-mapping>
+
+    <filter>
+        <filter-name>ModifyEduFilter</filter-name>
+        <filter-class>ModifyEduFilter</filter-class>
+    </filter>
+
+    <filter-mapping>
+        <filter-name>ModifyEduFilter</filter-name>
+        <url-pattern>/ModifyEduServlet</url-pattern>
+    </filter-mapping>
+
+    <filter>
+        <filter-name>ModifyEmailFilter</filter-name>
+        <filter-class>ModifyEmailFilter</filter-class>
+    </filter>
+
+    <filter-mapping>
+        <filter-name>ModifyEmailFilter</filter-name>
+        <url-pattern>/ModifyEmailServlet</url-pattern>
+    </filter-mapping>
+
+    <filter>
+        <filter-name>ModifyNameFilter</filter-name>
+        <filter-class>ModifyNameFilter</filter-class>
+    </filter>
+
+    <filter-mapping>
+        <filter-name>ModifyNameFilter</filter-name>
+        <url-pattern>/ModifyNameServlet</url-pattern>
+    </filter-mapping>
+
+    <filter>
+        <filter-name>ModifyNewsFilter</filter-name>
+        <filter-class>ModifyNewsFilter</filter-class>
+    </filter>
+
+    <filter-mapping>
+        <filter-name>ModifyNewsFilter</filter-name>
+        <url-pattern>/ModifyNewsServlet</url-pattern>
+    </filter-mapping>
+
+    <filter>
+        <filter-name>ModifyPositionFilter</filter-name>
+        <filter-class>ModifyPositionFilter</filter-class>
+    </filter>
+
+    <filter-mapping>
+        <filter-name>ModifyPositionFilter</filter-name>
+        <url-pattern>/ModifyPositionServlet</url-pattern>
+    </filter-mapping>
+
+    <filter>
+        <filter-name>ModifyRepresentativeFilter</filter-name>
+        <filter-class>ModifyRepresentativeFilter</filter-class>
+    </filter>
+
+    <filter-mapping>
+        <filter-name>ModifyRepresentativeFilter</filter-name>
+        <url-pattern>/ModifyRepresentativeServlet</url-pattern>
+    </filter-mapping>
+
+    <filter>
+        <filter-name>ModifyResearchFilter</filter-name>
+        <filter-class>ModifyResearchFilter</filter-class>
+    </filter>
+
+    <filter-mapping>
+        <filter-name>ModifyResearchFilter</filter-name>
+        <url-pattern>/ModifyResearchServlet</url-pattern>
+    </filter-mapping>
+
+    <filter>
+        <filter-name>ModifyTelFilter</filter-name>
+        <filter-class>ModifyTelFilter</filter-class>
+    </filter>
+
+    <filter-mapping>
+        <filter-name>ModifyTelFilter</filter-name>
+        <url-pattern>/ModifyTelServlet</url-pattern>
+    </filter-mapping>
 
 
 </web-app>

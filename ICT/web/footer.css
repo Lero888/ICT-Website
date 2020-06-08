@@ -86,6 +86,10 @@
   }
 }
 
+.footer-column ul {
+    list-style-type: none;
+}
+
 .footer2 {
 	background-color: rgba(20,46,103,1); 
 	height: auto; 

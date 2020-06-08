@@ -20,7 +20,7 @@ public class ModifyEmailServlet extends HttpServlet {
 
             String sql = "update staff set email = '"+ request.getParameter("email") + "' where staff_id = " + request.getParameter("sid") + "";
             stm.execute(sql);
-            response.sendRedirect("admin-personalinfo.jsp?sid=" + request.getParameter("sid"));
+            response.sendRedirect("admin-personal-info.jsp?sid=" + request.getParameter("sid"));
         }
         catch (Exception e){
             e.printStackTrace();

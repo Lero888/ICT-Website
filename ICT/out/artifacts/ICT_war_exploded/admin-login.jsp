@@ -1,8 +1,26 @@
+<%
+	Cookie[] arr_ck = request.getCookies();
+	String username ="";
+	String password ="";
+	for(int i=0; i<arr_ck.length; ++i)
+	{
+		if(arr_ck[i].getName().equals("username"))
+			username = arr_ck[i].getValue();
+		if(arr_ck[i].getName().equals("password"))
+			password = arr_ck[i].getValue();
+	}
+
+	if(!username.equals(""))
+	{
+		response.sendRedirect("AdminLoginServlet?username=" + username + "&password=" + password + " ");
+	}
+%>
+
 <!DOCTYPE html>
 <html>
 <head>
 	<title>Login</title>
-	<link rel="stylesheet" type="text/css" href="adminlogin.css">
+	<link rel="stylesheet" type="text/css" href="admin-login.css">
 </head>
 <body>
 	<div class="container">
@@ -26,7 +44,7 @@
 							<button class="btn" onclick="document.getElementById('login').submit();">Login</button>
 						</div>
 					</form>
-					
+
 				</div>
 			</div>
 		</div>

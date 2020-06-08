@@ -23,6 +23,7 @@ public class AddStaffServlet extends HttpServlet {
 
 
             String name = request.getParameter("name");
+            String staff_id = request.getParameter("sid");
             name = name.replace("<", "&#8249");
             name = name.replace(">", "&#8250");
             String position = request.getParameter("position");
@@ -52,50 +53,54 @@ public class AddStaffServlet extends HttpServlet {
                 os.write(data, 0, len);
                 os.close();
 
-                sql = "insert into staff(staff_name, position, school, tel, email, image) values ('" + name + "', '" + position + "', '" + school + "', '" + tel + "', '" + email + "', '" + name + ".png')";
+                sql = "insert into staff(staff_id, staff_name, position, school, tel, email, image) values (" + staff_id + ", '" + name + "', '" + position + "', '" + school + "', '" + tel + "', '" + email + "', '" + name + ".png')";
             }
 
             else
             {
-                sql = "insert into staff(staff_name, position, school, tel, email, image) values ('" + name + "', '" + position + "', '" + school + "', '" + tel + "', '" + email + "', 'profile.png')";
+                sql = "insert into staff(staff_id, staff_name, position, school, tel, email, image) values (" + staff_id + ",'" + name + "', '" + position + "', '" + school + "', '" + tel + "', '" + email + "', 'profile.png')";
 
             }
             stm.execute(sql);
 
-
-            ResultSet rs = stm.executeQuery("select * from staff order by staff_id desc");
-            rs.next();
-            String staff_id = rs.getString("staff_id");
-
             String EduBg = request.getParameter("Educational-Background");
             String EduBgs[] = EduBg.split("\n");
             for (String str : EduBgs) {
-                sql = "insert into edu_bg(staff_id, description) values (" + staff_id + ", '" + str + "')";
-                stm.execute(sql);
+
+                if(!str.isBlank()) {
+                    sql = "insert into edu_bg(staff_id, description) values (" + staff_id + ", '" + str + "')";
+                    stm.execute(sql);
+                }
             }
 
             String ResInt = request.getParameter("Research-Interest");
             String ResInts[] = ResInt.split("\n");
             for(String str: ResInts)
             {
-                sql = "insert into r_interest(staff_id, description) values (" + staff_id + ", '" + str + "')";
-                stm.execute(sql);
+                if(!str.isBlank()) {
+                    sql = "insert into r_interest(staff_id, description) values (" + staff_id + ", '" + str + "')";
+                    stm.execute(sql);
+                }
             }
 
             String AcadExp = request.getParameter("Academic-Experience");
             String AcadExps[] = AcadExp.split("\n");
             for(String str: AcadExps)
             {
-                sql = "insert into acad_exp(staff_id, description) values (" + staff_id + ", '" + str + "')";
-                stm.execute(sql);
+                if(!str.isBlank()) {
+                    sql = "insert into acad_exp(staff_id, description) values (" + staff_id + ", '" + str + "')";
+                    stm.execute(sql);
+                }
             }
 
             String RepPub = request.getParameter("Representative-Publications");
             String RepPubs[] = RepPub.split("\n");
             for(String str: RepPubs)
             {
-                sql = "insert into rep_pub(staff_id, description) values (" + staff_id + ", '" + str + "')";
-                stm.execute(sql);
+                if(!str.isBlank()) {
+                    sql = "insert into rep_pub(staff_id, description) values (" + staff_id + ", '" + str + "')";
+                    stm.execute(sql);
+                }
             }
 
             response.sendRedirect("admin-staff-panel.jsp");

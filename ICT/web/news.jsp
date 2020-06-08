@@ -16,22 +16,26 @@
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
 	<link rel="stylesheet" type="text/css" href="header.css">
 	<link rel="stylesheet" type="text/css" href="footer.css">
+	<link rel="stylesheet" type="text/css" href="back-to-top-button.css">
+	<script type=text/javascript src="back-to-top-button.js"></script>
 </head>
 <body>
 	<div class="navbarcont">
 		<div class="navbarcont2">
 			<div><a href="home.jsp">
 				<img src="images/logo.png" class="navbarlogo">
-			</a></div>	
+			</a></div>
 			<div class="navigationlist">
-				<div id="nav_item"><a href="home.jsp">Home</a></div>
-				<div id="nav_item"><a href="staff.jsp">Staff</a></div>
-				<div id="nav_item"><a href="program-structure.jsp">Program Structure</a></div>
-				<div id="nav_item"><a href="student-activities.jsp">Student Activities</a></div>
-				<div id="nav_item"><a href="about.jsp">About</a></div>
-			</div>	
+				<div class="nav_item"><a href="home.jsp">Home</a></div>
+				<div class="nav_item"><a href="staff.jsp">Staff</a></div>
+				<div class="nav_item"><a href="program-structure.jsp">Program Structure</a></div>
+				<div class="nav_item"><a href="student-activities.jsp">Student Activities</a></div>
+				<div class="nav_item"><a href="about.jsp">About</a></div>
+			</div>
 		</div>
 	</div>
+
+	<button onclick="topFunction()" id="myBtn" title="Go to top">&#8593;</button>
 
 	<div class="container">
 		<div class="contentcontainer">
@@ -43,6 +47,7 @@
 				{
 					if(bean.getIdnews().equals(nid))
 					{
+
 			%>
 			<div class="titlecontainer">
 				<h1><%=bean.getTitle()%></h1>
@@ -67,7 +72,7 @@
 				</div>
 			</div>
 			<div class="imgcontainer">
-				<img src="<%=bean.getThumbnail()%>" style="width:100%; min-height:300px; max-height: 500px;">
+				<img src="images/<%=bean.getThumbnail()%>" style="width:100%; min-height:300px; max-height: 500px;">
 			</div>
 
 			<%
@@ -98,7 +103,7 @@
 				</div>
 				<div class="sidecontent">
 					<%
-						String category = "highlight";
+						String category = "Highlight";
 						List <NewsBean> model1 = model_news.get();
 
 						for(NewsBean bean1: model1)
@@ -130,7 +135,7 @@
 				Most Read
 			</div>
 			<%
-				category = "mostread";
+				category = "Most Read";
 				List <NewsBean> model2 = model_news.get();
 				for (NewsBean bean2:model2){
 					if (bean2.getCategory().equals(category)){
@@ -181,7 +186,7 @@
 			<div class="footer-container">
 				<div class="footer-column">
 					<h3>EXPLORE</h3>
-					<ul style = "list-style-type: none;" class="text-white">
+					<ul class="text-white">
 						<li><a href="home.jsp">Home</a></li>
 						<li><a href="staff.jsp">Staff</a></li>
 						<li><a href="program-structure.jsp">Program Structure</a></li>
@@ -192,15 +197,15 @@
 
 				<div class="footer-column">
 					<h3>QUICK LINK</h3>
-					<ul style = "list-style-type: none;" class="text-white">
-						<li><a href="http://www.xmu.edu.my/">Xiamen University Malaysia</a></li>
-						<li><a href="https://linc.xmu.edu.my/">Library</a></li>
+					<ul class="text-white">
+						<li><a href="http://www.xmu.edu.my/" target="_blank" rel="noopener">Xiamen University Malaysia</a></li>
+						<li><a href="https://linc.xmu.edu.my/" target="_blank" rel="noopener">Library</a></li>
 					</ul>
 				</div>
 
 				<div class="footer-column">
 					<h3>OFFICE ADDRESS</h3>
-					<ul style = "list-style-type: none;" class="text-white">
+					<ul class="text-white">
 						<li>Xiamen University Malaysia</li>
 						<li>10, Jalan Sunsuria,</li>
 						<li>Bandar Sunsuria,</li>
@@ -211,18 +216,17 @@
 
 				<div class="footer-column">
 					<h3>CONTACT US</h3>
-					<ul style = "list-style-type: none;" class="text-white">
+					<ul class="text-white">
 						<li>
-							<a href = "https://www.facebook.com/SWEstudentunion/?ref=br_rs">
-								<img src = "images/facebook.png">
+							<a href = "https://www.facebook.com/SWEstudentunion/?ref=br_rs" target="_blank" rel="noopener">
+								<img src = "images\facebook.png" alt = "facebook">
 							</a>
-							<a href = "mailto: SWEstudentunion@outlook.com">
-								<img src = "images/mail.png">
+							<a href = "mailto: swestudentcouncil@outlook.com">
+								<img src = "images\mail.png" alt = "mail">
 							</a>
-							<a href = "https://xmux.xdea.top/">
-								<img src = "images/xmux.jpg">
+							<a href = "https://xmux.xdea.top/" target="_blank" rel="noopener">
+								<img src = "images\xmux.jpg" alt = "xmux">
 							</a>
-
 						</li>
 					</ul>
 				</div>

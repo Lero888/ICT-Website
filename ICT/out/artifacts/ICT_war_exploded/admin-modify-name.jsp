@@ -19,7 +19,9 @@
     <title>Admin</title>
     <link rel="stylesheet" type="text/css" href="header.css">
     <link rel="stylesheet" type="text/css" href="footer.css">
-    <link rel="stylesheet" type="text/css" href="admin-personalinfo.css">
+    <link rel="stylesheet" type="text/css" href="admin-personal-info.css">
+    <link rel="stylesheet" type="text/css" href="back-to-top-button.css">
+    <script type=text/javascript src="back-to-top-button.js"></script>
 
     <style>
         .image-with-tag {float:none; margin:0 auto 10px; display:block; width:400px; padding-bottom:35%;}
@@ -27,21 +29,28 @@
 </head>
 
 <body>
+<%
+    response.setHeader("Cache-Control","no-cache");
+    response.setHeader("Cache-Control","no-store");
+    response.setHeader("Pragma","no-cache");
+    response.setDateHeader ("Expires", 0);
 
+    if(session.getAttribute("username")==null || session == null)
+        response.sendRedirect("admin-login.jsp");
+%>
     <div class="navbarcont">
         <div class="navbarcont2">
             <div><a href="home.jsp">
                 <img src="images\logo.png" class="navbarlogo">
             </a></div>
-            <div class="navigationlist">
-                <div id="nav_item"><a href="home.jsp">Home</a></div>
-                <div id="nav_item"><a href="staff.jsp">Staff</a></div>
-                <div id="nav_item"><a href="program-structure.jsp">Program Structure</a></div>
-                <div id="nav_item"><a href="student-activities.jsp">Student Activities</a></div>
-                <div id="nav_item"><a href="about.jsp">About</a></div>
+            <div class="logout">
+                <div style="padding-right:10px; color:white;"><%=session.getAttribute("username")%></div>
+                <a href="./AdminLogoutServlet" id ="log">Logout</a>
             </div>
         </div>
     </div>
+
+    <button onclick="topFunction()" id="myBtn" title="Go to top">&#8593;</button>
 
     <%
         String sid = request.getParameter("sid");
@@ -66,19 +75,19 @@
                 <hr></hr>
 
                 <div class = "infocontainer">
-                    <div class = "infobox" style = "background-color: #F5F5F5">
-                        <div class = "column" style = "flex: 8.5;">
-                            <form action = "./ModifyNameServlet?sid=<%=request.getParameter("sid")%>" method = "post">
-                                <input type="text" name="name" value="<%=bean.getStaff_name()%>" placeholder="Name" required> <br></br>
-                                <button><a href="admin-personalinfo.jsp?sid=<%=sid%>" style = "color: #000000; text-decoration: none;">Cancel</a></button>
-                        </div>
+                    <form action = "./ModifyNameServlet?sid=<%=request.getParameter("sid")%>" method = "post">
+                        <div class = "infobox" style = "background-color: #F5F5F5">
+                            <div class = "column" style = "flex: 8.5;">
+                                    <input type="text" name="name" value="<%=bean.getStaff_name()%>" placeholder="Name" required> <br></br>
+                                    <button><a href="admin-personal-info.jsp?sid=<%=sid%>" style = "color: #000000; text-decoration: none;">Cancel</a></button>
+                            </div>
 
-                        <div class = "column" style = "flex: 1.5;">
-                            <p>Name</p>
-                            <input type = "submit" value = "Save Changes" style = "margin-top: 5px;">
-                            </form>
+                            <div class = "column" style = "flex: 1.5;">
+                                <p>Name</p>
+                                <input type = "submit" value = "Save Changes" style = "margin-top: 5px;">
+                            </div>
                         </div>
-                    </div>
+                    </form>
 
                     <div class = "infobox" style = "padding-top: 0px; margin-top: 10px; margin-bottom: 20px;">
                         <div class = "column">
@@ -143,7 +152,7 @@
                 <img src="images/<%=bean.getImage()%>">
                 <h3><%=bean.getStaff_name()%></h3>
 
-                <a href = "admin-personalinfo.jsp?sid=<%=sid%>">
+                <a href = "admin-personal-info.jsp?sid=<%=sid%>">
                     <div class = "title-box">
                         <div class = "hover">
                             <h3>Personal Info</h3>
@@ -183,7 +192,7 @@
             <div class="footer-container">
                 <div class="footer-column">
                     <h3>EXPLORE</h3>
-                    <ul style = "list-style-type: none;" class="text-white">
+                    <ul class="text-white">
                         <li><a href="home.jsp">Home</a></li>
                         <li><a href="staff.jsp">Staff</a></li>
                         <li><a href="program-structure.jsp">Program Structure</a></li>
@@ -194,15 +203,15 @@
 
                 <div class="footer-column">
                     <h3>QUICK LINK</h3>
-                    <ul style = "list-style-type: none;" class="text-white">
-                        <li><a href="http://www.xmu.edu.my/">Xiamen University Malaysia</a></li>
-                        <li><a href="https://linc.xmu.edu.my/">Library</a></li>
+                    <ul class="text-white">
+                        <li><a href="http://www.xmu.edu.my/" target="_blank" rel="noopener">Xiamen University Malaysia</a></li>
+                        <li><a href="https://linc.xmu.edu.my/" target="_blank" rel="noopener">Library</a></li>
                     </ul>
                 </div>
 
                 <div class="footer-column">
                     <h3>OFFICE ADDRESS</h3>
-                    <ul style = "list-style-type: none;" class="text-white">
+                    <ul class="text-white">
                         <li>Xiamen University Malaysia</li>
                         <li>10, Jalan Sunsuria,</li>
                         <li>Bandar Sunsuria,</li>
@@ -213,18 +222,17 @@
 
                 <div class="footer-column">
                     <h3>CONTACT US</h3>
-                    <ul style = "list-style-type: none;" class="text-white">
+                    <ul class="text-white">
                         <li>
-                            <a href = "https://www.facebook.com/SWEstudentunion/?ref=br_rs">
+                            <a href = "https://www.facebook.com/SWEstudentunion/?ref=br_rs" target="_blank" rel="noopener">
                                 <img src = "images\facebook.png" alt = "facebook">
                             </a>
-                            <a href = "mailto: SWEstudentcouncil@outlook.com">
+                            <a href = "mailto: swestudentcouncil@outlook.com">
                                 <img src = "images\mail.png" alt = "mail">
                             </a>
-                            <a href = "https://xmux.xdea.top/">
+                            <a href = "https://xmux.xdea.top/" target="_blank" rel="noopener">
                                 <img src = "images\xmux.jpg" alt = "xmux">
                             </a>
-
                         </li>
                     </ul>
                 </div>

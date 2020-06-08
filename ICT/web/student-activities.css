@@ -141,7 +141,7 @@ figure{
   margin: 0 5px 0 5px;
 }
 
-button{
+.show_more button{
   display:flex;
   justify-content: space-between;
   text-align:left;
@@ -152,7 +152,7 @@ button{
   width:100%;
 }
 
-button:hover{
+.show_more button:hover{
   cursor:pointer;
   background-color:buttonface;
 }

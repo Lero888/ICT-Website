@@ -1,12 +1,12 @@
 html, body {
   margin: 0px;
-  padding: 0px;
+  padding: 0px;;
   height: 100%;
   background-color: #FFFFFF;
   height: 100%;
 }
 
-
+/*Large box*/
 .flexcontainer a {
   color: #000000;
   text-decoration: none;

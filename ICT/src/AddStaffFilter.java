@@ -12,19 +12,37 @@ public class AddStaffFilter implements Filter {
 
         String name = req.getParameter("name");
         String position = req.getParameter("position");
-        String school = req.getParameter("school");
         String tel = req.getParameter("tel");
         String email = req.getParameter("email");
+        String educational = req.getParameter("Educational-Background");
+        String research = req.getParameter("Research-Interest");
+        String academic = req.getParameter("Academic-Experience");
+        String representative = req.getParameter("Representative-Publications");
+        PrintWriter out = resp.getWriter();
 
-        if( name.contains("<script>") || name.contains("</script>") || position.contains("<script>") || position.contains("</script>") || school.contains("<script>") || school.contains("</script>") || tel.contains("<script>") || tel.contains("</script>") || email.contains("<script>") || email.contains("</script>") )
+        if( name.contains("<script>") || name.contains("</script>")
+           || position.contains("<script>") || position.contains("</script>")
+           || tel.contains("<script>") || tel.contains("</script>")
+           || email.contains("<script>") || email.contains("</script>")
+        )
         {
-            PrintWriter out = resp.getWriter();
-            out.println("Invalid character in title or content");
+            out.println("Invalid character in name, position, tel or email.");
         }
+
+        else if( educational.contains("<script>") || educational.contains("</script>")
+                || research.contains("<script>") || research.contains("</script>")
+                || academic.contains("<script>") || academic.contains("</script>")
+                || representative.contains("<script>") || representative.contains("</script>")
+        )
+        {
+            out.println("Invalid character in educational background, research interest, academic experience or representative publication. ");
+        }
+
         else
         {
             chain.doFilter(req, resp);
         }
+
     }
 
     public void init(FilterConfig config) throws ServletException {

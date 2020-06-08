@@ -3,8 +3,10 @@
 <head>
 	<title>Bachelor of Engineering in Software Engineering</title>
 	<link rel="stylesheet" type="text/css" href="header.css">
-   <link rel="stylesheet" type="text/css" href="footer.css">
-   <link rel="stylesheet" type="text/css" href="software-engineering.css">
+    <link rel="stylesheet" type="text/css" href="footer.css">
+    <link rel="stylesheet" type="text/css" href="software-engineering.css">
+    <link rel="stylesheet" type="text/css" href="back-to-top-button.css">
+    <script type=text/javascript src="back-to-top-button.js"></script>
    
 	<style>
 		.image-with-tag {float:none; margin:0 auto 10px; display:block; width:400px; padding-bottom:35%;}
@@ -18,11 +20,11 @@
                 <img src="images/logo.png" class="navbarlogo">
             </a></div>
             <div class="navigationlist">
-                <div id="nav_item"><a href="home.jsp">Home</a></div>
-                <div id="nav_item"><a href="staff.jsp">Staff</a></div>
-                <div id="nav_item"><a href="program-structure.jsp">Program Structure</a></div>
-                <div id="nav_item"><a href="student-activities.jsp">Student Activities</a></div>
-                <div id="nav_item"><a href="about.jsp">About</a></div>
+                <div class="nav_item"><a href="home.jsp">Home</a></div>
+                <div class="nav_item"><a href="staff.jsp">Staff</a></div>
+                <div class="nav_item"><a href="program-structure.jsp">Program Structure</a></div>
+                <div class="nav_item"><a href="student-activities.jsp">Student Activities</a></div>
+                <div class="nav_item"><a href="about.jsp">About</a></div>
             </div>
         </div>
     </div>
@@ -34,7 +36,9 @@
 		<img class = "course-logo" src = "images/PS - swe.png" alt = "software-engineering">
 	</div>
 
-	<!-- body section--> 
+	<!-- body section-->
+    <button onclick="topFunction()" id="myBtn" title="Go to top">&#8593;</button>
+
 	<div class = "row" style = "margin-bottom: -22px;">
 		<p style = "font-size: 30px"><b>Software Engineering</b></p>
 	</div>
@@ -414,66 +418,65 @@
    
    </table>
 
-   <!-- Footer section -->
-   <footer>
-      <section class="footer">
-         
-           <div class="footer-container">
-               <div class="footer-column">
-                   <h3>EXPLORE</h3>
-                   <ul style = "list-style-type: none;" class="text-white">
-                       <li><a href="home.jsp">Home</a></li>
-                       <li><a href="staff.jsp">Staff</a></li>
-                       <li><a href="program-structure.jsp">Program Structure</a></li>
-                       <li><a href="student-activities.jsp">Student Activities</a></li>
-                       <li><a href ="about.jsp">About</a></li>
-                   </ul>
-               </div>
+    <!-- Footer section -->
+    <footer>
+        <section class="footer">
 
-               <div class="footer-column">
-                   <h3>QUICK LINK</h3>
-                   <ul style = "list-style-type: none;" class="text-white">
-                       <li><a href="http://www.xmu.edu.my/">Xiamen University Malaysia</a></li>
-                       <li><a href="https://linc.xmu.edu.my/">Library</a></li>
-                   </ul>
-               </div>
+            <div class="footer-container">
+                <div class="footer-column">
+                    <h3>EXPLORE</h3>
+                    <ul class="text-white">
+                        <li><a href="home.jsp">Home</a></li>
+                        <li><a href="staff.jsp">Staff</a></li>
+                        <li><a href="program-structure.jsp">Program Structure</a></li>
+                        <li><a href="student-activities.jsp">Student Activities</a></li>
+                        <li><a href ="about.jsp">About</a></li>
+                    </ul>
+                </div>
 
-               <div class="footer-column">
-                   <h3>OFFICE ADDRESS</h3>
-                   <ul style = "list-style-type: none;" class="text-white">
-                     <li>Xiamen University Malaysia</li>
-                       <li>10, Jalan Sunsuria,</li>
-                       <li>Bandar Sunsuria,</li>
-                       <li>43900 Sepang,</li>
-                       <li>Selangor Darul Ehsan, Malaysia.</li>
-                   </ul>
-               </div>
+                <div class="footer-column">
+                    <h3>QUICK LINK</h3>
+                    <ul class="text-white">
+                        <li><a href="http://www.xmu.edu.my/" target="_blank" rel="noopener">Xiamen University Malaysia</a></li>
+                        <li><a href="https://linc.xmu.edu.my/" target="_blank" rel="noopener">Library</a></li>
+                    </ul>
+                </div>
 
-               <div class="footer-column">
-                   <h3>CONTACT US</h3>
-                   <ul style = "list-style-type: none;" class="text-white">
-                       <li>
-                     <a href = "https://www.facebook.com/SWEstudentunion/?ref=br_rs"> 
-                        <img src = "images/facebook.png" alt = "facebook">
-                     </a>
-                     <a href = "mailto: SWEstudentcouncil@outlook.com">
-                        <img src = "images/mail.png" alt = mail>
-                     </a>
-                     <a href = "https://xmux.xdea.top/">
-                        <img src = "images/xmux.jpg" alt = "xmux">
-                     </a>
+                <div class="footer-column">
+                    <h3>OFFICE ADDRESS</h3>
+                    <ul class="text-white">
+                        <li>Xiamen University Malaysia</li>
+                        <li>10, Jalan Sunsuria,</li>
+                        <li>Bandar Sunsuria,</li>
+                        <li>43900 Sepang,</li>
+                        <li>Selangor Darul Ehsan, Malaysia.</li>
+                    </ul>
+                </div>
 
-                       </li>
-                   </ul>
-               </div>
-           </div>
+                <div class="footer-column">
+                    <h3>CONTACT US</h3>
+                    <ul class="text-white">
+                        <li>
+                            <a href = "https://www.facebook.com/SWEstudentunion/?ref=br_rs" target="_blank" rel="noopener">
+                                <img src = "images\facebook.png" alt = "facebook">
+                            </a>
+                            <a href = "mailto: swestudentcouncil@outlook.com">
+                                <img src = "images\mail.png" alt = "mail">
+                            </a>
+                            <a href = "https://xmux.xdea.top/" target="_blank" rel="noopener">
+                                <img src = "images\xmux.jpg" alt = "xmux">
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
 
-       </section>
+        </section>
 
-      <div class = "footer2">
-         Copyright &#0169 2019 Information Technology Xiamen University Malaysia. All rights reserved.
-      </div>
-   </footer>
+        <div class = "footer2">
+            Copyright &#0169 2019 Information Technology Xiamen University Malaysia. All rights reserved.
+        </div>
+    </footer>
 	
 </body>
 </html>

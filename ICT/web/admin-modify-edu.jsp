@@ -20,6 +20,8 @@
     <link rel="stylesheet" type="text/css" href="header.css">
     <link rel="stylesheet" type="text/css" href="footer.css">
     <link rel="stylesheet" type="text/css" href="admin-background.css">
+    <link rel="stylesheet" type="text/css" href="back-to-top-button.css">
+    <script type=text/javascript src="back-to-top-button.js"></script>
 
     <style>
         .image-with-tag {float:none; margin:0 auto 10px; display:block; width:400px; padding-bottom:35%;}
@@ -27,21 +29,28 @@
 </head>
 
 <body>
+<%
+    response.setHeader("Cache-Control","no-cache");
+    response.setHeader("Cache-Control","no-store");
+    response.setHeader("Pragma","no-cache");
+    response.setDateHeader ("Expires", 0);
 
+    if(session.getAttribute("username")==null || session == null)
+        response.sendRedirect("admin-login.jsp");
+%>
     <div class="navbarcont">
         <div class="navbarcont2">
             <div><a href="home.jsp">
                 <img src="images\logo.png" class="navbarlogo">
             </a></div>
-            <div class="navigationlist">
-                <div id="nav_item"><a href="home.jsp">Home</a></div>
-                <div id="nav_item"><a href="staff.jsp">Staff</a></div>
-                <div id="nav_item"><a href="program-structure.jsp">Program Structure</a></div>
-                <div id="nav_item"><a href="student-activities.jsp">Student Activities</a></div>
-                <div id="nav_item"><a href="about.jsp">About</a></div>
+            <div class="logout">
+                <div style="padding-right:10px; color:white;"><%=session.getAttribute("username")%></div>
+                <a href="./AdminLogoutServlet" id ="log">Logout</a>
             </div>
         </div>
     </div>
+
+    <button onclick="topFunction()" id="myBtn" title="Go to top">&#8593;</button>
 
     <%
         String sid = request.getParameter("sid");
@@ -58,44 +67,43 @@
                 <h2>Background and Expertise</h2>
                 <hr></hr>
 
-                <div class = "infocontainer">
-                    <div class = "infobox">
-                        <div class = "column" style = "margin-bottom: 15px; text-align: justify;">
-                            <form action = "./ModifyEduServlet?sid=<%=request.getParameter("sid")%>" method = "post">
-                                <textarea style = "margin-top: 15px; width: 482px; height:202px;" name = "educational" required>
-                                        <%
-                                            List<EduBgBean> model2 = model_EduBg.get();
 
-//                                            out.print(model2);
+                 <div class = "infocontainer">
 
-                                            for(EduBgBean bean2: model2)
-                                            {
-                                                if(bean2.getStaff_id().equals(sid))
-                                                {
-                                                    bean2.getDescription();
-                                                }
-                                            }
-                                        %>
+                     <form action = "./ModifyEduServlet?sid=<%=request.getParameter("sid")%>" method = "post">
+                         <div class = "infobox" style = "padding-top: 0px; margin-top: 10px; margin-bottom: 20px">
+                             <div class = "column" style = "margin-bottom: 15px; text-align: justify;">
+                                <textarea style = "margin-top: 15px; width: 482px; height:202px;" name = "educational" required = "required"><%
+                                    List<EduBgBean> model1 = model_EduBg.get();
+                                    for(EduBgBean bean1: model1)
+                                    {
+                                        if(bean1.getStaff_id().equals(sid))
+                                        {
+                                            out.println(bean1.getDescription());
+                                        }
+                                    }
+                                %></textarea>
 
-                                </textarea> <br></br>
-                                <button><a href="admin-background.jsp?sid=<%=sid%>" style = "color: #000000; text-decoration: none;">Cancel</a></button>
-                        </div>
+                                 <br></br>
+                                 <button><a href="admin-background.jsp?sid=<%=sid%>" style = "color: #000000; text-decoration: none;">Cancel</a></button>
+                             </div>
 
-                        <div class = "column" style = "flex: 2;">
-                            <p>Educational Background</p>
-                            <input type = "submit" value = "Save Changes" style = "margin-top: 170px;">
-                            </form>
-                        </div>
-                    </div>
+                             <div class = "column" style = "flex: 2;">
+                                 <p>Educational Background</p>
+                                 <input type = "submit" value = "Save Changes" style = "margin-top: 190px;">
+                             </div>
+                         </div>
+                     </form>
+
 
                     <div class = "infobox" style = "padding-top: 0px; margin-top: 10px; margin-bottom: 20px">
                         <div class = "column" style = "margin-bottom: 15px;">
                             <ul>
 
                                 <%
-                                    List<EduBgBean> model3 = model_EduBg.get();
+                                    List<ResIntBean> model3 = model_ResInt.get();
 
-                                    for(EduBgBean bean3: model3)
+                                    for(ResIntBean bean3: model3)
                                     {
                                         if(bean3.getStaff_id().equals(sid))
                                         {
@@ -187,6 +195,7 @@
                             <p><a href = "admin-modify-representative.jsp?sid=<%=sid%>">Edit</a></p>
                         </div>
                     </div>
+
                 </div>
                 <hr></hr>
             </div>
@@ -206,7 +215,7 @@
                 <img src="images/<%=bean.getImage()%>">
                 <h3><%=bean.getStaff_name()%></h3>
 
-                <a href = "admin-personalinfo.jsp?sid=<%=sid%>">
+                <a href = "admin-personal-info.jsp?sid=<%=sid%>">
                     <div class = "title-box">
                         <div class = "hover">
                             <h3>Personal Info</h3>
@@ -246,7 +255,7 @@
             <div class="footer-container">
                 <div class="footer-column">
                     <h3>EXPLORE</h3>
-                    <ul style = "list-style-type: none;" class="text-white">
+                    <ul class="text-white">
                         <li><a href="home.jsp">Home</a></li>
                         <li><a href="staff.jsp">Staff</a></li>
                         <li><a href="program-structure.jsp">Program Structure</a></li>
@@ -257,15 +266,15 @@
 
                 <div class="footer-column">
                     <h3>QUICK LINK</h3>
-                    <ul style = "list-style-type: none;" class="text-white">
-                        <li><a href="http://www.xmu.edu.my/">Xiamen University Malaysia</a></li>
-                        <li><a href="https://linc.xmu.edu.my/">Library</a></li>
+                    <ul class="text-white">
+                        <li><a href="http://www.xmu.edu.my/" target="_blank" rel="noopener">Xiamen University Malaysia</a></li>
+                        <li><a href="https://linc.xmu.edu.my/" target="_blank" rel="noopener">Library</a></li>
                     </ul>
                 </div>
 
                 <div class="footer-column">
                     <h3>OFFICE ADDRESS</h3>
-                    <ul style = "list-style-type: none;" class="text-white">
+                    <ul class="text-white">
                         <li>Xiamen University Malaysia</li>
                         <li>10, Jalan Sunsuria,</li>
                         <li>Bandar Sunsuria,</li>
@@ -276,18 +285,17 @@
 
                 <div class="footer-column">
                     <h3>CONTACT US</h3>
-                    <ul style = "list-style-type: none;" class="text-white">
+                    <ul class="text-white">
                         <li>
-                            <a href = "https://www.facebook.com/SWEstudentunion/?ref=br_rs">
+                            <a href = "https://www.facebook.com/SWEstudentunion/?ref=br_rs" target="_blank" rel="noopener">
                                 <img src = "images\facebook.png" alt = "facebook">
                             </a>
-                            <a href = "mailto: SWEstudentcouncil@outlook.com">
+                            <a href = "mailto: swestudentcouncil@outlook.com">
                                 <img src = "images\mail.png" alt = "mail">
                             </a>
-                            <a href = "https://xmux.xdea.top/">
+                            <a href = "https://xmux.xdea.top/" target="_blank" rel="noopener">
                                 <img src = "images\xmux.jpg" alt = "xmux">
                             </a>
-
                         </li>
                     </ul>
                 </div>

@@ -3,7 +3,18 @@
 <%@ page import="java.sql.ResultSet" %>
 <%@ page import="net.model.StaffBean" %>
 <%@ page import="java.util.List" %>
+<%@ page import="java.util.Collections" %>
 <jsp:useBean id="model_staff" class="net.model.StaffAccess" />
+
+<%
+	response.setHeader("Cache-Control","no-cache");
+	response.setHeader("Cache-Control","no-store");
+	response.setHeader("Pragma","no-cache");
+	response.setDateHeader ("Expires", 0);
+
+	if(session.getAttribute("username")==null || session == null)
+		response.sendRedirect("admin-login.jsp");
+%>
 
 <!DOCTYPE html>
 <html>
@@ -12,19 +23,13 @@
 	<link rel="stylesheet" type="text/css" href="footer.css">
 	<link rel="stylesheet" type="text/css" href="header.css">
 	<link rel="stylesheet" type="text/css" href="panel.css">
+	<link rel="stylesheet" type="text/css" href="back-to-top-button.css">
+	<script type=text/javascript src="back-to-top-button.js"></script>
+<%--	<script type=text/javascript src="confirmation.js"></script>--%>
 </head>
 <body>
-<%
-	response.setHeader("Cache-Control","no-cache");
-	response.setHeader("Cache-Control","no-store");
-	response.setHeader("Pragma","no-cache");
-	response.setDateHeader ("Expires", 0);
 
-	if(session.getAttribute("admin_id")==null)
-		response.sendRedirect("admin-login.jsp");
-
-%>
-<div class="navbarcont">
+	<div class="navbarcont">
 		<div class="navbarcont2">
 			<div><a href="home.jsp">
 				<img src="images/logo.png" class="navbarlogo">
@@ -36,7 +41,7 @@
 		</div>
 	</div>
 
-
+	<button onclick="topFunction()" id="myBtn" title="Go to top">&#8593;</button>
 
 	<div class="header1">
 		<div class="navigation_arrow"> <a href="admin-news-panel.jsp"> <b>&#10094;</b> </a></div>
@@ -46,43 +51,30 @@
 
 	<div class="container">
 
-<%--		<%--%>
-<%--			Class.forName("com.mysql.jdbc.Driver");--%>
-<%--			Statement stm = DriverManager.getConnection("jdbc:mysql://localhost:3306/ICT", "root", "xmuy").createStatement();--%>
-<%--			String sql = "select staff_id as sid, staff_name as name, image as image, email as email, tel as tel\n" +--%>
-<%--					"from staff";--%>
-<%--			ResultSet rs= stm.executeQuery(sql);--%>
-
-<%--			while(rs.next())--%>
-<%--			{--%>
-<%--		%>--%>
-
 		<%
 			List<StaffBean> model = model_staff.get();
+
+			Collections.sort(model, StaffBean.StaffNameComparator);
 
 			for(StaffBean bean: model)
 			{
 		%>
 
-		<div class="item">
-
-			<a href = "admin-personalinfo.jsp?sid=<%=bean.getStaff_id()%>">
+			<div onclick="window.location.href='admin-personal-info.jsp?sid=<%=bean.getStaff_id()%>'" class="item">
 				<div class="left">
-					<div class="image-container"><img src="images/<%=bean.getImage()%>"></div>
+					<div class="image-container"><img src="images/<%=bean.getImage()%>" alt="staff"></div>
 
 					<div class="info">
 						<h3><%=bean.getStaff_name()%></h3>
-						<p>Contact: <%=bean.getTel()%>	</p>
-						<p>Email  : <%=bean.getEmail()%>	</p>
+						<p>Contact: <%=bean.getTel()%></p>
+						<p>Email  : <%=bean.getEmail()%></p>
 					</div>
 
 				</div>
-			</a>
 
-			<div class="delete"><a href="./DeleteStaffServlet?sid=<%=bean.getStaff_id()%>"><img src="images/delete.png"></a></div>
+				<div class="delete"><a href="./DeleteStaffServlet?sid=<%=bean.getStaff_id()%>" onclick="return sure();"><img src="images/delete.png" alt="delete"></a></div>
+			</div>
 
-
-		</div>
 
 		<%
 			}
@@ -90,68 +82,68 @@
 
 	</div>
 
-	<a href="admin-add-new-staff.jsp"><div class="new"><img src="images/add.png"><p style="color:black;">Add Staff</p></div></a>
+	<a href="admin-add-new-staff.jsp"><div class="new"><img src="images/add.png" alt="add"><p style="color:black;">Add Staff</p></div></a>
 
-		<!-- Footer section -->
-		<footer>
-			<section class="footer">
+	<!-- Footer section -->
+	<footer>
+		<section class="footer">
 
-				<div class="footer-container">
-					<div class="footer-column">
-						<h3>EXPLORE</h3>
-						<ul style = "list-style-type: none;" class="text-white">
-							<li><a href="home.jsp">Home</a></li>
-							<li><a href="staff.jsp">Staff</a></li>
-							<li><a href="program-structure.jsp">Program Structure</a></li>
-							<li><a href="student-activities.jsp">Student Activities</a></li>
-							<li><a href ="about.jsp">About</a></li>
-						</ul>
-					</div>
-
-					<div class="footer-column">
-						<h3>QUICK LINK</h3>
-						<ul style = "list-style-type: none;" class="text-white">
-							<li><a href="http://www.xmu.edu.my/">Xiamen University Malaysia</a></li>
-							<li><a href="https://linc.xmu.edu.my/">Library</a></li>
-						</ul>
-					</div>
-
-					<div class="footer-column">
-						<h3>OFFICE ADDRESS</h3>
-						<ul style = "list-style-type: none;" class="text-white">
-							<li>Xiamen University Malaysia</li>
-							<li>10, Jalan Sunsuria,</li>
-							<li>Bandar Sunsuria,</li>
-							<li>43900 Sepang,</li>
-							<li>Selangor Darul Ehsan, Malaysia.</li>
-						</ul>
-					</div>
-
-					<div class="footer-column">
-						<h3>CONTACT US</h3>
-						<ul style = "list-style-type: none;" class="text-white">
-							<li>
-								<a href = "https://www.facebook.com/SWEstudentunion/?ref=br_rs">
-									<img src = "images/facebook.png">
-								</a>
-								<a href = "mailto: SWEstudentunion@outlook.com">
-									<img src = "images/mail.png">
-								</a>
-								<a href = "https://xmux.xdea.top/">
-									<img src = "images/xmux.jpg">
-								</a>
-
-							</li>
-						</ul>
-					</div>
+			<div class="footer-container">
+				<div class="footer-column">
+					<h3>EXPLORE</h3>
+					<ul class="text-white">
+						<li><a href="home.jsp">Home</a></li>
+						<li><a href="staff.jsp">Staff</a></li>
+						<li><a href="program-structure.jsp">Program Structure</a></li>
+						<li><a href="student-activities.jsp">Student Activities</a></li>
+						<li><a href ="about.jsp">About</a></li>
+					</ul>
 				</div>
 
-			</section>
+				<div class="footer-column">
+					<h3>QUICK LINK</h3>
+					<ul class="text-white">
+						<li><a href="http://www.xmu.edu.my/" target="_blank" rel="noopener">Xiamen University Malaysia</a></li>
+						<li><a href="https://linc.xmu.edu.my/" target="_blank" rel="noopener">Library</a></li>
+					</ul>
+				</div>
 
-			<div class = "footer2">
-				Copyright &#0169 2019 Information Technology Xiamen University Malaysia. All rights reserved.
+				<div class="footer-column">
+					<h3>OFFICE ADDRESS</h3>
+					<ul class="text-white">
+						<li>Xiamen University Malaysia</li>
+						<li>10, Jalan Sunsuria,</li>
+						<li>Bandar Sunsuria,</li>
+						<li>43900 Sepang,</li>
+						<li>Selangor Darul Ehsan, Malaysia.</li>
+					</ul>
+				</div>
+
+				<div class="footer-column">
+					<h3>CONTACT US</h3>
+					<ul class="text-white">
+						<li>
+							<a href = "https://www.facebook.com/SWEstudentunion/?ref=br_rs" target="_blank" rel="noopener">
+								<img src = "images\facebook.png" alt = "facebook">
+							</a>
+							<a href = "mailto: swestudentcouncil@outlook.com">
+								<img src = "images\mail.png" alt = "mail">
+							</a>
+							<a href = "https://xmux.xdea.top/" target="_blank" rel="noopener">
+								<img src = "images\xmux.jpg" alt = "xmux">
+							</a>
+						</li>
+					</ul>
+				</div>
 			</div>
-		</footer>
+
+		</section>
+
+		<div class = "footer2">
+			Copyright &#0169 2019 Information Technology Xiamen University Malaysia. All rights reserved.
+		</div>
+	</footer>
+
 
 </body>
 </html>
